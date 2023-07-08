@@ -18,14 +18,12 @@ const Navbar = () => {
     return (
         <div className="absolute w-full left-0 top-0 right-0 z-10 ease-in duration-300">
             <div className="m-auto flex justify-end lg:justify-center items-center p-4 text-white">
-                <Link href='/' className="absolute left-6 lg:left-24 xl:left-44 top-1 lg:top-4">
+                <Link href='/' className="absolute left-6 md:left-16 xl:left-24 2xl:left-44 top-3 lg:top-2 w-[3.75rem] h-[3.75rem] md:w-16 md:h-16 lg:w-[7.5rem] lg:h-[7.5rem]">
                     <Image
                         src={logo}
                         alt='REMTA'
-                        width={120}
-                        height={120}
-                        // placeholder="blur"
-                        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 55vw, 100vw" 
+                        priority
+                        fill
                     />
                 </Link>
                 <ul className="hidden lg:flex">
@@ -39,12 +37,12 @@ const Navbar = () => {
                         <Link href='/#contact'>Контакти</Link>
                     </li>
                 </ul>
-                <Link href='https://www.facebook.com/RemtaDesign' className="hidden lg:block absolute right-24 xl:right-44 top-8" rel="noopener noreferrer" target="_blank">
-                    <Image src={fb} alt='Facebook' width='3rem' height='3rem' className=" drop-shadow-[0_4px_0_rgba(0,0,0,0.25)]" />
+                <Link href='https://www.facebook.com/RemtaDesign' className="hidden lg:block absolute lg:right-16 xl:right-24 2xl:right-44 top-8" rel="noopener noreferrer" target="_blank">
+                    <Image src={fb} alt='Facebook' width='3rem' height='3rem' className=" drop-shadow-[0_4px_0_rgba(0,0,0,0.25)]" priority />
                 </Link>
 
                 {/* Mobile Button */}
-                <div onClick={handleNav} className="block lg:hidden z-10 pt-3">
+                <div onClick={handleNav} className="block lg:hidden z-10 pt-3 md:px-16">
                     {nav ? <AiOutlineClose className="text-[#56423E]" size='1.875rem' /> : <AiOutlineMenu size='1.875rem' />}
                 </div>
                 {/* Mobile Menu */}
