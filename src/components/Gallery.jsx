@@ -2,6 +2,8 @@
 
 import left_arrow from "../assets/desktop/left-arrow.svg"
 import right_arrow from "../assets/desktop/right-arrow.svg"
+import up_arrow from "../assets/mobile/up-arrow.svg"
+import down_arrow from "../assets/mobile/down-arrow.svg"
 import Image from "next/image"
 import { useState } from "react"
 import img1 from "../assets/desktop/gallery/img1.jpg"
@@ -90,20 +92,24 @@ const Gallery = () => {
     }
 
     return ( 
-        <div id="gallery" className="w-full h-screen">
-            <h1 className="pt-40 text-[#56423E] text-center text-[2.8125rem] font-semibold leading-[3rem] tracking-wider">Галерия</h1>
-            <div className="px-44 pt-[8.32rem] flex items-center justify-between mx-auto">
+        <div id="gallery" className="flex flex-col justify-center lg:justify-start w-full h-screen">
+            <h1 className="lg:pt-40 text-[#56423E] text-center text-3xl md:text-4xl xl:text-[2.5rem] 2xl:text-[2.8125rem] font-semibold leading-[3rem] tracking-wider">Галерия</h1>
+            <div className="w-full px-6 md:px-16 xl:px-24 pt-8 lg:pt-[8.32rem] flex flex-col lg:flex-row items-center justify-center mx-auto">
                 {/* Left arrow */}
-                <Image className="cursor-pointer hover:scale-105" onClick={prevSlide} src={left_arrow} alt="previous" width='3.125rem' height='2.8125rem' />
+                <Image className="hidden lg:block cursor-pointer hover:scale-105" onClick={prevSlide} src={left_arrow} alt="previous" width='3.125rem' height='2.8125rem' />
+                {/* mobile up arrow */}
+                <Image className="block lg:hidden" onClick={prevSlide} src={up_arrow} alt="previous" width='3.125rem' height='2.8125rem' />
 
                 {/* Images */}
-                <Image className="cursor-pointer hover:scale-105 rounded-[1.25rem] shadow-[5px_6px_0_rgba(0,0,0,0.25)] max-w-[20.8125rem] max-h-[16.4375rem]" src={slides[currentIndex].img1} alt="" width='20.8125rem' height='16.4375rem' />
-                <Image className="cursor-pointer hover:scale-105 rounded-[1.25rem] shadow-[5px_6px_0_rgba(0,0,0,0.25)] max-w-[20.8125rem] max-h-[16.4375rem]" src={slides[currentIndex].img2} alt="" width='20.8125rem' height='16.4375rem' />
-                <Image className="cursor-pointer hover:scale-105 rounded-[1.25rem] shadow-[5px_6px_0_rgba(0,0,0,0.25)] max-w-[20.8125rem] max-h-[16.4375rem]" src={slides[currentIndex].img3} alt="" width='20.8125rem' height='16.4375rem' />
-                <Image className="cursor-pointer hover:scale-105 rounded-[1.25rem] shadow-[5px_6px_0_rgba(0,0,0,0.25)] max-w-[20.8125rem] max-h-[16.4375rem]" src={slides[currentIndex].img4} alt="" width='20.8125rem' height='16.4375rem' />
+                <Image className="my-2 mx-4 cursor-pointer hover:scale-105 rounded-[1.25rem] shadow-[5px_6px_0_rgba(0,0,0,0.25)] w-52 h-40 md:w-80 md:h-60 lg:w-60 lg:h-48 xl:w-72 xl:h-60 2xl:w-72 2xl:h-60" src={slides[currentIndex].img1} alt="" width='20.8125rem' height='16.4375rem' />
+                <Image className="my-2 mx-4 cursor-pointer hover:scale-105 rounded-[1.25rem] shadow-[5px_6px_0_rgba(0,0,0,0.25)] w-52 h-40 md:w-80 md:h-60 lg:w-60 lg:h-48 xl:w-72 xl:h-60 2xl:w-72 2xl:h-60" src={slides[currentIndex].img2} alt="" width='20.8125rem' height='16.4375rem' />
+                <Image className="my-2 mx-4 cursor-pointer hover:scale-105 rounded-[1.25rem] shadow-[5px_6px_0_rgba(0,0,0,0.25)] w-52 h-40 md:w-80 md:h-60 lg:w-60 lg:h-48 xl:w-72 xl:h-60 2xl:w-72 2xl:h-60" src={slides[currentIndex].img3} alt="" width='20.8125rem' height='16.4375rem' />
+                <Image className="hidden 2xl:block my-2 mx-4 cursor-pointer hover:scale-105 rounded-[1.25rem] shadow-[5px_6px_0_rgba(0,0,0,0.25)] 2xl:w-72 2xl:h-60" src={slides[currentIndex].img4} alt="" width='20.8125rem' height='16.4375rem' />
 
                 {/* Right arrow */}
-                <Image className="cursor-pointer hover:scale-105" onClick={nextSlide} src={right_arrow} alt="next" width='3.125rem' height='2.8125rem' />
+                <Image className="hidden lg:block cursor-pointer hover:scale-105" onClick={nextSlide} src={right_arrow} alt="next" width='3.125rem' height='2.8125rem' />
+                {/* mobile down arrow */}
+                <Image className="block lg:hidden" onClick={nextSlide} src={down_arrow} alt="next" width='3.125rem' height='2.8125rem' />
             </div>
         </div>
     )

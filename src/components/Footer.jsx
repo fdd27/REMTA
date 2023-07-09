@@ -18,7 +18,7 @@ const rw = Raleway({
 
 const Footer = () => {
     return (
-        <div className="absolute bottom-0 left-0 right-0 w-full h-[13.25rem] bg-[rgba(255,116,72,0.87)] px-44">
+        <div className="hidden lg:block absolute bottom-0 left-0 right-0 w-full h-[13.25rem] bg-[rgba(255,116,72,0.87)] px-44">
             <div className="flex justify-between items-center pt-[3.89rem]">
                 <div className="flex items-center gap-3 cursor-pointer hover:scale-105">
                     <Image src={mail} alt="email:" width='2.125rem' height='2.125rem' />
