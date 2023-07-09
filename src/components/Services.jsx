@@ -96,8 +96,8 @@ const Services = () => {
 
 
             {/* Carousel */}
-            <div className="mt-10 mx-auto p-20 flex justify-center items-center w-[69.25rem] h-[23.2065rem] rounded-[1.25rem] bg-[rgba(255,255,255,0.6)] shadow-[7px_7px_0_rgba(0,0,0,0.25)]">
-                <div className="flex flex-shrink-0 justify-center items-center w-[16.51963rem] h-[13.30994rem] rounded-[6.25rem_0] border-2 border-solid border-[#FF6E41] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]">
+            <div className="mt-10 mx-auto p-20 flex justify-center items-center xl:w-[69.25rem] xl:h-[23.2065rem] rounded-[1.25rem] bg-[rgba(255,255,255,0.6)] shadow-[7px_7px_0_rgba(0,0,0,0.25)]">
+                <div className="flex flex-shrink-0 justify-center items-center xl:w-[16.51963rem] xl:h-[13.30994rem] rounded-[6.25rem_0] border-2 border-solid border-[#FF6E41] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]">
                     <Image
                         src={slides[currentIndex].img} 
                         alt="" 
