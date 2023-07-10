@@ -27,18 +27,18 @@ const Navbar = () => {
                     />
                 </Link>
                 <ul className="hidden lg:flex">
-                    <li className="p-8 text-2xl font-bold drop-shadow-[0_4px_0_rgba(0,0,0,0.25)] hover:scale-110">
+                    <li className="p-8 text-2xl font-bold drop-shadow-[0_4px_0_rgba(0,0,0,0.25)] cursor-pointer hover:scale-110">
                         <Link href='/'>Начало</Link>
                     </li>
-                    <li className="p-8 text-2xl font-bold drop-shadow-[0_4px_0_rgba(0,0,0,0.25)] hover:scale-110">
+                    <li className="p-8 text-2xl font-bold drop-shadow-[0_4px_0_rgba(0,0,0,0.25)] cursor-pointer hover:scale-110">
                         <Link href='/#gallery'>Галерия</Link>
                     </li>
-                    <li className="p-8 text-2xl font-bold drop-shadow-[0_4px_0_rgba(0,0,0,0.25)] hover:scale-110">
+                    <li className="p-8 text-2xl font-bold drop-shadow-[0_4px_0_rgba(0,0,0,0.25)] cursor-pointer hover:scale-110">
                         <Link href='/#contact'>Контакти</Link>
                     </li>
                 </ul>
-                <Link href='https://www.facebook.com/RemtaDesign' className="hidden lg:block absolute lg:right-16 xl:right-24 2xl:right-44 top-8" rel="noopener noreferrer" target="_blank">
-                    <Image src={fb} alt='Facebook' width='3rem' height='3rem' className=" drop-shadow-[0_4px_0_rgba(0,0,0,0.25)]" priority />
+                <Link href='https://www.facebook.com/RemtaDesign' className="hidden lg:block absolute lg:right-16 xl:right-24 2xl:right-44 top-8 hover:scale-110" rel="noopener noreferrer" target="_blank">
+                    <Image src={fb} alt='Facebook' width='3rem' height='3rem' className="drop-shadow-[0_4px_0_rgba(0,0,0,0.25)]" priority />
                 </Link>
 
                 {/* Mobile Button */}
