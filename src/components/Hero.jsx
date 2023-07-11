@@ -17,14 +17,14 @@ const pf = Playfair_Display({
 
 const Hero = () => {
     return (
-        <div className="w-full h-screen bg-[url('../assets/desktop/hero-bg.svg')] bg-cover bg-center">
+        <section className="w-full h-screen bg-[url('../assets/desktop/hero-bg.svg')] bg-cover bg-center snap-start flex flex-col">
             <Navbar />
 
             {/* Hero container */}
-            <div className="w-full h-screen flex lg:pt-44 px-6 md:px-16 xl:px-24 2xl:px-44">
+            <div className="w-full flex px-6 md:px-16 xl:px-24 2xl:px-44 flex-auto">
 
                 {/* Left Half */}
-                <div className="w-full lg:w-[51%] lg:py-14 flex flex-col justify-center lg:justify-around items-center lg:items-start lg:pr-3">
+                <div className="w-full lg:w-[51%] flex flex-col justify-center lg:justify-around items-center lg:items-start lg:pr-3">
                     
                     <h1 className="text-white text-3xl md:text-4xl xl:text-[2.65rem] 2xl:text-5xl font-bold leading-8 md:leading-[3rem] tracking-wider drop-shadow-[4px_4px_0_rgba(0,0,0,0.25)] text-center lg:text-start">
                         Мебели по поръчка<br />изработени специално за теб
@@ -70,7 +70,7 @@ const Hero = () => {
                     />
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

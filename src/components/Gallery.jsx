@@ -92,7 +92,7 @@ const Gallery = () => {
     }
 
     return ( 
-        <div id="gallery" className="flex flex-col justify-center lg:justify-start w-full h-screen">
+        <section id="gallery" className="flex flex-col justify-center lg:justify-start w-full h-screen snap-start">
             <h1 className="lg:pt-40 text-[#56423E] text-center text-3xl md:text-4xl xl:text-[2.5rem] 2xl:text-[2.8125rem] font-semibold leading-[3rem] tracking-wider">Галерия</h1>
             <div className="w-full px-6 md:px-16 xl:px-24 pt-8 lg:pt-[8.32rem] flex flex-col lg:flex-row items-center justify-center mx-auto">
                 {/* Left arrow */}
@@ -111,7 +111,7 @@ const Gallery = () => {
                 {/* mobile down arrow */}
                 <Image className="block lg:hidden" onClick={nextSlide} src={down_arrow} alt="next" width='3.125rem' height='2.8125rem' />
             </div>
-        </div>
+        </section>
     )
 }
 

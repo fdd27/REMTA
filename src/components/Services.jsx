@@ -10,7 +10,6 @@ import services_img_2 from "../assets/desktop/services-img-2.svg"
 import services_img_3 from "../assets/desktop/services-img-3.svg"
 import services_img_4 from "../assets/desktop/services-img-4.svg"
 import services_img_5 from "../assets/desktop/services-img-5.svg"
-import { RxDotFilled } from 'react-icons/rx'
 
 const raleway = Raleway({
     subsets: ['cyrillic', 'latin'],
@@ -52,21 +51,27 @@ const Services = () => {
     const prevSlide = () => {
         const isFirstSlide = currentIndex === 0
         const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1
+        document.getElementById(`dot${currentIndex}`).style.backgroundColor = '#B2B4B5'
         setCurrentIndex(newIndex)
+        document.getElementById(`dot${newIndex}`).style.backgroundColor = '#FF6E41'
     }
 
     const nextSlide = () => {
         const isLastSlide = currentIndex === slides.length - 1
         const newIndex = isLastSlide ? 0 : currentIndex + 1
+        document.getElementById(`dot${currentIndex}`).style.backgroundColor = '#B2B4B5'
         setCurrentIndex(newIndex)
+        document.getElementById(`dot${newIndex}`).style.backgroundColor = '#FF6E41'
     }
 
     const goToSlide = (slideIndex) => {
+        document.getElementById(`dot${currentIndex}`).style.backgroundColor = '#B2B4B5'
         setCurrentIndex(slideIndex)
+        document.getElementById(`dot${slideIndex}`).style.backgroundColor = '#FF6E41'
     }
 
     return (
-        <div id="services" className="flex flex-col justify-center w-full h-screen px-6 md:px-16 xl:px-24 2xl:px-44">
+        <section id="services" className="flex flex-col justify-center w-full h-screen px-6 md:px-16 xl:px-24 2xl:px-44 snap-start">
             <h1 className="text-[#56423E] text-center text-3xl md:text-4xl xl:text-[2.5rem] 2xl:text-[2.8125rem] font-semibold leading-[3rem] tracking-wider">Как работи всичко</h1>
             <p className={`max-w-[77.875rem] mx-auto mt-7 font-medium text-[#56423E] text-justify text-base md:text-xl 2xl:text-[1.375rem] leading-4 lg:leading-8 tracking-wide ${raleway.className}`}>
                 Държим клиентите ни да участват във всяка стъпка от процеса, за да сме сигурни, че тяхната визия е реализирана във всеки аспект на дизайна. От избора на материалите до размерите и характеристиките, ние работим в тясно сътрудничество с нашите клиенти, за да създадем обзавеждане, което идеално пасва на нуждите и предпочитанията им.
@@ -74,6 +79,7 @@ const Services = () => {
 
             {/* Carousel Buttons*/}
             <div className="hidden lg:flex justify-center items-center mt-8 lg:mt-[4.34rem]">
+                
                 {/* Left arrow */}
                 <div>
                     <Image className="cursor-pointer hover:scale-110" onClick={prevSlide} src={left_arrow} alt="previous" width='3.125rem' height='2.8125rem' />
@@ -82,8 +88,8 @@ const Services = () => {
                 {/* Dots */}
                 <div className="flex justify-center">
                     {slides.map((slide, slideIndex) => (
-                        <div key={slideIndex} onClick={() => goToSlide(slideIndex)} className="text-2xl cursor-pointer hover:scale-110">
-                            <RxDotFilled />
+                        <div id="dots" key={slideIndex} onClick={() => goToSlide(slideIndex)} className="cursor-pointer hover:scale-110">
+                            <div id={`dot${slideIndex}`} className="w-3 h-3 m-2 rounded-full bg-[#B2B4B5]" />
                         </div>
                     ))}
                 </div>
@@ -97,7 +103,7 @@ const Services = () => {
 
             {/* Carousel */}
             <div className="xl:max-w-[69.25rem] xl:max-h-[23.2065rem] mt-10 mx-auto p-5 lg:p-20 flex flex-col items-center justify-start lg:flex-row lg:justify-center rounded-[1.25rem] bg-[rgba(255,255,255,0.6)] shadow-[7px_7px_0_rgba(0,0,0,0.25)]">
-                <div className="w-full flex justify-between items-center md:px-16 lg:px-0">
+                <div className="w-full flex flex-initial justify-between items-center md:px-16 lg:px-0">
                     {/* mobile left arrow */}
                     <div className="block lg:hidden">
                         <Image className="cursor-pointer hover:scale-110" onClick={prevSlide} src={left_arrow} alt="previous" width='3.125rem' height='2.8125rem' />
@@ -122,13 +128,13 @@ const Services = () => {
                 </div>
 
                 {/* carousel title and text */}
-                <div className="flex flex-col justify-between items-center lg:items-start lg:ml-[4.5rem] lg:h-[12.5rem] xl:h-[13.30994rem]">
+                <div className="flex flex-col flex-auto justify-between items-center lg:items-start lg:ml-[4.5rem] lg:h-[12.5rem] xl:h-[13.30994rem]">
                     <h1 className="text-[#FF6E41] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium lg:leading-[3rem] lg:tracking-[0.03125rem]">{slides[currentIndex].title}</h1>
                     <p className={`text-[#56423E] py-5 lg:py-0 md:px-16 lg:px-0 text-justify text-xs md:text-base lg:text-lg xl:text-xl ${raleway.className}`}>{slides[currentIndex].text}</p>
                 </div>
             </div>
 
-        </div>
+        </section>
     )
 }
 
