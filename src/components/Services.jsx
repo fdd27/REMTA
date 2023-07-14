@@ -70,6 +70,10 @@ const Services = () => {
         document.getElementById(`dot${slideIndex}`).style.backgroundColor = '#FF6E41'
     }
 
+    const setFirstDot = () => {
+        document.getElementById('dot0').style.backgroundColor = '#FF6E41'
+    }
+
     return (
         <section id="services" className="flex flex-col justify-center w-full h-screen px-6 md:px-16 xl:px-24 2xl:px-44 snap-start">
             <h1 className="text-[#56423E] text-center text-3xl md:text-4xl xl:text-[2.5rem] 2xl:text-[2.8125rem] font-semibold leading-[3rem] tracking-wider">Как работи всичко</h1>
