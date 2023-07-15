@@ -30,7 +30,7 @@ import img21 from "../assets/desktop/gallery/img21.jpg"
 import img22 from "../assets/desktop/gallery/img22.jpg"
 import img23 from "../assets/desktop/gallery/img23.jpg"
 import img24 from "../assets/desktop/gallery/img24.jpg"
-
+import PopupImage from "./PopupImage"
 
 const Gallery = () => {
 
@@ -91,6 +91,11 @@ const Gallery = () => {
         setCurrentIndex(slideIndex)
     }
 
+    const imageClick = (e) => {
+        document.getElementById('popup').classList.toggle('visible')
+        document.getElementById('popupImage').src = e.currentTarget.src
+    }
+
     return ( 
         <section id="gallery" className="flex flex-col justify-center lg:justify-start w-full h-screen snap-start">
             <h1 className="lg:pt-40 text-[#56423E] text-center text-3xl md:text-4xl xl:text-[2.5rem] 2xl:text-[2.8125rem] font-semibold leading-[3rem] tracking-wider">Галерия</h1>
@@ -101,16 +106,18 @@ const Gallery = () => {
                 <Image className="block lg:hidden" onClick={prevSlide} src={up_arrow} alt="previous" width='3.125rem' height='2.8125rem' />
 
                 {/* Images */}
-                <Image className="my-2 mx-4 cursor-pointer hover:scale-105 rounded-[1.25rem] shadow-[5px_6px_0_rgba(0,0,0,0.25)] w-52 h-40 md:w-80 md:h-60 lg:w-60 lg:h-48 xl:w-72 xl:h-60 2xl:w-72 2xl:h-60" src={slides[currentIndex].img1} alt="" width='20.8125rem' height='16.4375rem' />
-                <Image className="my-2 mx-4 cursor-pointer hover:scale-105 rounded-[1.25rem] shadow-[5px_6px_0_rgba(0,0,0,0.25)] w-52 h-40 md:w-80 md:h-60 lg:w-60 lg:h-48 xl:w-72 xl:h-60 2xl:w-72 2xl:h-60" src={slides[currentIndex].img2} alt="" width='20.8125rem' height='16.4375rem' />
-                <Image className="my-2 mx-4 cursor-pointer hover:scale-105 rounded-[1.25rem] shadow-[5px_6px_0_rgba(0,0,0,0.25)] w-52 h-40 md:w-80 md:h-60 lg:w-60 lg:h-48 xl:w-72 xl:h-60 2xl:w-72 2xl:h-60" src={slides[currentIndex].img3} alt="" width='20.8125rem' height='16.4375rem' />
-                <Image className="hidden 2xl:block my-2 mx-4 cursor-pointer hover:scale-105 rounded-[1.25rem] shadow-[5px_6px_0_rgba(0,0,0,0.25)] 2xl:w-72 2xl:h-60" src={slides[currentIndex].img4} alt="" width='20.8125rem' height='16.4375rem' />
+                <Image onClick={e => imageClick(e)} className="my-2 mx-4 cursor-pointer hover:scale-105 rounded-[1.25rem] shadow-[5px_6px_0_rgba(0,0,0,0.25)] w-52 h-40 md:w-80 md:h-60 lg:w-60 lg:h-48 xl:w-72 xl:h-60 2xl:w-72 2xl:h-60" src={slides[currentIndex].img1} alt=""/>
+                <Image onClick={e => imageClick(e)} className="my-2 mx-4 cursor-pointer hover:scale-105 rounded-[1.25rem] shadow-[5px_6px_0_rgba(0,0,0,0.25)] w-52 h-40 md:w-80 md:h-60 lg:w-60 lg:h-48 xl:w-72 xl:h-60 2xl:w-72 2xl:h-60" src={slides[currentIndex].img2} alt=""/>
+                <Image onClick={e => imageClick(e)} className="my-2 mx-4 cursor-pointer hover:scale-105 rounded-[1.25rem] shadow-[5px_6px_0_rgba(0,0,0,0.25)] w-52 h-40 md:w-80 md:h-60 lg:w-60 lg:h-48 xl:w-72 xl:h-60 2xl:w-72 2xl:h-60" src={slides[currentIndex].img3} alt=""/>
+                <Image onClick={e => imageClick(e)} className="hidden 2xl:block my-2 mx-4 cursor-pointer hover:scale-105 rounded-[1.25rem] shadow-[5px_6px_0_rgba(0,0,0,0.25)] 2xl:w-72 2xl:h-60" src={slides[currentIndex].img4} alt=""/>
 
                 {/* Right arrow */}
                 <Image className="hidden lg:block cursor-pointer hover:scale-105" onClick={nextSlide} src={right_arrow} alt="next" width='3.125rem' height='2.8125rem' />
                 {/* mobile down arrow */}
                 <Image className="block lg:hidden" onClick={nextSlide} src={down_arrow} alt="next" width='3.125rem' height='2.8125rem' />
             </div>
+
+            <PopupImage />
         </section>
     )
 }
