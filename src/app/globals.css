@@ -26,10 +26,10 @@ body {
     rgb(var(--background-start-rgb)); */
 }
 
-input[required]+label {
+/* input[required]+label {
   position: relative;
   left: -17.75rem;
-  /* the negative of the input width */
+  the negative of the input width
 }
 
 input[required]+label:after {
@@ -43,4 +43,35 @@ input[required]:invalid+label {
 
 input[required]:valid+label {
   display: none;
+} */
+
+.input:not(.unfilled):invalid {
+  color: #d50000;
+  background: #fff8f8;
+  border-color: #d50000;
+}
+
+.input:not(.unfilled):invalid::placeholder {
+  color: #ffbfbf;
+}
+
+#email.filled:invalid {
+  color: #56423E;
+  background: white;
+  border-color: #56423E;
+}
+
+#email:not(.filled):invalid {
+  color: #d50000;
+  background: #fff8f8;
+  border-color: #d50000;
+}
+
+
+#email.filled:not(.firstFill)::placeholder {
+  color: white;
+}
+
+#email:not(.fulled):not(.firstFill)::placeholder {
+  color:  #ffbfbf;
 }

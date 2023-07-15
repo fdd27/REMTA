@@ -5,7 +5,7 @@ import img from "../assets/desktop/contact-img.svg"
 import { Inter } from "next/font/google"
 import Footer from './Footer'
 import emailjs from "@emailjs/browser"
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 
 const inter = Inter({
     subsets: ['latin', 'cyrillic'],
@@ -13,7 +13,6 @@ const inter = Inter({
 })
 
 const Contact = () => {
-
     const router = useRouter()
 
     const sendEmail = (e) => {
@@ -26,12 +25,12 @@ const Contact = () => {
         let message = document.getElementById('message')
 
         let params = {
-            name : name.value,
-            surname : surname.value,
-            email : email.value,
-            tel : tel.value,
-            about : about.value,
-            message : message.value
+            name: name.value,
+            surname: surname.value,
+            email: email.value,
+            tel: tel.value,
+            about: about.value,
+            message: message.value
         }
 
         emailjs.send('service_d13x09j', 'template_0bmzw3b', params, 'jez6L6mf60f2W1hOW').then((res) => {
@@ -45,7 +44,24 @@ const Contact = () => {
         about.value = ''
         message.value = ''
 
-        router.push('/#gallery')
+        router.push('/#hero')
+    }
+
+    const inputKeyUp = (e) => {
+        if (e.currentTarget.id == 'email') {
+            if (e.currentTarget.value != '') {
+                e.currentTarget.classList.add('filled')
+                if (e.currentTarget.classList.contains('firstFill')) {
+                    e.currentTarget.classList.remove('firstFill')
+                }
+            }
+            else if (e.currentTarget.value == '') {
+                e.currentTarget.classList.remove('filled')
+            }
+        }
+        else if (e.currentTarget.value != '') {
+            e.currentTarget.classList.remove('unfilled')
+        }
     }
 
     return (
@@ -60,25 +76,30 @@ const Contact = () => {
                 </div>
 
                 {/* right side form */}
-                <form onSubmit={e => {sendEmail(e)}} className="flex flex-col w-full lg:w-1/2 items-center justify-center">
+                <form onSubmit={e => { sendEmail(e) }} className="flex flex-col w-full lg:w-1/2 items-center justify-center">
                     <h1 className="mb-12 text-[#56423E] text-center text-3xl md:text-4xl lg:text-3xl xl:text-[2rem] 2xl:text-[2.1875rem] font-semibold leading-[3rem] tracking-[-0.04375rem]">Изпрати запитване</h1>
                     <div className="flex">
-                        <input id="name" type='text' name='name' placeholder="Име" className="mb-4 md:mb-8 lg:mb-[2.25rem] mr-2 md:mr-8 lg:mr-[1.19rem] w-36 h-8 md:w-64 md:h-10 lg:w-52 xl:w-64 2xl:w-[17.75rem] xl:h-[2.9375rem] shadow-[4px_4px_0_rgba(0,0,0,0.25)] border border-solid border-[#56423E] rounded-[0.375rem] outline-none text-[#56423E] pl-4" required='required' />
-                        {/* <label className="text-[#56423E] text-base tracking-[-0.02rem]" htmlFor="name">Име</label> */}
-                        <input id="surname" type='text' name='surname' placeholder="Фамилия" className="lg:mb-[2.25rem] w-36 h-8 md:w-64 md:h-10 lg:w-52 xl:w-64 2xl:w-[17.75rem] xl:h-[2.9375rem] shadow-[4px_4px_0_rgba(0,0,0,0.25)] border border-solid border-[#56423E] rounded-[0.375rem] outline-none text-[#56423E] pl-4" required='required' />
-                        {/* <label className="text-[#56423E] text-base tracking-[-0.02rem]" htmlFor="surname">Фамилия</label> */}
+                        <div className="input-container">
+                            <input id="name" type='text' name='name' placeholder="Име" onInvalid={e => e.target.setCustomValidity('')} onInput={e => e.target.setCustomValidity('')} onKeyUp={e => { inputKeyUp(e) }} className={`input unfilled mb-4 md:mb-8 lg:mb-[2.25rem] mr-2 md:mr-8 lg:mr-[1.19rem] w-36 h-8 md:w-64 md:h-10 lg:w-52 xl:w-64 2xl:w-[17.75rem] xl:h-[2.9375rem] shadow-[4px_4px_0_rgba(0,0,0,0.25)] border border-solid border-[#56423E] rounded-[0.375rem] outline-none text-[#56423E] pl-4 placeholder:text-[#56423ea8] placeholder:${inter.className}`} required='required' />
+                        </div>
+                        <div className="input-container">
+                            <input id="surname" type='text' name='surname' placeholder="Фамилия" onInvalid={e => e.target.setCustomValidity('')} onInput={e => e.target.setCustomValidity('')} onKeyUp={e => { inputKeyUp(e) }} className={`input unfilled lg:mb-[2.25rem] w-36 h-8 md:w-64 md:h-10 lg:w-52 xl:w-64 2xl:w-[17.75rem] xl:h-[2.9375rem] shadow-[4px_4px_0_rgba(0,0,0,0.25)] border border-solid border-[#56423E] rounded-[0.375rem] outline-none text-[#56423E] pl-4 placeholder:text-[#56423ea8] placeholder:${inter.className}`} required='required' />
+                        </div>
                     </div>
                     <div className="flex">
-                        <input id="email" type='email' name='email' placeholder="Имейл" className="mb-4 md:mb-8 lg:mb-[2.25rem] mr-2 md:mr-8 lg:mr-[1.19rem] w-36 h-8 md:w-64 md:h-10 lg:w-52 xl:w-64 2xl:w-[17.75rem] xl:h-[2.9375rem] shadow-[4px_4px_0_rgba(0,0,0,0.25)] border border-solid border-[#56423E] rounded-[0.375rem] outline-none text-[#56423E] pl-4" required='required' />
-                        {/* <label className="text-[#56423E] text-base tracking-[-0.02rem]" htmlFor="email">Имейл</label> */}
-                        <input id="tel" type='tel' name='tel' placeholder="Телефон" className="lg:mb-[2.25rem] w-36 h-8 md:w-64 md:h-10 lg:w-52 xl:w-64 2xl:w-[17.75rem] xl:h-[2.9375rem] shadow-[4px_4px_0_rgba(0,0,0,0.25)] border border-solid border-[#56423E] rounded-[0.375rem] outline-none text-[#56423E] pl-4" required='required' />
-                        {/* <label className="text-[#56423E] text-base tracking-[-0.02rem]" htmlFor="tel">Телефон</label> */}
+                        <div className="input-container">
+                            <input id="email" type='email' name='email' placeholder="Имейл" onInvalid={e => e.target.setCustomValidity('')} onInput={e => e.target.setCustomValidity('')} onKeyUp={e => { inputKeyUp(e) }} className={`firstFill filled mb-4 md:mb-8 lg:mb-[2.25rem] mr-2 md:mr-8 lg:mr-[1.19rem] w-36 h-8 md:w-64 md:h-10 lg:w-52 xl:w-64 2xl:w-[17.75rem] xl:h-[2.9375rem] shadow-[4px_4px_0_rgba(0,0,0,0.25)] border border-solid border-[#56423E] rounded-[0.375rem] outline-none text-[#56423E] pl-4 placeholder:text-[#56423ea8] placeholder:${inter.className}`} required='required' />
+                        </div>
+                        <div className="input-container">
+                            <input id="tel" type='tel' name='tel' placeholder="Телефон" onInvalid={e => e.target.setCustomValidity('')} onInput={e => e.target.setCustomValidity('')} onKeyUp={e => { inputKeyUp(e) }} className={`input unfilled lg:mb-[2.25rem] w-36 h-8 md:w-64 md:h-10 lg:w-52 xl:w-64 2xl:w-[17.75rem] xl:h-[2.9375rem] shadow-[4px_4px_0_rgba(0,0,0,0.25)] border border-solid border-[#56423E] rounded-[0.375rem] outline-none text-[#56423E] pl-4 placeholder:text-[#56423ea8] placeholder:${inter.className}`} required='required' />
+                        </div>
                     </div>
-                    <input  id="about" type='text' name='about' placeholder="Относно" className="mb-4 md:mb-8 lg:mb-[2.25rem] w-36 h-8 md:w-64 md:h-10 lg:w-52 xl:w-64 2xl:w-[17.75rem] xl:h-[2.9375rem] shadow-[4px_4px_0_rgba(0,0,0,0.25)] border border-solid border-[#56423E] rounded-[0.375rem] outline-none text-[#56423E] pl-4" required='required' />
-                    {/* <label className="text-[#56423E] text-base tracking-[-0.02rem]" htmlFor="about">Относно</label> */}
-                    <textarea id="message" name='message' placeholder="Съобщение" className="mb-4 md:mb-8 lg:mb-[2.44rem] w-72 md:w-[34rem] lg:w-[27rem] xl:w-[33rem] 2xl:w-[36.6875rem] shadow-[4px_4px_0_rgba(0,0,0,0.25)] border border-solid border-[#56423E] rounded-[0.375rem] outline-none text-[#56423E] pl-4 pr-4 py-2" cols="30" rows="6" required></textarea>
+                    <div className="input-container">
+                        <input id="about" type='text' name='about' placeholder="Относно" onInvalid={e => e.target.setCustomValidity('')} onInput={e => e.target.setCustomValidity('')} onKeyUp={e => { inputKeyUp(e) }} className={`input unfilled mb-4 md:mb-8 lg:mb-[2.25rem] w-36 h-8 md:w-64 md:h-10 lg:w-52 xl:w-64 2xl:w-[17.75rem] xl:h-[2.9375rem] shadow-[4px_4px_0_rgba(0,0,0,0.25)] border border-solid border-[#56423E] rounded-[0.375rem] outline-none text-[#56423E] pl-4 placeholder:text-[#56423ea8] placeholder:${inter.className}`} required='required' />
+                    </div>
+                    <textarea id="message" name='message' placeholder="Съобщение" className={`resize-none mb-4 md:mb-8 lg:mb-[2.44rem] w-72 md:w-[34rem] lg:w-[27rem] xl:w-[33rem] 2xl:w-[36.6875rem] shadow-[4px_4px_0_rgba(0,0,0,0.25)] border border-solid border-[#56423E] rounded-[0.375rem] outline-none text-[#56423E] pl-4 pr-4 py-2 placeholder:text-[#56423ea8] placeholder:${inter.className}`} cols="30" rows="6"></textarea>
 
-                    <button type="submit" className="px-6 py-2 md:px-10 md:py-3 lg:px-16 lg:py-6 rounded-2xl lg:rounded-3xl bg-[#FF3131] flex justify-center items-center shadow-[5px_5px_0_rgba(0,0,0,0.25)] cursor-pointer hover:scale-105">
+                    <button type="submit" className="px-6 py-2 md:px-10 md:py-3 lg:px-12 lg:py-5 rounded-2xl lg:rounded-3xl bg-[#FF3131] flex justify-center items-center shadow-[5px_5px_0_rgba(0,0,0,0.25)] cursor-pointer hover:scale-105">
                         <p className="text-white text-center drop-shadow-[0_4px_4px_rgba(0,0,0,0.4)] text-lg lg:text-xl 2xl:text-2xl font-semibold ">Изпрати</p>
                     </button>
                 </form>
