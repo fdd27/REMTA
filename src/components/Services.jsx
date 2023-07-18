@@ -1,15 +1,15 @@
 'use client'
 
 import { Raleway } from "next/font/google"
-import left_arrow from "../assets/desktop/left-arrow.svg"
-import right_arrow from "../assets/desktop/right-arrow.svg"
+import left_arrow from "../assets/left-arrow.png"
+import right_arrow from "../assets/right-arrow.png"
 import Image from "next/image"
-import { useState } from "react"
-import services_img_1 from "../assets/desktop/services-img-1.svg"
-import services_img_2 from "../assets/desktop/services-img-2.svg"
-import services_img_3 from "../assets/desktop/services-img-3.svg"
-import services_img_4 from "../assets/desktop/services-img-4.svg"
-import services_img_5 from "../assets/desktop/services-img-5.svg"
+import { useState, useEffect } from "react"
+import services_img_1 from "../assets/srvimg1.png"
+import services_img_2 from "../assets/srvimg2.png"
+import services_img_3 from "../assets/srvimg3.png"
+import services_img_4 from "../assets/srvimg4.png"
+import services_img_5 from "../assets/srvimg5.png"
 
 const raleway = Raleway({
     subsets: ['cyrillic', 'latin'],
@@ -48,7 +48,17 @@ const Services = () => {
 
     const [currentIndex, setCurrentIndex] = useState(0)
 
+    let firstDotClick = true
+
+    useEffect(() => {
+        document.getElementById('dot0').style.backgroundColor = '#FF6E41'
+    }, [])
+
     const prevSlide = () => {
+        if (firstDotClick) {
+            document.getElementById('dot0').style.backgroundColor = '#B2B4B5'
+            firstDotClick = false
+        }
         const isFirstSlide = currentIndex === 0
         const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1
         document.getElementById(`dot${currentIndex}`).style.backgroundColor = '#B2B4B5'
@@ -57,6 +67,10 @@ const Services = () => {
     }
 
     const nextSlide = () => {
+        if (firstDotClick) {
+            document.getElementById('dot0').style.backgroundColor = '#B2B4B5'
+            firstDotClick = false
+        }
         const isLastSlide = currentIndex === slides.length - 1
         const newIndex = isLastSlide ? 0 : currentIndex + 1
         document.getElementById(`dot${currentIndex}`).style.backgroundColor = '#B2B4B5'
@@ -65,17 +79,19 @@ const Services = () => {
     }
 
     const goToSlide = (slideIndex) => {
+        if (firstDotClick) {
+            if (slideIndex != 0) {
+                document.getElementById('dot0').style.backgroundColor = '#B2B4B5'
+            }
+            firstDotClick = false
+        }
         document.getElementById(`dot${currentIndex}`).style.backgroundColor = '#B2B4B5'
         setCurrentIndex(slideIndex)
         document.getElementById(`dot${slideIndex}`).style.backgroundColor = '#FF6E41'
     }
 
-    const setFirstDot = () => {
-        document.getElementById('dot0').style.backgroundColor = '#FF6E41'
-    }
-
     return (
-        <section id="services" className="flex flex-col justify-center w-full h-screen px-6 md:px-16 xl:px-24 2xl:px-44 snap-start">
+        <section id="services" className="flex flex-col justify-center w-full h-screen px-6 md:px-16 xl:px-24 2xl:px-44 snap-start snap-always">
             <h1 className="text-[#56423E] text-center text-3xl md:text-4xl xl:text-[2.5rem] 2xl:text-[2.8125rem] font-semibold leading-[3rem] tracking-wider">Как работи всичко</h1>
             <p className={`max-w-[77.875rem] mx-auto mt-7 font-medium text-[#56423E] text-justify text-base md:text-xl 2xl:text-[1.375rem] leading-4 lg:leading-8 tracking-wide ${raleway.className}`}>
                 Държим клиентите ни да участват във всяка стъпка от процеса, за да сме сигурни, че тяхната визия е реализирана във всеки аспект на дизайна. От избора на материалите до размерите и характеристиките, ние работим в тясно сътрудничество с нашите клиенти, за да създадем обзавеждане, което идеално пасва на нуждите и предпочитанията им.
@@ -83,10 +99,17 @@ const Services = () => {
 
             {/* Carousel Buttons*/}
             <div className="hidden lg:flex justify-center items-center mt-8 lg:mt-[4.34rem]">
-                
+
                 {/* Left arrow */}
                 <div>
-                    <Image className="cursor-pointer hover:scale-110" onClick={prevSlide} src={left_arrow} alt="previous" width='3.125rem' height='2.8125rem' />
+                    <Image
+                        className="max-w-full h-auto cursor-pointer hover:scale-110"
+                        onClick={prevSlide}
+                        src={left_arrow}
+                        alt="previous"
+                        loading="eager"
+                        sizes="100vw"
+                    />
                 </div>
 
                 {/* Dots */}
@@ -100,7 +123,14 @@ const Services = () => {
 
                 {/* Right arrow */}
                 <div>
-                    <Image className="cursor-pointer hover:scale-110" onClick={nextSlide} src={right_arrow} alt="next" width='3.125rem' height='2.8125rem' />
+                    <Image
+                        className="max-w-full h-auto cursor-pointer hover:scale-110"
+                        onClick={nextSlide}
+                        src={right_arrow}
+                        alt="next"
+                        loading="eager"
+                        sizes="100vw"
+                    />
                 </div>
             </div>
 
@@ -110,7 +140,14 @@ const Services = () => {
                 <div className="w-full flex flex-initial justify-between items-center md:px-16 lg:px-0">
                     {/* mobile left arrow */}
                     <div className="block lg:hidden">
-                        <Image className="cursor-pointer hover:scale-110" onClick={prevSlide} src={left_arrow} alt="previous" width='3.125rem' height='2.8125rem' />
+                        <Image
+                            className="max-w-full h-auto cursor-pointer hover:scale-110"
+                            onClick={prevSlide}
+                            src={left_arrow}
+                            alt="previous"
+                            loading="eager"
+                            sizes="100vw"
+                        />
                     </div>
 
                     {/* border and image inside */}
@@ -120,13 +157,22 @@ const Services = () => {
                                 src={slides[currentIndex].img}
                                 alt=""
                                 fill
+                                loading="eager"
+                                sizes="20vw"
                             />
                         </div>
                     </div>
 
                     {/* mobile right arrow */}
                     <div className="block lg:hidden">
-                        <Image className="cursor-pointer hover:scale-110" onClick={nextSlide} src={right_arrow} alt="next" width='3.125rem' height='2.8125rem' />
+                        <Image
+                            className="max-w-full h-auto cursor-pointer hover:scale-110"
+                            onClick={nextSlide}
+                            src={right_arrow}
+                            alt="next"
+                            loading="eager"
+                            sizes="100vw" 
+                        />
                     </div>
 
                 </div>

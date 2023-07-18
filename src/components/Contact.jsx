@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image"
-import img from "../assets/desktop/contact-img.svg"
+import img from "../assets/contactimg.png"
 import { Inter } from "next/font/google"
 import Footer from './Footer'
 import emailjs from "@emailjs/browser"
@@ -33,8 +33,9 @@ const Contact = () => {
             message: message.value
         }
 
-        emailjs.send('service_d13x09j', 'template_0bmzw3b', params, 'jez6L6mf60f2W1hOW').then((res) => {
+        emailjs.send('service_d13x09j', 'template_0bmzw3b', params, 'jez6L6mf60f2W1hOW').then(() => {
             alert("Заявката е изпратена!")
+            router.push('/#hero')
         })
 
         name.value = ''
@@ -44,7 +45,11 @@ const Contact = () => {
         about.value = ''
         message.value = ''
 
-        router.push('/#hero')
+        name.classList.add('unfilled')
+        surname.classList.add('unfilled')
+        email.classList.add('firstFill')
+        tel.classList.add('unfilled')
+        about.classList.add('unfilled')
     }
 
     const inputKeyUp = (e) => {
@@ -65,13 +70,19 @@ const Contact = () => {
     }
 
     return (
-        <section id="contact" className="w-full h-screen flex flex-col snap-start">
+        <section id="contact" className="w-full h-screen flex flex-col snap-start snap-always">
             <div className="flex w-full flex-auto px-6 md:px-16 xl:px-24 2xl:px-44">
 
                 {/* left side image */}
                 <div className="hidden lg:flex w-1/2 justify-center items-center">
                     <div className="relative w-[31rem] h-[45rem]">
-                        <Image src={img} alt="" fill />
+                        <Image 
+                            src={img} 
+                            alt="" 
+                            fill 
+                            loading="eager" 
+                            sizes="(max-width: 1024px) 0vw, 50vw"
+                        />
                     </div>
                 </div>
 

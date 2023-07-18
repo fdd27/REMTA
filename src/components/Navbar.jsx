@@ -5,10 +5,11 @@ import Link from "next/link"
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import { useState } from 'react'
 import logo from "../assets/desktop/logo.svg"
-import fb from "../assets/desktop/icon-facebook.svg"
-import fb_m from '../assets/mobile/icon-facebook.svg'
+import fbOrange from "../assets/fbicon.png"
+import fbBrown from '../assets/fbiconbrown.png'
+import fb_m from '../assets/fbiconMobile.png'
 
-const Navbar = ({ color, shadow }) => {
+const Navbar = ({ color, shadow, mobile_menu_col, fbIcon }) => {
     const [nav, setNav] = useState(false)
 
     const handleNav = () => {
@@ -22,8 +23,10 @@ const Navbar = ({ color, shadow }) => {
                     <Image
                         src={logo}
                         alt='REMTA'
-                        priority
                         fill
+                        sizes="(max-width: 768px) 25vw, 15vw"
+                        loading="eager"
+                        className="max-w-full h-auto"
                     />
                 </Link>
                 <ul className={`hidden lg:flex text-[${color}] ${shadow}`}>
@@ -38,12 +41,12 @@ const Navbar = ({ color, shadow }) => {
                     </li>
                 </ul>
                 <Link href='https://www.facebook.com/RemtaDesign' className={`hidden lg:block absolute lg:right-16 xl:right-24 2xl:right-44 top-8 hover:scale-110`} rel="noopener noreferrer" target="_blank">
-                    <Image src={fb} alt='Facebook' width='3rem' height='3rem' className="drop-shadow-[0_4px_0_rgba(0,0,0,0.25)]" priority />
+                    <Image src={fbIcon ? fbOrange : fbBrown} alt='Facebook' width='3rem' height='3rem' className="max-w-full h-auto drop-shadow-[0_4px_0_rgba(0,0,0,0.25)]" loading="eager" />
                 </Link>
 
                 {/* Mobile Button */}
                 <div onClick={handleNav} className="block lg:hidden z-10 pt-3 md:px-16">
-                    {nav ? <AiOutlineClose className="text-[#56423E]" size='1.875rem' /> : <AiOutlineMenu size='1.875rem' />}
+                    {nav ? <AiOutlineClose className="text-[#56423E]" size='1.875rem' /> : <AiOutlineMenu size='1.875rem' className={`text-[${mobile_menu_col}]`} />}
                 </div>
                 {/* Mobile Menu */}
                 <div className={
@@ -55,14 +58,14 @@ const Navbar = ({ color, shadow }) => {
                             <Link className="active:text-[#FF7448DE]" onClick={handleNav} href='/'>Начало</Link>
                         </li>
                         <li className="p-8 text-2xl font-bold">
-                            <Link className="active:text-[#FF7448DE]" onClick={handleNav} href='/#gallery'>Галерия</Link>
+                            <Link className="active:text-[#FF7448DE]" onClick={handleNav} href='/gallery'>Галерия</Link>
                         </li>
                         <li className="p-8 text-2xl font-bold">
                             <Link className="active:text-[#FF7448DE]" onClick={handleNav} href='/#contact'>Контакти</Link>
                         </li>
                         <li className="flex justify-center items-center p-8">
                             <Link href='https://www.facebook.com/RemtaDesign' rel="noopener noreferrer" target="_blank">
-                                <Image src={fb_m} alt='Facebook' width='3rem' height='3rem' className="" />
+                                <Image src={fb_m} alt='Facebook' width='3rem' height='3rem' className="max-w-full h-auto" loading="eager" />
                             </Link>
                         </li>
                     </ul>

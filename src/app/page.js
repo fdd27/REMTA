@@ -2,6 +2,7 @@ import Contact from "@/components/Contact"
 import Gallery from "@/components/Gallery"
 import Hero from "@/components/Hero"
 import Services from "@/components/Services"
+// import ButtonToTop from "@/components/ButtonToTop"
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Services />
       <Gallery />
       <Contact />
+      {/* <ButtonToTop /> */}
     </div>
   )
 }

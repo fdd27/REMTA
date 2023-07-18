@@ -1,7 +1,7 @@
 import Navbar from "./Navbar"
 import Image from "next/image"
-import hero_img from "../assets/desktop/hero-img.svg"
-import hero_arrow from '../assets/desktop/hero-arrow.svg'
+import hero_img from "../assets/hero-img.png"
+import hero_arrow from '../assets/hero-arrow.png'
 import { Raleway, Playfair_Display } from "next/font/google"
 import Link from "next/link"
 
@@ -17,15 +17,15 @@ const pf = Playfair_Display({
 
 const Hero = () => {
     return (
-        <section id="hero" className="w-full h-screen bg-[url('../assets/desktop/hero-bg.svg')] bg-cover bg-center snap-start flex flex-col">
-            <Navbar color='#ffffff' shadow='drop-shadow-[0_4px_0_rgba(0,0,0,0.25)]' />
+        <section id="hero" className="w-full h-screen bg-[url('../assets/desktop/hero-bg.svg')] bg-cover bg-center flex flex-col snap-start snap-always z-50">
+            <Navbar color='#ffffff' shadow='drop-shadow-[0_4px_0_rgba(0,0,0,0.25)]' mobile_menu_col='#ffffff' fbIcon={true} />
 
             {/* Hero container */}
             <div className="w-full flex px-6 md:px-16 xl:px-24 2xl:px-44 flex-auto">
 
                 {/* Left Half */}
                 <div className="w-full lg:w-[51%] flex flex-col justify-center lg:justify-around items-center lg:items-start lg:pr-3">
-                    
+
                     <h1 className="text-white text-3xl md:text-4xl xl:text-[2.65rem] 2xl:text-5xl font-bold leading-8 md:leading-[3rem] tracking-wider drop-shadow-[4px_4px_0_rgba(0,0,0,0.25)] text-center lg:text-start">
                         Мебели по поръчка<br />изработени специално за теб
                     </h1>
@@ -48,9 +48,9 @@ const Hero = () => {
                             <Image
                                 src={hero_arrow}
                                 alt=""
-                                width='1.875rem'
-                                height='1.875rem'
-                                priority
+                                loading="eager"
+                                className="max-w-full h-auto"
+                                sizes="100vw"
                             />
                         </Link>
 
@@ -62,11 +62,10 @@ const Hero = () => {
                     <Image
                         src={hero_img}
                         alt=""
-                        // width='38.3125rem'
-                        // height='47.9375rem'
-                        width={613}
-                        height={767}
                         priority
+                        loading="eager"
+                        className="max-w-full h-auto"
+                        sizes="100vw"
                     />
                 </div>
             </div>
