@@ -49,46 +49,64 @@ const Services = () => {
     const [currentIndex, setCurrentIndex] = useState(0)
 
     let firstDotClick = true
-
     useEffect(() => {
         document.getElementById('dot0').style.backgroundColor = '#FF6E41'
     }, [])
 
     const prevSlide = () => {
+
         if (firstDotClick) {
             document.getElementById('dot0').style.backgroundColor = '#B2B4B5'
             firstDotClick = false
         }
+
         const isFirstSlide = currentIndex === 0
         const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1
+
         document.getElementById(`dot${currentIndex}`).style.backgroundColor = '#B2B4B5'
         setCurrentIndex(newIndex)
         document.getElementById(`dot${newIndex}`).style.backgroundColor = '#FF6E41'
     }
 
     const nextSlide = () => {
+        // setTimeout(hideCarousel(), 300)
+
         if (firstDotClick) {
             document.getElementById('dot0').style.backgroundColor = '#B2B4B5'
             firstDotClick = false
         }
+
         const isLastSlide = currentIndex === slides.length - 1
         const newIndex = isLastSlide ? 0 : currentIndex + 1
+        
         document.getElementById(`dot${currentIndex}`).style.backgroundColor = '#B2B4B5'
         setCurrentIndex(newIndex)
         document.getElementById(`dot${newIndex}`).style.backgroundColor = '#FF6E41'
+
+        // setTimeout(showCarousel(), 300)
     }
 
     const goToSlide = (slideIndex) => {
+
         if (firstDotClick) {
             if (slideIndex != 0) {
                 document.getElementById('dot0').style.backgroundColor = '#B2B4B5'
             }
             firstDotClick = false
         }
+        
         document.getElementById(`dot${currentIndex}`).style.backgroundColor = '#B2B4B5'
         setCurrentIndex(slideIndex)
         document.getElementById(`dot${slideIndex}`).style.backgroundColor = '#FF6E41'
     }
+
+    // const hideCarousel = () => {
+    //     document.getElementById('carousel').classList.add('opacity-0')
+    // }
+
+    // const showCarousel = () => {
+    //     document.getElementById('carousel').classList.remove('opacity-0')
+    // }
 
     return (
         <section id="services" className="flex flex-col justify-center w-full h-screen px-6 md:px-16 xl:px-24 2xl:px-44 snap-start snap-always">
@@ -136,7 +154,7 @@ const Services = () => {
 
 
             {/* Carousel */}
-            <div className="xl:max-w-[69.25rem] xl:max-h-[23.2065rem] mt-10 mx-auto p-5 lg:p-20 flex flex-col items-center justify-start lg:flex-row lg:justify-center rounded-[1.25rem] bg-[rgba(255,255,255,0.6)] shadow-[7px_7px_0_rgba(0,0,0,0.25)]">
+            <div id="carousel" className="xl:max-w-[69.25rem] xl:max-h-[23.2065rem] mt-10 mx-auto p-5 lg:p-20 flex flex-col items-center justify-start lg:flex-row lg:justify-center rounded-[1.25rem] bg-[rgba(255,255,255,0.6)] shadow-[7px_7px_0_rgba(255,110,65,0.55)] transition-opacity opacity-0 duration-500">
                 <div className="w-full flex flex-initial justify-between items-center md:px-16 lg:px-0">
                     {/* mobile left arrow */}
                     <div className="block lg:hidden">
@@ -159,6 +177,7 @@ const Services = () => {
                                 fill
                                 loading="eager"
                                 sizes="20vw"
+                                onLoadingComplete={() => document.getElementById('carousel').classList.remove('opacity-0')}
                             />
                         </div>
                     </div>
@@ -171,7 +190,7 @@ const Services = () => {
                             src={right_arrow}
                             alt="next"
                             loading="eager"
-                            sizes="100vw" 
+                            sizes="100vw"
                         />
                     </div>
 

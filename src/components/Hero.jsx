@@ -38,8 +38,8 @@ const Hero = () => {
                     <div className="w-full flex flex-col md:flex-row justify-center lg:justify-start items-center">
 
                         {/* btn to contact */}
-                        <Link href='#contact' className="w-[14.375rem] h-auto lg:h-[4.5rem] mb-6 md:mb-0 md:me-[2.6rem] px-[0.5625rem] py-3 lg:py-6 rounded-2xl lg:rounded-[24px] bg-[#FF3131] drop-shadow-[5px_5px_0_rgba(0,0,0,0.25)] flex justify-center items-center hover:scale-105 cursor-pointer">
-                            <p className="text-white text-center text-lg lg:text-xl 2xl:text-[1.5rem] lg:leading-[0.9375rem] font-semibold drop-shadow-[0_4px_4px_rgba(0,0,0,0.4)]">Направи заявка</p>
+                        <Link href='#contact' className="mb-6 md:mb-0 md:me-[2.6rem] px-6 py-4 rounded-3xl bg-[#FF3131] drop-shadow-[5px_5px_0_rgba(0,0,0,0.25)] flex justify-center items-center hover:scale-105 cursor-pointer">
+                            <p className="text-white text-center text-lg lg:text-xl 2xl:text-2xl font-semibold drop-shadow-[0_4px_4px_rgba(0,0,0,0.4)]">Направи заявка</p>
                         </Link>
 
                         {/* btn to services */}
@@ -64,8 +64,8 @@ const Hero = () => {
                         alt=""
                         priority
                         loading="eager"
-                        className="max-w-full h-auto"
                         sizes="100vw"
+                        className="max-w-full h-auto"
                     />
                 </div>
             </div>
