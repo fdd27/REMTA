@@ -83,3 +83,7 @@ input[required]:valid+label {
 #popup {
   background-color: rgba(0, 0, 0, 0.9);
 }
+
+#btn_hero {
+  transform: perspective(1px) translateZ(0);
+}

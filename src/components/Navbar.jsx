@@ -19,7 +19,7 @@ const Navbar = ({ color, shadow, mobile_menu_col, fbIcon }) => {
     return (
         <div className="relative w-full left-0 top-0 right-0 z-10 ease-in duration-300 flex-initial">
             <div className="m-auto flex justify-end lg:justify-center items-center p-4 text-white">
-                <Link href='/' className="absolute left-6 md:left-16 xl:left-24 2xl:left-44 top-3 lg:top-2 w-[3.75rem] h-[3.75rem] md:w-16 md:h-16 lg:w-[7.5rem] lg:h-[7.5rem]">
+                <Link href='/' className="absolute left-6 md:left-16 xl:left-24 2xl:left-44 top-3 lg:top-2 w-[3.75rem] h-[3.75rem] md:w-16 md:h-16 lg:w-24 lg:h-24">
                     <Image
                         src={logo}
                         alt='REMTA'

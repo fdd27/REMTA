@@ -52,7 +52,7 @@ export default function GalleryPage() {
                                 src={img}
                                 alt=""
                                 onClick={e => imageClick(e)}
-                                className="cursor-pointer hover:scale-105 rounded-[1.25rem] shadow-[5px_6px_0_rgba(0,0,0,0.25)] w-36 h-28 md:w-72 md:h-52 lg:w-60 lg:h-48 xl:w-72 xl:h-60 2xl:w-72 2xl:h-60"
+                                className="cursor-pointer hover:scale-105 rounded-[1.25rem] shadow-[5px_6px_0_rgba(255,110,65,0.55)] w-36 h-28 md:w-72 md:h-52 lg:w-60 lg:h-48 xl:w-72 xl:h-60 2xl:w-72 2xl:h-60"
                                 loading="eager"
                             />
                         </div>

@@ -17,7 +17,7 @@ const pf = Playfair_Display({
 
 const Hero = () => {
     return (
-        <section id="hero" className="w-full h-screen pb-32 lg:pb-0 bg-[url('../assets/hero-bg.svg')] bg-cover bg-center flex flex-col snap-start snap-always z-50">
+        <section id="hero" className="w-full h-screen pb-32 lg:pb-0 bg-[url('../assets/hero-bg.png')] bg-cover bg-center bg-tra flex flex-col snap-start snap-always z-50">
             <Navbar color='#ffffff' shadow='drop-shadow-[0_4px_0_rgba(0,0,0,0.25)]' mobile_menu_col='#ffffff' fbIcon={true} />
 
             {/* Hero container */}
@@ -38,13 +38,13 @@ const Hero = () => {
                     <div className="w-full flex flex-col md:flex-row justify-center lg:justify-start items-center">
 
                         {/* btn to contact */}
-                        <Link href='#contact' className="mb-6 md:mb-0 md:me-[2.6rem] px-4 py-2 md:px-6 md:py-4 rounded-2xl md:rounded-3xl bg-[#FF3131] drop-shadow-[5px_5px_0_rgba(0,0,0,0.25)] flex justify-center items-center hover:scale-105 cursor-pointer">
-                            <p className="text-white text-center text-lg lg:text-xl 2xl:text-2xl font-semibold">Направи заявка</p>
+                        <Link href='#contact' id='btn_hero' className="mb-6 md:mb-0 md:me-[2.6rem] px-4 py-2 md:px-6 md:py-4 rounded-2xl md:rounded-3xl border-white border-2 border-solid border-opacity-100 bg-transparent hover:bg-[#FF3131] transition-colors ease-out flex justify-center items-center hover:scale-105 cursor-pointer shadow-[5px_5px_0_rgba(0,0,0,0.25)]">
+                            <p className="text-white text-center text-lg lg:text-xl 2xl:text-2xl font-semibold tracking-normal lg:tracking-wide">Направи заявка</p>
                         </Link>
 
                         {/* btn to services */}
                         <Link href='#services' className="flex justify-center items-center hover:scale-105 cursor-pointer">
-                            <p className="me-2 text-white text-center text-lg lg:text-xl 2xl:text-2xl font-semibold leading-[1.875rem] tracking-tight underline">Нашите услуги</p>
+                            <p className="me-2 text-white text-center text-lg lg:text-xl 2xl:text-2xl font-semibold leading-[1.875rem] underline">Нашите услуги</p>
                             <Image
                                 src={hero_arrow}
                                 alt=""
