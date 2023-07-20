@@ -1,5 +1,6 @@
 import './globals.css'
 import { Playfair_Display } from 'next/font/google'
+import img from '../assets/logo.svg'
 
 const pf = Playfair_Display({
   subsets: ['latin', 'cyrillic'],
@@ -8,7 +9,8 @@ const pf = Playfair_Display({
 
 export const metadata = {
   title: 'REMTA Design',
-  description: '',
+  description: 'Мебели по поръчка, изработени специално за теб',
+  image: {img},
 }
 
 export default function RootLayout({ children }) {

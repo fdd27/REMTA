@@ -20,11 +20,13 @@ const rw = Raleway({
 const Footer = () => {
 
     const showCopyTooltip = (id, text) => {
-        copy(text)
-        const tooltip = document.getElementById(`copytooltip_${id}`)
-        tooltip.style.display = 'flex'
-        tooltip.style.opacity = '1'
-        setTimeout(closeCopyTooltip, 1000, tooltip)
+        if (window.innerWidth > 1024) {
+            copy(text)
+            const tooltip = document.getElementById(`copytooltip_${id}`)
+            tooltip.style.display = 'flex'
+            tooltip.style.opacity = '1'
+            setTimeout(closeCopyTooltip, 1000, tooltip)
+        }
     }
 
     const closeCopyTooltip = (tooltip) => {

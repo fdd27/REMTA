@@ -26,8 +26,8 @@ const Hero = () => {
                 {/* Left Half */}
                 <div className="w-full lg:w-[51%] flex flex-col justify-center lg:justify-around items-center lg:items-start lg:pr-3">
 
-                    <h1 className=" pt-4 text-white text-2xl md:text-4xl xl:text-[2.65rem] 2xl:text-5xl font-bold leading-8 md:leading-[3rem] tracking-wider drop-shadow-[4px_4px_0_rgba(0,0,0,0.25)] text-center lg:text-start">
-                        Мебели по поръчка<br />изработени специално за теб
+                    <h1 className=" pt-4 text-white text-2xl md:text-4xl xl:text-[2.65rem] 2xl:text-5xl font-bold leading-8 md:leading-[3rem] tracking-wider lg:drop-shadow-[4px_4px_0_rgba(0,0,0,0.25)] text-center lg:text-start">
+                        Мебели по поръчка,<br />изработени специално за теб
                     </h1>
 
                     <p className={`py-6 lg:py-0 lg:pe-10 xl:pe-20 2xl:pe-40 text-white text-justify text-base md:text-xl 2xl:text-[1.375rem] ${raleway.className} leading-6 md:leading-[1.875rem] tracking-[0.012em] md:tracking-wide font-medium`}>
