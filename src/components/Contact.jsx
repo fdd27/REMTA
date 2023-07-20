@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image"
-import img from "../assets/contactImg.png"
+import img from "../assets/contactimg.png"
 import { Inter } from "next/font/google"
 import Footer from './Footer'
 import emailjs from "@emailjs/browser"
