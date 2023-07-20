@@ -20,7 +20,7 @@ export const metadata = {
     url: 'https://www.remtadesign.store',
     siteName: 'REMTA Design',
     images: {
-      url: 'https://postimg.cc/8sY61BX9',
+      url: 'https://i.postimg.cc/HsY496wY/asdasd.png',
       width: 66,
       height: 66,
     },
