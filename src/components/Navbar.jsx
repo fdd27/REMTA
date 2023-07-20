@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import { useState } from 'react'
-import logo from "../assets/desktop/logo.svg"
+import logo from "../assets/logo.svg"
 import fbOrange from "../assets/fbicon.png"
 import fbBrown from '../assets/fbiconbrown.png'
 import fb_m from '../assets/fbiconMobile.png'

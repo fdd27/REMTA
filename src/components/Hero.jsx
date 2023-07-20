@@ -17,7 +17,7 @@ const pf = Playfair_Display({
 
 const Hero = () => {
     return (
-        <section id="hero" className="w-full h-screen bg-[url('../assets/desktop/hero-bg.svg')] bg-cover bg-center flex flex-col snap-start snap-always z-50">
+        <section id="hero" className="w-full h-screen bg-[url('../assets/hero-bg.svg')] bg-cover bg-center flex flex-col snap-start snap-always z-50">
             <Navbar color='#ffffff' shadow='drop-shadow-[0_4px_0_rgba(0,0,0,0.25)]' mobile_menu_col='#ffffff' fbIcon={true} />
 
             {/* Hero container */}
