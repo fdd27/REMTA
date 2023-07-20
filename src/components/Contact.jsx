@@ -88,7 +88,7 @@ const Contact = () => {
 
                 {/* right side form */}
                 <form onSubmit={e => { sendEmail(e) }} className="flex flex-col w-full lg:w-1/2 items-center justify-center">
-                    <h1 className="mb-12 text-[#56423E] text-center text-3xl md:text-4xl lg:text-3xl xl:text-[2rem] 2xl:text-[2.1875rem] font-semibold leading-[3rem] tracking-[-0.04375rem]">Изпрати запитване</h1>
+                    <h1 className="mb-6 md:mb-12 text-[#56423E] text-center text-3xl md:text-4xl lg:text-3xl xl:text-[2rem] 2xl:text-[2.1875rem] font-semibold leading-[3rem] tracking-[-0.04375rem]">Изпрати запитване</h1>
                     <div className="flex">
                         <div className="input-container">
                             <input id="name" type='text' name='name' placeholder="Име" onInvalid={e => e.target.setCustomValidity('')} onInput={e => e.target.setCustomValidity('')} onKeyUp={e => { inputKeyUp(e) }} className={`input unfilled mb-4 md:mb-8 lg:mb-[2.25rem] mr-2 md:mr-8 lg:mr-[1.19rem] w-36 h-8 md:w-64 md:h-10 lg:w-52 xl:w-64 2xl:w-[17.75rem] xl:h-[2.9375rem] shadow-[4px_4px_0_rgba(255,110,65,0.55)] border border-solid border-[#56423E] rounded-[0.375rem] outline-none text-[#56423E] pl-4 placeholder:text-[#56423ea8] placeholder:${inter.className}`} required='required' />

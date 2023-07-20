@@ -109,9 +109,9 @@ const Services = () => {
     // }
 
     return (
-        <section id="services" className="flex flex-col justify-center w-full h-screen px-6 md:px-16 xl:px-24 2xl:px-44 snap-start snap-always">
-            <h1 className="text-[#56423E] text-center text-3xl md:text-4xl xl:text-[2.5rem] 2xl:text-[2.8125rem] font-semibold leading-[3rem] tracking-wider">Как работи всичко</h1>
-            <p className={`max-w-[77.875rem] mx-auto mt-7 font-medium text-[#56423E] text-justify text-base md:text-xl 2xl:text-[1.375rem] leading-4 lg:leading-8 tracking-wide ${raleway.className}`}>
+        <section id="services" className="flex flex-col justify-center w-full h-screen px-6 md:px-16 xl:px-24 2xl:px-44 pb-32 lg:pb-0 snap-start snap-always">
+            <h1 className="text-[#56423E] text-center text-2xl md:text-4xl xl:text-[2.5rem] 2xl:text-[2.8125rem] font-semibold leading-[3rem] tracking-wider">Как работи всичко</h1>
+            <p className={`max-w-[77.875rem] mx-auto md:mt-7 font-medium text-[#56423E] text-justify text-sm md:text-xl 2xl:text-[1.375rem] leading-4 lg:leading-8 tracking-wide ${raleway.className}`}>
                 Държим клиентите ни да участват във всяка стъпка от процеса, за да сме сигурни, че тяхната визия е реализирана във всеки аспект на дизайна. От избора на материалите до размерите и характеристиките, ние работим в тясно сътрудничество с нашите клиенти, за да създадем обзавеждане, което идеално пасва на нуждите и предпочитанията им.
             </p>
 
@@ -154,7 +154,7 @@ const Services = () => {
 
 
             {/* Carousel */}
-            <div id="carousel" className="xl:max-w-[69.25rem] xl:max-h-[23.2065rem] mt-10 mx-auto p-5 lg:p-20 flex flex-col items-center justify-start lg:flex-row lg:justify-center rounded-[1.25rem] bg-[rgba(255,255,255,0.6)] shadow-[7px_7px_0_rgba(255,110,65,0.55)] transition-opacity opacity-0 duration-500">
+            <div id="carousel" className="xl:max-w-[69.25rem] xl:max-h-[23.2065rem] mt-5 md:mt-10 mx-auto p-3 md:p-5 lg:p-20 flex flex-col items-center justify-start lg:flex-row lg:justify-center rounded-[1.25rem] bg-[rgba(255,255,255,0.6)] shadow-[7px_7px_0_rgba(255,110,65,0.55)] transition-opacity opacity-0 duration-500">
                 <div className="w-full flex flex-initial justify-between items-center md:px-16 lg:px-0">
                     {/* mobile left arrow */}
                     <div className="block lg:hidden">
@@ -169,7 +169,7 @@ const Services = () => {
                     </div>
 
                     {/* border and image inside */}
-                    <div className="my-5 lg:my-0 flex flex-shrink-0 justify-center items-center w-[6.5rem] h-[5.5rem] md:w-[11.9rem] md:h-[9.6rem] lg:w-56 lg:h-[12.5rem] xl:w-[16.51963rem] xl:h-[13.30994rem] rounded-[2.2rem_0] md:rounded-[4rem_0] lg:rounded-[5.5rem_0] xl:rounded-[6.25rem_0] border-2 border-solid border-[#FF6E41] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]">
+                    <div className="mb-2 md:mb-0 md:my-5 lg:my-0 flex flex-shrink-0 justify-center items-center w-[6.5rem] h-[5.5rem] md:w-[11.9rem] md:h-[9.6rem] lg:w-56 lg:h-[12.5rem] xl:w-[16.51963rem] xl:h-[13.30994rem] rounded-[2.2rem_0] md:rounded-[4rem_0] lg:rounded-[5.5rem_0] xl:rounded-[6.25rem_0] border-2 border-solid border-[#FF6E41] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]">
                         <div className="relative w-12 h-12 md:w-[6.28rem] md:h-[6.28rem] xl:w-[7.5rem] xl:h-[7.5rem]">
                             <Image
                                 src={slides[currentIndex].img}
@@ -198,8 +198,8 @@ const Services = () => {
 
                 {/* carousel title and text */}
                 <div className="flex flex-col flex-auto justify-between items-center lg:items-start lg:ml-[4.5rem] lg:h-[12.5rem] xl:h-[13.30994rem]">
-                    <h1 className="text-[#FF6E41] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium lg:leading-[3rem] lg:tracking-[0.03125rem]">{slides[currentIndex].title}</h1>
-                    <p className={`text-[#56423E] py-5 lg:py-0 md:px-16 lg:px-0 text-justify text-xs md:text-base lg:text-lg xl:text-xl ${raleway.className}`}>{slides[currentIndex].text}</p>
+                    <h1 className="text-[#FF6E41] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium lg:leading-[3rem] lg:tracking-[0.03125rem] text-center">{slides[currentIndex].title}</h1>
+                    <p className={`text-[#56423E] py-2 md:py-5 lg:py-0 md:px-16 lg:px-0 text-justify text-xs md:text-base lg:text-lg xl:text-xl ${raleway.className}`}>{slides[currentIndex].text}</p>
                 </div>
             </div>
 

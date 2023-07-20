@@ -94,13 +94,13 @@ const Gallery = () => {
     }
 
     return (
-        <section id="gallery" className="flex flex-col justify-center w-full h-screen snap-start snap-always">
+        <section id="gallery" className="flex flex-col justify-center w-full h-screen pb-32 lg:pb-0 snap-start snap-always">
             <h1 className="text-[#56423E] text-center text-3xl md:text-4xl xl:text-[2.5rem] 2xl:text-[2.8125rem] font-semibold leading-[3rem] tracking-wider">Галерия</h1>
-            <div className="w-full px-6 md:px-16 lg:px-0 py-8 lg:py-24 flex flex-col lg:flex-row lg:flex-wrap lg:w-[38rem] gap-4 lg:gap-8 items-center justify-center mx-auto">
-                <Image onClick={e => imageClick(e)} className="max-w-full cursor-pointer hover:scale-105 rounded-[1.25rem] shadow-[5px_6px_0_rgba(255,110,65,0.55)] w-52 h-40 md:w-80 md:h-60 lg:w-60 lg:h-48 xl:w-72 xl:h-60" src={img1} alt="" loading="eager" />
-                <Image onClick={e => imageClick(e)} className="max-w-full cursor-pointer hover:scale-105 rounded-[1.25rem] shadow-[5px_6px_0_rgba(255,110,65,0.55)] w-52 h-40 md:w-80 md:h-60 lg:w-60 lg:h-48 xl:w-72 xl:h-60" src={img2} alt="" loading="eager" />
-                <Image onClick={e => imageClick(e)} className="max-w-full cursor-pointer hover:scale-105 rounded-[1.25rem] shadow-[5px_6px_0_rgba(255,110,65,0.55)] w-52 h-40 md:w-80 md:h-60 lg:w-60 lg:h-48 xl:w-72 xl:h-60" src={img3} alt="" loading="eager" />
-                <Image onClick={e => imageClick(e)} className="max-w-full hidden lg:block cursor-pointer hover:scale-105 rounded-[1.25rem] shadow-[5px_6px_0_rgba(255,110,65,0.55)] lg:w-60 lg:h-48 xl:w-72 xl:h-60" src={img4} alt="" loading="eager" />
+            <div className="w-full px-6 md:px-0 py-8 md:py-16 lg:py-24 flex flex-col md:flex-row md:flex-wrap md:w-[38rem] gap-4 md:gap-8 items-center justify-center mx-auto">
+                <Image onClick={e => imageClick(e)} className="max-w-full cursor-pointer hover:scale-105 rounded-[1.25rem] shadow-[5px_6px_0_rgba(255,110,65,0.55)] w-40 h-32 md:w-60 md:h-48 lg:w-60 lg:h-48 xl:w-72 xl:h-60" src={img1} alt="" loading="eager" />
+                <Image onClick={e => imageClick(e)} className="max-w-full cursor-pointer hover:scale-105 rounded-[1.25rem] shadow-[5px_6px_0_rgba(255,110,65,0.55)] w-40 h-32 md:w-60 md:h-48 lg:w-60 lg:h-48 xl:w-72 xl:h-60" src={img2} alt="" loading="eager" />
+                <Image onClick={e => imageClick(e)} className="max-w-full hidden md:block cursor-pointer hover:scale-105 rounded-[1.25rem] shadow-[5px_6px_0_rgba(255,110,65,0.55)] md:w-60 md:h-48 lg:w-60 lg:h-48 xl:w-72 xl:h-60" src={img3} alt="" loading="eager" />
+                <Image onClick={e => imageClick(e)} className="max-w-full hidden md:block cursor-pointer hover:scale-105 rounded-[1.25rem] shadow-[5px_6px_0_rgba(255,110,65,0.55)] md:w-60 md:h-48 lg:w-60 lg:h-48 xl:w-72 xl:h-60" src={img4} alt="" loading="eager" />
             </div>
             <Link href='/gallery' className="mx-auto px-6 py-2 lg:px-9 md:py-4 rounded-2xl md:rounded-3xl bg-[#FF3131] drop-shadow-[5px_5px_0_rgba(0,0,0,0.25)] flex justify-center items-center hover:scale-105 cursor-pointer">
                 <p className="text-white text-center text-lg lg:text-xl 2xl:text-2xl font-semibold drop-shadow-[0_4px_4px_rgba(0,0,0,0.4)]">Виж всички</p>
