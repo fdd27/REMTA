@@ -111,7 +111,7 @@ const Contact = () => {
                     <textarea id="message" name='message' placeholder="Съобщение" className={`resize-none mb-4 md:mb-8 lg:mb-[2.44rem] w-72 md:w-[34rem] lg:w-[27rem] xl:w-[33rem] 2xl:w-[36.6875rem] shadow-[4px_4px_0_rgba(255,110,65,0.55)] border border-solid border-[#56423E] rounded-[0.375rem] outline-none text-[#56423E] pl-4 pr-4 py-2 placeholder:text-[#56423ea8] placeholder:${inter.className}`} cols="30" rows="6"></textarea>
 
                     <button type="submit" className="px-8 py-2 lg:px-10 md:py-4 rounded-2xl md:rounded-3xl bg-[#FF3131] flex justify-center items-center shadow-[5px_5px_0_rgba(0,0,0,0.25)] cursor-pointer hover:scale-105">
-                        <p className="text-white text-center drop-shadow-[0_4px_4px_rgba(0,0,0,0.4)] text-lg lg:text-xl 2xl:text-2xl font-semibold ">Изпрати</p>
+                        <p className="text-white text-center text-lg lg:text-xl 2xl:text-2xl font-semibold ">Изпрати</p>
                     </button>
                 </form>
             </div>

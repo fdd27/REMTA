@@ -103,7 +103,7 @@ const Gallery = () => {
                 <Image onClick={e => imageClick(e)} className="max-w-full hidden md:block cursor-pointer hover:scale-105 rounded-[1.25rem] shadow-[5px_6px_0_rgba(255,110,65,0.55)] md:w-60 md:h-48 lg:w-60 lg:h-48 xl:w-72 xl:h-60" src={img4} alt="" loading="eager" />
             </div>
             <Link href='/gallery' className="mx-auto px-6 py-2 lg:px-9 md:py-4 rounded-2xl md:rounded-3xl bg-[#FF3131] drop-shadow-[5px_5px_0_rgba(0,0,0,0.25)] flex justify-center items-center hover:scale-105 cursor-pointer">
-                <p className="text-white text-center text-lg lg:text-xl 2xl:text-2xl font-semibold drop-shadow-[0_4px_4px_rgba(0,0,0,0.4)]">Виж всички</p>
+                <p className="text-white text-center text-lg lg:text-xl 2xl:text-2xl font-semibold">Виж всички</p>
             </Link>
 
             <PopupImage />

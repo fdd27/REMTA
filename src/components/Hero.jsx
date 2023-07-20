@@ -39,7 +39,7 @@ const Hero = () => {
 
                         {/* btn to contact */}
                         <Link href='#contact' className="mb-6 md:mb-0 md:me-[2.6rem] px-4 py-2 md:px-6 md:py-4 rounded-2xl md:rounded-3xl bg-[#FF3131] drop-shadow-[5px_5px_0_rgba(0,0,0,0.25)] flex justify-center items-center hover:scale-105 cursor-pointer">
-                            <p className="text-white text-center text-lg lg:text-xl 2xl:text-2xl font-semibold drop-shadow-[0_4px_4px_rgba(0,0,0,0.4)]">Направи заявка</p>
+                            <p className="text-white text-center text-lg lg:text-xl 2xl:text-2xl font-semibold">Направи заявка</p>
                         </Link>
 
                         {/* btn to services */}

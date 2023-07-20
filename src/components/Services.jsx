@@ -169,7 +169,7 @@ const Services = () => {
                     </div>
 
                     {/* border and image inside */}
-                    <div className="mb-2 md:mb-0 md:my-5 lg:my-0 flex flex-shrink-0 justify-center items-center w-[6.5rem] h-[5.5rem] md:w-[11.9rem] md:h-[9.6rem] lg:w-56 lg:h-[12.5rem] xl:w-[16.51963rem] xl:h-[13.30994rem] rounded-[2.2rem_0] md:rounded-[4rem_0] lg:rounded-[5.5rem_0] xl:rounded-[6.25rem_0] border-2 border-solid border-[#FF6E41] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]">
+                    <div className="my-2 md:my-5 lg:my-0 flex flex-shrink-0 justify-center items-center w-[6.5rem] h-[5.5rem] md:w-[11.9rem] md:h-[9.6rem] lg:w-56 lg:h-[12.5rem] xl:w-[16.51963rem] xl:h-[13.30994rem] rounded-[2.2rem_0] md:rounded-[4rem_0] lg:rounded-[5.5rem_0] xl:rounded-[6.25rem_0] border-2 border-solid border-[#FF6E41] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]">
                         <div className="relative w-12 h-12 md:w-[6.28rem] md:h-[6.28rem] xl:w-[7.5rem] xl:h-[7.5rem]">
                             <Image
                                 src={slides[currentIndex].img}
