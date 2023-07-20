@@ -9,10 +9,22 @@ const pf = Playfair_Display({
 
 export const metadata = {
   title: 'REMTA Design',
-  description: 'Мебели по поръчка, изработени специално за теб',
+  description: '',
   keywords: ['Next.js', 'React', 'JavaScript', 'Remta', 'Momchilgrad', 'furniture', 'Bulgaria', 'мебели', 'мебели по поръчка', 'Момчилград', 'България', 'Ремта'],
   openGraph: {
     images: {img},
+  },
+  openGraph: {
+    title: 'REMTA Design',
+    description: 'Мебели по поръчка, изработени специално за теб',
+    url: 'https://www.remtadesign.store',
+    siteName: 'REMTA Design',
+    images: {
+      url: 'https://postimg.cc/8sY61BX9',
+      width: 66,
+      height: 66,
+    },
+    type: 'website',
   },
 }
 
