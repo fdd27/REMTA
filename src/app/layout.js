@@ -10,7 +10,10 @@ const pf = Playfair_Display({
 export const metadata = {
   title: 'REMTA Design',
   description: 'Мебели по поръчка, изработени специално за теб',
-  image: {img},
+  keywords: ['Next.js', 'React', 'JavaScript', 'Remta', 'Momchilgrad', 'furniture', 'Bulgaria', 'мебели', 'мебели по поръчка', 'Момчилград', 'България', 'Ремта'],
+  openGraph: {
+    images: {img},
+  },
 }
 
 export default function RootLayout({ children }) {
