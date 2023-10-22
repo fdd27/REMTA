@@ -70,7 +70,7 @@ const Contact = () => {
     }
 
     return (
-        <section id="contact" className="w-full h-screen flex flex-col snap-start snap-always">
+        <section id="contact" className="w-full h-screen flex flex-col snap-start snap-always"> 
             <div className="flex w-full flex-auto px-6 md:px-16 xl:px-24 2xl:px-44">
 
                 {/* left side image */}
@@ -87,7 +87,7 @@ const Contact = () => {
                 </div>
 
                 {/* right side form */}
-                <form onSubmit={e => { sendEmail(e) }} className="flex flex-col w-full lg:w-1/2 items-center justify-center">
+                <form onSubmit={e => { sendEmail(e) }} autoComplete="off" auto className="flex flex-col w-full lg:w-1/2 items-center justify-center">
                     <h1 className="mb-6 md:mb-12 text-[#56423E] text-center text-3xl md:text-4xl lg:text-3xl xl:text-[2rem] 2xl:text-[2.1875rem] font-semibold leading-[3rem] tracking-[-0.04375rem]">Изпрати запитване</h1>
                     <div className="flex">
                         <div className="input-container">

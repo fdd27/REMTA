@@ -72,7 +72,7 @@ input[required]:valid+label {
   color: white;
 }
 
-#email:not(.fulled):not(.firstFill)::placeholder {
+#email:not(.filled):not(.firstFill)::placeholder {
   color:  #ffbfbf;
 }
 

@@ -110,7 +110,9 @@ const Services = () => {
 
     return (
         <section id="services" className="flex flex-col justify-center w-full h-screen px-6 md:px-16 xl:px-24 2xl:px-44 pb-32 lg:pb-0 snap-start snap-always">
-            <h1 className="text-[#56423E] text-center text-2xl md:text-4xl xl:text-[2.5rem] 2xl:text-[2.8125rem] font-semibold leading-[3rem] tracking-wider">Как работи всичко</h1>
+            <h1 className="text-[#56423E] text-center text-2xl md:text-4xl xl:text-[2.5rem] 2xl:text-[2.8125rem] font-semibold leading-[3rem] tracking-wider">
+                Как работи всичко
+            </h1>
             <p className={`max-w-[77.875rem] mx-auto md:mt-7 font-medium text-[#56423E] text-justify text-sm md:text-xl 2xl:text-[1.375rem] leading-4 lg:leading-8 tracking-wide ${raleway.className}`}>
                 Държим клиентите ни да участват във всяка стъпка от процеса, за да сме сигурни, че тяхната визия е реализирана във всеки аспект на дизайна. От избора на материалите до размерите и характеристиките, ние работим в тясно сътрудничество с нашите клиенти, за да създадем обзавеждане, което идеално пасва на нуждите и предпочитанията им.
             </p>
@@ -164,7 +166,7 @@ const Services = () => {
                             src={left_arrow}
                             alt="previous"
                             loading="eager"
-                            sizes="100vw"
+                            // sizes="100vw"
                         />
                     </div>
 
@@ -190,7 +192,7 @@ const Services = () => {
                             src={right_arrow}
                             alt="next"
                             loading="eager"
-                            sizes="100vw"
+                            // sizes="100vw"
                         />
                     </div>
 

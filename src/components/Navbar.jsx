@@ -41,7 +41,7 @@ const Navbar = ({ color, shadow, mobile_menu_col, fbIcon }) => {
                     </li>
                 </ul>
                 <Link href='https://www.facebook.com/RemtaDesign' className={`hidden lg:block absolute lg:right-16 xl:right-24 2xl:right-44 top-8 hover:scale-110`} rel="noopener noreferrer" target="_blank">
-                    <Image src={fbIcon ? fbOrange : fbBrown} alt='Facebook' width='3rem' height='3rem' className="max-w-full h-auto drop-shadow-[0_4px_0_rgba(0,0,0,0.25)]" loading="eager" />
+                    <Image src={fbIcon ? fbOrange : fbBrown} alt='Facebook' width='3rem' height='3rem' className={`max-w-full h-auto ${shadow}`} loading="eager" />
                 </Link>
 
                 {/* Mobile Button */}
