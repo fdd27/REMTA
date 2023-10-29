@@ -19,7 +19,7 @@ const Navbar = ({ color, shadow, mobile_menu_col, fbIcon }) => {
     return (
         <div className="relative w-full left-0 top-0 right-0 z-10 ease-in duration-300 flex-initial">
             <div className="m-auto flex justify-end lg:justify-center items-center p-4 text-white">
-                <Link href='/' className="absolute left-6 md:left-16 xl:left-24 2xl:left-44 top-3 lg:top-2 w-[3.75rem] h-[3.75rem] md:w-16 md:h-16 lg:w-24 lg:h-24">
+                <Link href='/' className="absolute left-4 md:left-16 xl:left-24 2xl:left-72 top-3 lg:top-2 w-[3.75rem] h-[3.75rem] md:w-16 md:h-16 lg:w-20 lg:h-20">
                     <Image
                         src={logo}
                         alt='REMTA'
@@ -34,13 +34,18 @@ const Navbar = ({ color, shadow, mobile_menu_col, fbIcon }) => {
                         <Link href='/'>Начало</Link>
                     </li>
                     <li className="p-8 text-2xl font-bold cursor-pointer hover:scale-110">
-                        <Link href='/gallery'>Галерия</Link>
+                        <Link href='/#gallery'>Галерия</Link>
                     </li>
                     <li className="p-8 text-2xl font-bold cursor-pointer hover:scale-110">
                         <Link href='/#contact'>Контакти</Link>
                     </li>
                 </ul>
-                <Link href='https://www.facebook.com/RemtaDesign' className={`hidden lg:block absolute lg:right-16 xl:right-24 2xl:right-44 top-8 hover:scale-110`} rel="noopener noreferrer" target="_blank">
+                <Link
+                    href='https://www.facebook.com/RemtaDesign'
+                    className={`hidden lg:block absolute right-4 lg:right-16 xl:right-24 2xl:right-72 top-8 hover:scale-110`}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                >
                     <Image src={fbIcon ? fbOrange : fbBrown} alt='Facebook' width='3rem' height='3rem' className={`max-w-full h-auto ${shadow}`} loading="eager" />
                 </Link>
 

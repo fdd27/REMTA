@@ -35,7 +35,7 @@ const Contact = () => {
 
         emailjs.send('service_d13x09j', 'template_0bmzw3b', params, 'jez6L6mf60f2W1hOW').then(() => {
             alert("Заявката е изпратена!")
-            router.push('/#hero')
+            // router.push('/#hero')
         })
 
         name.value = ''
@@ -70,17 +70,17 @@ const Contact = () => {
     }
 
     return (
-        <section id="contact" className="w-full h-screen flex flex-col snap-start snap-always"> 
-            <div className="flex w-full flex-auto px-6 md:px-16 xl:px-24 2xl:px-44">
+        <section id="contact" className="w-full h-screen flex flex-col snap-start snap-always">
+            <div className="flex w-full flex-auto px-4 md:px-16 xl:px-24 2xl:px-44">
 
                 {/* left side image */}
                 <div className="hidden lg:flex w-1/2 justify-center items-center">
                     <div className="relative w-[31rem] h-[45rem]">
-                        <Image 
-                            src={img} 
-                            alt="" 
-                            fill 
-                            loading="eager" 
+                        <Image
+                            src={img}
+                            alt=""
+                            fill
+                            loading="eager"
                             sizes="(max-width: 1024px) 0vw, 50vw"
                         />
                     </div>
@@ -110,7 +110,12 @@ const Contact = () => {
                     </div>
                     <textarea id="message" name='message' placeholder="Съобщение" className={`resize-none ${inter.className} mb-4 md:mb-8 lg:mb-[2.44rem] w-72 md:w-[34rem] lg:w-[27rem] xl:w-[33rem] 2xl:w-[36.6875rem] shadow-[4px_4px_0_rgba(255,110,65,0.55)] border border-solid border-[#56423E] rounded-[0.375rem] outline-none text-[#56423E] pl-4 pr-4 py-2 placeholder:text-[#56423ea8] placeholder:${inter.className}`} cols="30" rows="6"></textarea>
 
-                    <button type="submit" className="px-8 py-2 lg:px-10 md:py-4 rounded-2xl md:rounded-3xl border-[#56423E] border-2 border-solid border-opacity-100 bg-transparent hover:bg-[#FF3131] text-[#56423E] hover:text-white transition-colors ease-out flex justify-center items-center shadow-[5px_5px_0_rgba(255,110,65,0.55)] cursor-pointer hover:scale-105">
+                    <button
+                        type="submit"
+                        className="px-8 py-2 lg:px-10 md:py-4 rounded-2xl md:rounded-3xl border-[#56423E] border-2 border-solid border-opacity-100 bg-transparent
+                        hover:bg-[#FF3131] text-[#56423E] hover:text-white transition-colors ease-out flex justify-center items-center shadow-[5px_5px_0_rgba(255,110,65,0.55)] cursor-pointer 
+                        hover:scale-105"
+                    >
                         <p className="text-center text-lg lg:text-xl 2xl:text-2xl font-semibold ">Изпрати</p>
                     </button>
                 </form>

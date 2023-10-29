@@ -41,11 +41,11 @@ const Footer = () => {
     }
 
     return (
-        <div className="flex-initial bottom-0 left-0 right-0 w-full bg-[rgba(255,116,72,0.75)] px-6 md:px-16 xl:px-24 2xl:px-44">
-            <div className="w-full flex flex-col lg:flex-row gap-2 lg:gap-0 justify-between items-center pt-1 lg:pt-8">
+        <div className="flex-initial bottom-0 left-0 right-0 w-full bg-[rgba(255,116,72,0.75)] px-4 md:px-16 xl:px-24 2xl:px-44">
+            <div className="w-full flex flex-col lg:flex-row gap-2 lg:gap-0 justify-between items-center py-1 lg:py-8">
                 <div id="footerEmail" onClick={() => showCopyTooltip('email', document.getElementById('footerEmailText').innerHTML)} className="relative w-full lg:w-auto flex items-center gap-3 cursor-pointer lg:hover:scale-105">
                     {/* email tooltip */}
-                    <div id="copytooltip_email" className={`hidden max-w-fit bg-[#555] text-white justify-center items-center px-4 py-1 rounded-xl absolute left-0 right-0 mx-auto bottom-44 lg:bottom-7 opacity-0 transition-opacity ${inter.className} font-medium`}>
+                    <div id="copytooltip_email" className={`hidden max-w-fit bg-[#555] text-white justify-center items-center px-4 py-1 rounded-xl absolute left-0 right-0 mx-auto bottom-44 lg:bottom-8 opacity-0 transition-opacity ${inter.className} font-medium`}>
                         <PiCopyFill className="mr-2" />
                         <p>Копирано</p>
                     </div>
@@ -72,7 +72,7 @@ const Footer = () => {
                 </Link>
                 <div id="footerTel" onClick={() => showCopyTooltip('tel', document.getElementById('footerTelText').innerHTML)} className="w-full lg:w-auto flex items-center gap-3 cursor-pointer lg:hover:scale-105 relative">
                     {/* tel tooltip */}
-                    <div id="copytooltip_tel" className={`hidden max-w-fit bg-[#555] text-white justify-center items-center px-4 py-1 rounded-xl absolute left-0 right-0 mx-auto bottom-44 lg:bottom-7 opacity-0 transition-opacity ${inter.className} font-medium`}>
+                    <div id="copytooltip_tel" className={`hidden max-w-fit bg-[#555] text-white justify-center items-center px-4 py-1 rounded-xl absolute left-0 right-0 mx-auto bottom-44 lg:bottom-8 opacity-0 transition-opacity ${inter.className} font-medium`}>
                         <PiCopyFill className="mr-2" />
                         <p>Копирано</p>
                     </div>
@@ -87,7 +87,7 @@ const Footer = () => {
                     <p id="footerTelText" className={`${inter.className} w-full text-center text-white text-base lg:text-lg xl:text-xl 2xl:text-[1.375rem] font-medium leading-[1.375rem] tracking-tight`}>+359 879 339 001</p>
                 </div>
             </div>
-            <p className={`${rw.className} pb-2 pt-4 lg:pb-3 lg:pt-5 text-center lg:text-end text-white text-base lg:text-lg xl:text-xl 2xl:text-lg font-light italic`}>© 2023 ET Ремта Дизайн. Всички права запазени.</p>
+            {/* <p className={`${rw.className} pb-2 pt-4 lg:pb-3 lg:pt-5 text-center lg:text-end text-white text-base lg:text-lg xl:text-xl 2xl:text-lg font-light italic`}>© 2023 ET Ремта Дизайн. Всички права запазени.</p> */}
         </div>
     )
 }
