@@ -55,7 +55,7 @@ const Technologies = () => {
     return (
         <section id="technologies" className="h-full lg:h-fit flex flex-col w-full px-4 md:px-16 xl:px-24 2xl:px-72 pb-32 lg:pb-0 snap-start snap-always">
 
-            <h1 className="text-[#56423E] text-center text-2xl md:text-4xl xl:text-[2.5rem] 2xl:text-[2.8125rem] font-semibold leading-[3rem] tracking-wider mt-14 mb-8 lg:my-24">
+            <h1 className="text-[#56423E] text-center text-3xl md:text-4xl xl:text-[2.5rem] 2xl:text-[2.8125rem] font-semibold leading-[3rem] tracking-wider mt-14 mb-8 lg:my-24">
                 Технологии
             </h1>
 
@@ -63,12 +63,13 @@ const Technologies = () => {
             <div className="navigation-wrapper rounded-[1.25rem] shadow-[7px_7px_0_rgba(255,110,65,0.55)]">
                 <div ref={sliderRef} className="keen-slider rounded-[1.25rem]">
                     {/* Carousel item 1 */}
-                    <div className="keen-slider__slide tech-slide1">
-                        {/* border and image > removed: rounded-[2.2rem_0] md:rounded-[4rem_0] lg:rounded-[5.5rem_0] xl:rounded-[6.25rem_0] border-2 border-solid border-[#FF6E41] bg-white*/}
-                        <div className="relative hidden md:flex flex-shrink-0 justify-center items-center mx-12 lg:ml-16 lg:mr-8 w-32 h-24 md:w-60 md:h-48 xl:w-72 xl:h-60 rounded-[0_2rem] 
-                        lg:rounded-[0_5rem] shadow-[4px_4px_0_rgba(0,0,0,0.3)]">
+                    <div className="keen-slider__slide tech-slide1 flex flex-col md:flex-row">
+                        <div
+                            className="relative flex flex-shrink-0 justify-center items-center my-8 mx-12 lg:ml-16 lg:mr-8 w-32 h-24 md:w-60 md:h-48 xl:w-72 xl:h-60 rounded-[0_2rem] 
+                            lg:rounded-[0_5rem] shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
+                        >
                             <Image
-                                src={slides[currentSlide].img}
+                                src={slides[0].img}
                                 alt="Плотове"
                                 fill
                                 sizes="(max-width: 1024px) 40vw, 20vw"
@@ -77,79 +78,93 @@ const Technologies = () => {
                         </div>
                         {/* text */}
                         <div className="flex flex-col flex-auto justify-start items-start mx-12 lg:mr-16 lg:ml-8">
-                            <h1 className="w-full lg:w-fit mb-2 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium lg:leading-[3rem] lg:tracking-[0.03125rem] text-center">
-                                {slides[currentSlide].title}
+                            <h1
+                                className="w-full lg:w-fit mb-2 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium lg:leading-[3rem] lg:tracking-[0.03125rem] 
+                                text-center"
+                            >
+                                {slides[0].title}
                             </h1>
-                            <p className={`text-[#56423E] text-justify text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl ${raleway.className}`}>{slides[currentSlide].text}</p>
+                            <p className={`mb-2 text-[#56423E] text-center lg:text-justify text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl ${raleway.className}`}>{slides[0].text}</p>
                         </div>
                     </div>
 
                     {/* Carousel item 2 */}
-                    <div className="keen-slider__slide tech-slide2">
-                        {/* border and image */}
-                        <div className="relative hidden md:flex flex-shrink-0 justify-center items-center mx-12 lg:ml-16 lg:mr-8 w-32 h-24 md:w-60 md:h-48 xl:w-72 xl:h-60 rounded-[0_2rem] 
-                        lg:rounded-[0_5rem] shadow-[4px_4px_0_rgba(0,0,0,0.3)]">
+                    <div className="keen-slider__slide tech-slide2 flex flex-col md:flex-row">
+                        <div
+                            className="relative flex flex-shrink-0 justify-center items-center my-8 mx-12 lg:ml-16 lg:mr-8 w-32 h-24 md:w-60 md:h-48 xl:w-72 xl:h-60 rounded-[0_2rem] 
+                            lg:rounded-[0_5rem] shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
+                        >
                             <Image
-                                src={slides[currentSlide].img}
+                                src={slides[1].img}
                                 alt="Чекмеджета"
                                 fill
                                 sizes="(max-width: 1024px) 40vw, 20vw"
-                                className=" object-fill rounded-[0_2rem] lg:rounded-[0_5rem]"
+                                className="object-fill rounded-[0_2rem] lg:rounded-[0_5rem]"
                             />
                         </div>
                         {/* text */}
                         <div className="flex flex-col flex-auto justify-start items-start mx-12 lg:mr-16 lg:ml-8">
-                            <h1 className="w-full lg:w-fit mb-2 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium lg:leading-[3rem] lg:tracking-[0.03125rem] text-center">
-                                {slides[currentSlide].title}
+                            <h1
+                                className="w-full lg:w-fit mb-2 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium lg:leading-[3rem] lg:tracking-[0.03125rem] 
+                                text-center"
+                            >
+                                {slides[1].title}
                             </h1>
-                            <p className={`text-[#56423E] text-justify text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl ${raleway.className}`}>{slides[currentSlide].text}</p>
+                            <p className={`mb-2 text-[#56423E] text-center lg:text-justify text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl ${raleway.className}`}>{slides[1].text}</p>
                         </div>
                     </div>
 
                     {/* Carousel item 3 */}
-                    <div className="keen-slider__slide tech-slide3">
-                        {/* border and image */}
-                        <div className="relative hidden md:flex flex-shrink-0 justify-center items-center mx-12 lg:ml-16 lg:mr-8 w-32 h-24 md:w-60 md:h-48 xl:w-72 xl:h-60 rounded-[0_2rem] 
-                        lg:rounded-[0_5rem] shadow-[4px_4px_0_rgba(0,0,0,0.3)]">
+                    <div className="keen-slider__slide tech-slide3 flex flex-col md:flex-row">
+                        <div
+                            className="relative flex flex-shrink-0 justify-center items-center my-8 mx-12 lg:ml-16 lg:mr-8 w-32 h-24 md:w-60 md:h-48 xl:w-72 xl:h-60 rounded-[0_2rem] 
+                            lg:rounded-[0_5rem] shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
+                        >
                             <Image
-                                src={slides[currentSlide].img}
+                                src={slides[2].img}
                                 alt="Дръжки и врати"
                                 fill
                                 sizes="(max-width: 1024px) 40vw, 20vw"
-                                className=" object-fill rounded-[0_2rem] lg:rounded-[0_5rem]"
+                                className="object-fill rounded-[0_2rem] lg:rounded-[0_5rem]"
                             />
                         </div>
                         {/* text */}
                         <div className="flex flex-col flex-auto justify-start items-start mx-12 lg:mr-16 lg:ml-8">
-                            <h1 className="w-full lg:w-fit mb-2 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium lg:leading-[3rem] lg:tracking-[0.03125rem] text-center">
-                                {slides[currentSlide].title}
+                            <h1
+                                className="w-full lg:w-fit mb-2 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium lg:leading-[3rem] lg:tracking-[0.03125rem] 
+                                text-center"
+                            >
+                                {slides[2].title}
                             </h1>
-                            <p className={`text-[#56423E] text-justify text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl ${raleway.className}`}>{slides[currentSlide].text}</p>
+                            <p className={`mb-2 text-[#56423E] text-center lg:text-justify text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl ${raleway.className}`}>{slides[2].text}</p>
                         </div>
                     </div>
 
                     {/* Carousel item 4 */}
-                    <div className="keen-slider__slide tech-slide4">
-                        {/* border and image */}
-                        <div className="relative hidden md:flex flex-shrink-0 justify-center items-center mx-12 lg:ml-16 lg:mr-8 w-32 h-24 md:w-60 md:h-48 xl:w-72 xl:h-60 rounded-[0_2rem] 
-                        lg:rounded-[0_5rem] shadow-[4px_4px_0_rgba(0,0,0,0.3)]">
+                    <div className="keen-slider__slide tech-slide4 flex flex-col md:flex-row">
+                        <div
+                            className="relative flex flex-shrink-0 justify-center items-center my-8 mx-12 lg:ml-16 lg:mr-8 w-32 h-24 md:w-60 md:h-48 xl:w-72 xl:h-60 rounded-[0_2rem] 
+                            lg:rounded-[0_5rem] shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
+                        >
                             <Image
-                                src={slides[currentSlide].img}
-                                alt="Електроуреди"
+                                src={slides[3].img}
+                                alt="Плотове"
                                 fill
                                 sizes="(max-width: 1024px) 40vw, 20vw"
-                                className=" object-fill rounded-[0_2rem] lg:rounded-[0_5rem]"
+                                className="object-fill rounded-[0_2rem] lg:rounded-[0_5rem]"
                             />
                         </div>
                         {/* text */}
                         <div className="flex flex-col flex-auto justify-start items-start mx-12 lg:mr-16 lg:ml-8">
-                            <h1 className="w-full lg:w-fit mb-2 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium lg:leading-[3rem] lg:tracking-[0.03125rem] text-center">
-                                {slides[currentSlide].title}
+                            <h1
+                                className="w-full lg:w-fit mb-2 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium lg:leading-[3rem] lg:tracking-[0.03125rem] 
+                                text-center"
+                            >
+                                {slides[3].title}
                             </h1>
-                            <p className={`text-[#56423E] text-justify text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl ${raleway.className}`}>{slides[currentSlide].text}</p>
+                            <p className={`mb-2 text-[#56423E] text-center lg:text-justify text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl ${raleway.className}`}>{slides[3].text}</p>
                         </div>
                     </div>
-
                 </div>
                 {loaded && instanceRef.current && (
                     <>
@@ -184,7 +199,7 @@ const Technologies = () => {
                                 onClick={() => {
                                     instanceRef.current?.moveToIdx(idx)
                                 }}
-                                className={"dot" + (currentSlide === idx ? " active" : "")}
+                                className={"dot" + (currentSlide === idx ? " active " : "")}
                             ></button>
                         )
                     })}
@@ -200,7 +215,7 @@ const Arrow = (props) => {
         <svg
             onClick={props.onClick}
             className={`arrow ${props.left ? "arrow--left" : "arrow--right"
-                } ${disabeld}`}
+                } ${disabeld} hover:translate-y-[-1.2rem] transition duration-200 ease-in-out`}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
         >

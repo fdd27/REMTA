@@ -1,7 +1,6 @@
 import Navbar from "./Navbar"
 import Image from "next/image"
 import hero_img from "../assets/hero-img.png"
-import hero_arrow from '../assets/hero-arrow.png'
 import { Raleway, Playfair_Display } from "next/font/google"
 import Link from "next/link"
 
@@ -17,7 +16,7 @@ const pf = Playfair_Display({
 
 const Hero = () => {
     return (
-        <section id="hero" className="w-full h-screen  bg-[url('../assets/hero-bg.png')] bg-cover bg-center bg-tra flex flex-col snap-start snap-always z-50">
+        <section id="home" className="w-full h-screen bg-[url('../assets/hero-bg.png')] bg-cover bg-center bg-tra flex flex-col snap-start snap-always z-50">
             <Navbar color='#ffffff' shadow='drop-shadow-[0_4px_0_rgba(0,0,0,0.25)]' mobile_menu_col='#ffffff' fbIcon={true} />
 
             {/* Hero container */}
@@ -26,11 +25,17 @@ const Hero = () => {
                 {/* Left Half */}
                 <div className="w-full lg:w-[51%] flex flex-col gap-y-6 md:gap-y-28 lg:gap-y-0 justify-center items-center lg:items-start lg:pr-3">
 
-                    <h1 className="lg:pe-12 text-white text-2xl md:text-4xl xl:text-[2.65rem] 2xl:text-5xl font-bold leading-8 md:leading-[3rem] tracking-wider lg:drop-shadow-[4px_4px_0_rgba(0,0,0,0.25)] text-center lg:text-start">
+                    <h1
+                        className="lg:pe-12 text-white text-3xl md:text-4xl xl:text-[2.65rem] 2xl:text-5xl font-bold leading-8 md:leading-[3rem] tracking-wider 
+                        drop-shadow-[4px_4px_0_rgba(0,0,0,0.25)] text-center lg:text-start"
+                    >
                         Мебели по поръчка,<br />изработени специално за теб
                     </h1>
 
-                    <p className={`py-6 lg:py-20 lg:pe-10 xl:pe-20 2xl:pe-40 text-white text-justify text-base md:text-xl 2xl:text-[1.375rem] ${raleway.className} leading-6 md:leading-[1.875rem] tracking-[0.012em] md:tracking-wide font-medium`}>
+                    <p
+                        className={`py-6 lg:py-20 lg:pe-10 xl:pe-20 2xl:pe-40 text-white text-justify text-base md:text-xl 2xl:text-[1.375rem] ${raleway.className} leading-6 
+                        md:leading-[1.875rem] tracking-[0.012em] md:tracking-wide font-medium`}
+                    >
                         В <span className={`${pf.className} font-bold`}>REMTA DESIGN</span> вярваме, че всяка мебел трябва да бъде толкова уникална, колкото и човека, за когото е създадена. Благодарение на дългогодишния ни опит в индустрията безпроблемно създаваме мебели, които съчетават необходимите форма и функция с желания комфорт и стил.
                     </p>
 
@@ -42,21 +47,14 @@ const Hero = () => {
                             href='#contact'
                             id='btn_hero'
                             className="mb-6 md:mb-0 md:me-[2.6rem] px-4 py-2 md:px-6 md:py-4 rounded-2xl md:rounded-3xl border-white border-2 border-solid border-opacity-100 bg-transparent 
-                            hover:scale-105 hover:bg-[#FF3131] transition-colors ease-out flex justify-center items-center cursor-pointer shadow-[5px_5px_0_rgba(0,0,0,0.25)]"
+                            hover:scale-105 hover:bg-[#FF3131] transition duration-200 ease-in-out flex justify-center items-center cursor-pointer shadow-[5px_5px_0_rgba(0,0,0,0.25)]"
                         >
-                            <p className="text-white text-center text-lg lg:text-xl 2xl:text-2xl font-semibold tracking-normal lg:tracking-wide">Направи заявка</p>
+                            <p className="text-white text-center text-lg md:text-[1.375rem] 2xl:text-2xl font-semibold tracking-normal lg:tracking-wide">Направи заявка</p>
                         </Link>
 
                         {/* btn to services */}
-                        <Link href='#services' className="flex justify-center items-center hover:scale-105 cursor-pointer">
-                            <p className="me-2 text-white text-center text-lg lg:text-xl 2xl:text-2xl font-semibold leading-[1.875rem] underline">Нашите услуги</p>
-                            <Image
-                                src={hero_arrow}
-                                alt=""
-                                loading="eager"
-                                className="max-w-full h-auto"
-                            // sizes="100vw"
-                            />
+                        <Link href='#services' className="flex justify-center items-center hover:scale-105 transition duration-200 ease-in-out cursor-pointer">
+                            <p className="me-2 text-white text-center text-lg md:text-[1.375rem] 2xl:text-2xl font-semibold leading-[1.875rem] underline-offset-8 hover:underline">Нашите услуги</p>
                         </Link>
 
                     </div>
@@ -69,7 +67,6 @@ const Hero = () => {
                         alt=""
                         priority
                         loading="eager"
-                        // sizes="100vw"
                         className="max-w-full h-auto"
                     />
                 </div>

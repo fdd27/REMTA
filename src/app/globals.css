@@ -16,35 +16,9 @@
   }
 }
 
-body {
-  /* color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb)); */
-}
+/* body {} */
 
-/* input[required]+label {
-  position: relative;
-  left: -17.75rem;
-  the negative of the input width
-}
-
-input[required]+label:after {
-  content: '*';
-  color: #FF3131;
-}
-
-input[required]:invalid+label {
-  display: inline-block;
-}
-
-input[required]:valid+label {
-  display: none;
-} */
-
+/* Form elements */
 .input:not(.unfilled):invalid {
   color: #d50000;
   background: #fff8f8;
@@ -67,7 +41,6 @@ input[required]:valid+label {
   border-color: #d50000;
 }
 
-
 #email.filled:not(.firstFill)::placeholder {
   color: white;
 }
@@ -75,6 +48,8 @@ input[required]:valid+label {
 #email:not(.filled):not(.firstFill)::placeholder {
   color: #ffbfbf;
 }
+
+/* Form elements */
 
 .visible {
   display: flex;
@@ -84,23 +59,18 @@ input[required]:valid+label {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
-#btn_hero {
-  /* transform: perspective(1px) translateZ(0); */
-}
-
 /*technolgies slider */
 [class^="tech-slide"],
 [class*=" tech-slide"] {
-  background: rgba(255,255,255,0.6);
+  background: rgba(255, 255, 255, 0.6);
   display: flex;
   align-items: center;
-  height: 300px;
   max-height: 100vh;
 }
 
 .navigation-wrapper {
   position: relative;
-  background: rgba(255,255,255,0.6);
+  background: rgba(255, 255, 255, 0.6);
 }
 
 .dots {
@@ -118,6 +88,16 @@ input[required]:valid+label {
   margin: 10px 5px;
   padding: 5px;
   cursor: pointer;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* hover:scale-110 transition duration-200 ease-in-out */
+.dot:hover {
+  --tw-scale-x: 1.25;
+  --tw-scale-y: 1.25;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .dot:focus {
@@ -151,6 +131,7 @@ input[required]:valid+label {
 .arrow--disabled {
   fill: rgba(255, 255, 255, 0.5);
 }
+
 /* technologies slider */
 
 /* gallery slider */
@@ -169,10 +150,13 @@ input[required]:valid+label {
   margin-top: 10px;
   height: 100px;
 }
+
 .thumbnail .keen-slider__slide {
   cursor: pointer;
 }
+
 .thumbnail .keen-slider__slide.active {
   border: 2px solid #FF6E41;
 }
+
 /* gallery sldier */

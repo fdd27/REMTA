@@ -43,12 +43,12 @@ const Services = () => {
 
     return (
         <section id="services" className="flex flex-col w-full px-4 md:px-16 xl:px-24 2xl:px-72 snap-start snap-always">
-            <h1 className="text-[#56423E] text-center text-2xl md:text-4xl xl:text-[2.5rem] 2xl:text-[2.8125rem] font-semibold leading-[3rem] tracking-wider my-8 lg:my-20">
+            <h1 className="text-[#56423E] text-center text-3xl md:text-4xl xl:text-[2.5rem] 2xl:text-[2.8125rem] font-semibold leading-[3rem] tracking-wider my-8 lg:my-20">
                 Как работи всичко
             </h1>
 
             {/* removed from p > md:mt-7 max-w-[77.875rem] mx-auto 2xl:text-[1.375rem] */}
-            <p className={`${raleway.className} font-medium text-[#56423E] text-center text-sm md:text-xl 2xl:text-xl leading-4 lg:leading-8 tracking-wide mb-8 lg:mb-20`}>
+            <p className={`${raleway.className} font-normal text-[#56423E] text-center text-base md:text-xl 2xl:text-[1.375rem] leading-4 lg:leading-8 tracking-wide mb-8 lg:mb-20`}>
                 Държим клиентите ни да участват във всяка стъпка от процеса, за да сме сигурни, че тяхната визия е реализирана във всеки аспект на дизайна. От избора на материалите до размерите и характеристиките, ние работим в тясно сътрудничество с нашите клиенти, за да създадем обзавеждане, което идеално пасва на нуждите и предпочитанията им.
             </p>
 
@@ -58,7 +58,9 @@ const Services = () => {
                 <div className="w-full lg:w-[49%] flex flex-row items-center p-6 bg-[rgba(255,255,255,0.6)] rounded-[1.25rem] shadow-[7px_7px_0_rgba(255,110,65,0.55)]">
                     {/* border and image */}
                     <div className="flex flex-shrink-0 justify-center items-center mr-6 w-24 h-24 md:w-48 md:h-48 xl:w-48 xl:h-48 rounded-[2.2rem_0] md:rounded-[4rem_0] lg:rounded-[5.5rem_0] xl:rounded-[5rem_0] border-2 border-solid border-[#FF6E41] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]">
-                        <div className="relative w-12 h-12 md:w-24 md:h-24 xl:w-[7.5rem] xl:h-[7.5rem]">
+                        <div
+                            className="relative w-12 h-12 md:w-24 md:h-24 xl:w-[7.5rem] xl:h-[7.5rem]"
+                        >
                             <Image
                                 src={services[0].img}
                                 alt="Консултация"
@@ -69,15 +71,23 @@ const Services = () => {
                     </div>
                     {/* text */}
                     <div className="flex flex-col flex-auto justify-start items-start h-full">
-                        <h1 className="w-full mb-2 text-center lg:text-start text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium lg:leading-[3rem] lg:tracking-[0.03125rem]">{services[0].title}</h1>
-                        <p className={`${raleway.className} text-[#56423E] text-justify lg:text-left text-xs md:text-base lg:text-lg xl:text-base font-normal`}>{services[0].text}</p>
+                        <h1
+                            className="w-full mb-2 text-start text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium leading-5 sm:leading-[3rem] 
+                            lg:tracking-[0.03125rem]"
+                        >
+                            {services[0].title}
+                        </h1>
+                        <p className={`${raleway.className} text-[#56423E] text-left text-xs md:text-base lg:text-lg xl:text-base font-normal`}>{services[0].text}</p>
                     </div>
                 </div>
 
                 {/* Service 2 */}
                 <div className="w-full lg:w-[49%] flex flex-row items-center p-6 bg-[rgba(255,255,255,0.6)] rounded-[1.25rem] shadow-[7px_7px_0_rgba(255,110,65,0.55)]">
                     {/* border and image */}
-                    <div className="flex flex-shrink-0 justify-center items-center mr-6 w-24 h-24 md:w-48 md:h-48 xl:w-48 xl:h-48 rounded-[2.2rem_0] md:rounded-[4rem_0] lg:rounded-[5.5rem_0] xl:rounded-[5rem_0] border-2 border-solid border-[#FF6E41] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]">
+                    <div
+                        className="flex flex-shrink-0 justify-center items-center mr-6 w-24 h-24 md:w-48 md:h-48 xl:w-48 xl:h-48 rounded-[2.2rem_0] md:rounded-[4rem_0] lg:rounded-[5.5rem_0] 
+                        xl:rounded-[5rem_0] border-2 border-solid border-[#FF6E41] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
+                    >
                         <div className="relative w-12 h-12 md:w-24 md:h-24 xl:w-[7.5rem] xl:h-[7.5rem]">
                             <Image
                                 src={services[1].img}
@@ -89,15 +99,23 @@ const Services = () => {
                     </div>
                     {/* text */}
                     <div className="flex flex-col flex-auto justify-start items-start h-full">
-                        <h1 className="w-full text-center lg:text-start mb-2 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium lg:leading-[3rem] lg:tracking-[0.03125rem]">{services[1].title}</h1>
-                        <p className={`${raleway.className} text-[#56423E] text-justify lg:text-left text-xs md:text-base lg:text-lg xl:text-base font-normal`}>{services[1].text}</p>
+                        <h1
+                            className="w-full text-start mb-2 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium leading-5 sm:leading-[3rem] 
+                            lg:tracking-[0.03125rem]"
+                        >
+                            {services[1].title}
+                        </h1>
+                        <p className={`${raleway.className} text-[#56423E] text-left text-xs md:text-base lg:text-lg xl:text-base font-normal`}>{services[1].text}</p>
                     </div>
                 </div>
 
                 {/* Service 3 */}
                 <div className="w-full lg:w-[49%] flex flex-row items-center p-6 bg-[rgba(255,255,255,0.6)] rounded-[1.25rem] shadow-[7px_7px_0_rgba(255,110,65,0.55)]">
                     {/* border and image */}
-                    <div className="flex flex-shrink-0 justify-center items-center mr-6 w-24 h-24 md:w-48 md:h-48 xl:w-48 xl:h-48 rounded-[2.2rem_0] md:rounded-[4rem_0] lg:rounded-[5.5rem_0] xl:rounded-[5rem_0] border-2 border-solid border-[#FF6E41] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]">
+                    <div
+                        className="flex flex-shrink-0 justify-center items-center mr-6 w-24 h-24 md:w-48 md:h-48 xl:w-48 xl:h-48 rounded-[2.2rem_0] md:rounded-[4rem_0] lg:rounded-[5.5rem_0] 
+                        xl:rounded-[5rem_0] border-2 border-solid border-[#FF6E41] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
+                    >
                         <div className="relative w-12 h-12 md:w-24 md:h-24 xl:w-[7.5rem] xl:h-[7.5rem]">
                             <Image
                                 src={services[2].img}
@@ -109,15 +127,23 @@ const Services = () => {
                     </div>
                     {/* text */}
                     <div className="flex flex-col flex-auto justify-start items-start h-full">
-                        <h1 className="w-full text-center lg:text-start mb-2 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium lg:leading-[3rem] lg:tracking-[0.03125rem]">{services[2].title}</h1>
-                        <p className={`${raleway.className} text-[#56423E] text-justify lg:text-left text-xs md:text-base lg:text-lg xl:text-base font-normal`}>{services[2].text}</p>
+                        <h1
+                            className="w-full text-start mb-2 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium leading-5 sm:leading-[3rem] 
+                            lg:tracking-[0.03125rem]"
+                        >
+                            {services[2].title}
+                        </h1>
+                        <p className={`${raleway.className} text-[#56423E] text-left text-xs md:text-base lg:text-lg xl:text-base font-normal`}>{services[2].text}</p>
                     </div>
                 </div>
 
                 {/* Service 4 */}
                 <div className="w-full lg:w-[49%] flex flex-row items-center p-6 bg-[rgba(255,255,255,0.6)] rounded-[1.25rem] shadow-[7px_7px_0_rgba(255,110,65,0.55)]">
                     {/* border and image */}
-                    <div className="flex flex-shrink-0 justify-center items-center mr-6 w-24 h-24 md:w-48 md:h-48 xl:w-48 xl:h-48 rounded-[2.2rem_0] md:rounded-[4rem_0] lg:rounded-[5.5rem_0] xl:rounded-[5rem_0] border-2 border-solid border-[#FF6E41] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]">
+                    <div
+                        className="flex flex-shrink-0 justify-center items-center mr-6 w-24 h-24 md:w-48 md:h-48 xl:w-48 xl:h-48 rounded-[2.2rem_0] md:rounded-[4rem_0] lg:rounded-[5.5rem_0] 
+                        xl:rounded-[5rem_0] border-2 border-solid border-[#FF6E41] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
+                    >
                         <div className="relative w-12 h-12 md:w-24 md:h-24 xl:w-[7.5rem] xl:h-[7.5rem]">
                             <Image
                                 src={services[3].img}
@@ -129,15 +155,23 @@ const Services = () => {
                     </div>
                     {/* text */}
                     <div className="flex flex-col flex-auto justify-start items-start h-full">
-                        <h1 className="w-full text-center lg:text-start mb-2 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium lg:leading-[3rem] lg:tracking-[0.03125rem]">{services[3].title}</h1>
-                        <p className={`${raleway.className} text-[#56423E] text-justify lg:text-left text-xs md:text-base lg:text-lg xl:text-base font-normal`}>{services[3].text}</p>
+                        <h1
+                            className="w-full text-start mb-2 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium leading-5 sm:leading-[3rem] 
+                            lg:tracking-[0.03125rem]"
+                        >
+                            {services[3].title}
+                        </h1>
+                        <p className={`${raleway.className} text-[#56423E] text-left text-xs md:text-base lg:text-lg xl:text-base font-normal`}>{services[3].text}</p>
                     </div>
                 </div>
 
                 {/* Service 5 */}
                 <div className="w-full lg:w-[49%] mx-auto flex flex-row items-center p-6 bg-[rgba(255,255,255,0.6)] rounded-[1.25rem] shadow-[7px_7px_0_rgba(255,110,65,0.55)]">
                     {/* border and image */}
-                    <div className="flex flex-shrink-0 justify-center items-center mr-6 w-24 h-24 md:w-48 md:h-48 xl:w-48 xl:h-48 rounded-[2.2rem_0] md:rounded-[4rem_0] lg:rounded-[5.5rem_0] xl:rounded-[5rem_0] border-2 border-solid border-[#FF6E41] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]">
+                    <div
+                        className="flex flex-shrink-0 justify-center items-center mr-6 w-24 h-24 md:w-48 md:h-48 xl:w-48 xl:h-48 rounded-[2.2rem_0] md:rounded-[4rem_0] lg:rounded-[5.5rem_0] 
+                        xl:rounded-[5rem_0] border-2 border-solid border-[#FF6E41] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
+                    >
                         <div className="relative w-12 h-12 md:w-24 md:h-24 xl:w-[7.5rem] xl:h-[7.5rem]">
                             <Image
                                 src={services[4].img}
@@ -149,8 +183,13 @@ const Services = () => {
                     </div>
                     {/* text */}
                     <div className="flex flex-col flex-auto justify-start items-start h-full">
-                        <h1 className="w-full text-center lg:text-start mb-2 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium lg:leading-[3rem] lg:tracking-[0.03125rem]">{services[4].title}</h1>
-                        <p className={`${raleway.className} text-[#56423E] text-justify lg:text-left text-xs md:text-base lg:text-lg xl:text-base font-normal`}>{services[4].text}</p>
+                        <h1
+                            className="w-full text-start mb-2 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium leading-5 sm:leading-[3rem] 
+                            lg:tracking-[0.03125rem]"
+                        >
+                            {services[4].title}
+                        </h1>
+                        <p className={`${raleway.className} text-[#56423E] text-left text-xs md:text-base lg:text-lg xl:text-base font-normal`}>{services[4].text}</p>
                     </div>
                 </div>
             </div>

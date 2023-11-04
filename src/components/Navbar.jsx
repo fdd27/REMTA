@@ -19,6 +19,7 @@ const Navbar = ({ color, shadow, mobile_menu_col, fbIcon }) => {
     return (
         <div className="relative w-full left-0 top-0 right-0 z-10 ease-in duration-300 flex-initial">
             <div className="m-auto flex justify-end lg:justify-center items-center p-4 text-white">
+                {/* Logo */}
                 <Link href='/' className="absolute left-4 md:left-16 xl:left-24 2xl:left-72 top-3 lg:top-2 w-[3.75rem] h-[3.75rem] md:w-16 md:h-16 lg:w-20 lg:h-20">
                     <Image
                         src={logo}
@@ -26,23 +27,25 @@ const Navbar = ({ color, shadow, mobile_menu_col, fbIcon }) => {
                         fill
                         sizes="(max-width: 768px) 25vw, 15vw"
                         loading="eager"
-                        className="max-w-full h-auto"
+                        className="max-w-full h-auto hover:scale-110 transition duration-200 ease-in-out"
                     />
                 </Link>
+                {/* Navigation buttons */}
                 <ul className={`hidden lg:flex text-[${color}] ${shadow}`}>
-                    <li className="p-8 text-2xl font-bold cursor-pointer hover:scale-110">
-                        <Link href='/'>Начало</Link>
+                    <li className="p-8 text-2xl font-bold hover:underline underline-offset-8 hover:scale-110 transition duration-200 ease-in-out">
+                        <Link href='/#home' className="cursor-pointer">Начало</Link>
                     </li>
-                    <li className="p-8 text-2xl font-bold cursor-pointer hover:scale-110">
-                        <Link href='/#gallery'>Галерия</Link>
+                    <li className="p-8 text-2xl font-bold hover:underline underline-offset-8 hover:scale-110 transition duration-200 ease-in-out">
+                        <Link href='/#gallery' className="cursor-pointer">Галерия</Link>
                     </li>
-                    <li className="p-8 text-2xl font-bold cursor-pointer hover:scale-110">
-                        <Link href='/#contact'>Контакти</Link>
+                    <li className="p-8 text-2xl font-bold hover:underline underline-offset-8 hover:scale-110 transition duration-200 ease-in-out">
+                        <Link href='/#contact' className="cursor-pointer">Контакти</Link>
                     </li>
                 </ul>
+                {/* Facebook button */}
                 <Link
                     href='https://www.facebook.com/RemtaDesign'
-                    className={`hidden lg:block absolute right-4 lg:right-16 xl:right-24 2xl:right-72 top-8 hover:scale-110`}
+                    className={`hidden lg:block absolute right-4 lg:right-16 xl:right-24 2xl:right-72 top-8 hover:scale-110 transition duration-200 ease-in-out`}
                     rel="noopener noreferrer"
                     target="_blank"
                 >
@@ -60,10 +63,10 @@ const Navbar = ({ color, shadow, mobile_menu_col, fbIcon }) => {
                         : 'absolute lg:hidden top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen text-center ease-in duration-300'}>
                     <ul>
                         <li className="p-8 text-2xl font-bold">
-                            <Link className="active:text-[#FF7448DE]" onClick={handleNav} href='/'>Начало</Link>
+                            <Link className="active:text-[#FF7448DE]" onClick={handleNav} href='/#home'>Начало</Link>
                         </li>
                         <li className="p-8 text-2xl font-bold">
-                            <Link className="active:text-[#FF7448DE]" onClick={handleNav} href='/gallery'>Галерия</Link>
+                            <Link className="active:text-[#FF7448DE]" onClick={handleNav} href='/#gallery'>Галерия</Link>
                         </li>
                         <li className="p-8 text-2xl font-bold">
                             <Link className="active:text-[#FF7448DE]" onClick={handleNav} href='/#contact'>Контакти</Link>
