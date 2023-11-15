@@ -40,7 +40,7 @@ const Footer = () => {
                     {/* email copy popup */}
                     <div
                         id="copytooltip_email"
-                        className={`flex max-w-fit bg-[#555] text-white justify-center items-center px-4 py-1 rounded-xl absolute left-0 right-0 mx-auto bottom-9 md:bottom-10 lg:bottom-8 opacity-0 
+                        className={`hidden lg:flex max-w-fit bg-[#555] text-white justify-center items-center px-4 py-1 rounded-xl absolute left-0 right-0 mx-auto bottom-8 opacity-0 
                         transition-opacity duration-200 ease-in-out ${inter.className} font-medium`}
                     >
                         <PiCopyFill className="mr-2" />
@@ -91,7 +91,7 @@ const Footer = () => {
                     {/* tel copy popup */}
                     <div
                         id="copytooltip_tel"
-                        className={`flex max-w-fit bg-[#555] text-white justify-center items-center px-4 py-1 rounded-xl absolute left-0 right-0 mx-auto bottom-[7.2rem] md:bottom-32 lg:bottom-8 opacity-0 
+                        className={`hidden lg:flex max-w-fit bg-[#555] text-white justify-center items-center px-4 py-1 rounded-xl absolute left-0 right-0 mx-auto bottom-8 opacity-0 
                         transition-opacity duration-200 ease-in-out ${inter.className} font-medium`}
                     >
                         <PiCopyFill className="mr-2" />

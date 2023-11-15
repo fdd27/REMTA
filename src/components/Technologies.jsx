@@ -93,7 +93,7 @@ const Technologies = () => {
                                 {slides[0].title}
                             </h1>
                             <p className={`mb-2 text-[#56423E] text-center lg:text-justify text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl ${raleway.className}`}>{slides[0].text}</p>
-                            <div className="w-full flex flex-col lg:flex-row  mb-2 text-[#56423E] text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl font-normal lg:gap-x-3 text-center">
+                            <div className="w-full flex flex-col lg:flex-row  mb-2 text-[#56423E] text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl font-medium lg:gap-x-3 text-center">
                                 <p>Партньори:</p>
                                 <Link
                                     href='https://kronospan.com/bg_BG/products/view/kronodesign/laminirani-plochi/laminirano-pd-ch/laminirano-pd-ch-1'
@@ -154,7 +154,7 @@ const Technologies = () => {
                                 {slides[2].title}
                             </h1>
                             <p className={`mb-2 text-[#56423E] text-center lg:text-justify text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl ${raleway.className}`}>{slides[2].text}</p>
-                            <div className="w-full flex flex-col lg:flex-row  mb-2 text-[#56423E] text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl font-normal lg:gap-x-3 text-center">
+                            <div className="w-full flex flex-col lg:flex-row  mb-2 text-[#56423E] text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl font-medium lg:gap-x-3 text-center">
                                 <p>Партньори:</p>
                                 <Link
                                     href='https://lotostrading.com/bg/mebelni-drazhki'
@@ -195,7 +195,7 @@ const Technologies = () => {
                                 {slides[3].title}
                             </h1>
                             <p className={`mb-2 text-[#56423E] text-center lg:text-justify text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl ${raleway.className}`}>{slides[3].text}</p>
-                            <div className="w-full flex flex-col lg:flex-row  mb-2 text-[#56423E] text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl font-normal lg:gap-x-3 text-center">
+                            <div className="w-full flex flex-col lg:flex-row  mb-2 text-[#56423E] text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl font-medium lg:gap-x-3 text-center">
                                 <p>Партньори:</p>
                                 <Link
                                     href='https://www.teka.com/bg-bg/'
@@ -230,7 +230,7 @@ const Technologies = () => {
                                 {slides[4].title}
                             </h1>
                             <p className={`mb-2 text-[#56423E] text-center lg:text-justify text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl ${raleway.className}`}>{slides[4].text}</p>
-                            <div className="w-full flex flex-col lg:flex-row  mb-2 text-[#56423E] text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl font-normal lg:gap-x-3 text-center">
+                            <div className="w-full flex flex-col lg:flex-row  mb-2 text-[#56423E] text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl font-medium lg:gap-x-3 text-center">
                                 <p>Партньори:</p>
                                 <Link
                                     href='http://www.tunakapi.com/'

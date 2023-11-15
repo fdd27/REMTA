@@ -62,7 +62,7 @@ const Services = () => {
                         xl:rounded-[5rem_0] border-2 border-solid border-[#FF3131] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
                     >
                         <div
-                            className="relative w-12 h-12 md:w-24 md:h-24 xl:w-[7.5rem] xl:h-[7.5rem]"
+                            className="relative w-12 h-12 md:w-24 md:h-24"
                         >
                             <Image
                                 src={services[0].img}
@@ -91,7 +91,7 @@ const Services = () => {
                         className="flex flex-shrink-0 justify-center items-center mr-6 w-24 h-24 md:w-48 md:h-48 xl:w-48 xl:h-48 rounded-[2.2rem_0] md:rounded-[4rem_0] lg:rounded-[5.5rem_0] 
                         xl:rounded-[5rem_0] border-2 border-solid border-[#FF3131] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
                     >
-                        <div className="relative w-12 h-12 md:w-24 md:h-24 xl:w-[7.5rem] xl:h-[7.5rem]">
+                        <div className="relative w-12 h-12 md:w-24 md:h-24">
                             <Image
                                 src={services[1].img}
                                 alt="Консултация"
@@ -119,7 +119,7 @@ const Services = () => {
                         className="flex flex-shrink-0 justify-center items-center mr-6 w-24 h-24 md:w-48 md:h-48 xl:w-48 xl:h-48 rounded-[2.2rem_0] md:rounded-[4rem_0] lg:rounded-[5.5rem_0] 
                         xl:rounded-[5rem_0] border-2 border-solid border-[#FF3131] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
                     >
-                        <div className="relative w-12 h-12 md:w-24 md:h-24 xl:w-[7.5rem] xl:h-[7.5rem]">
+                        <div className="relative w-12 h-12 md:w-24 md:h-24">
                             <Image
                                 src={services[2].img}
                                 alt="Консултация"
@@ -147,7 +147,7 @@ const Services = () => {
                         className="flex flex-shrink-0 justify-center items-center mr-6 w-24 h-24 md:w-48 md:h-48 xl:w-48 xl:h-48 rounded-[2.2rem_0] md:rounded-[4rem_0] lg:rounded-[5.5rem_0] 
                         xl:rounded-[5rem_0] border-2 border-solid border-[#FF3131] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
                     >
-                        <div className="relative w-12 h-12 md:w-24 md:h-24 xl:w-[7.5rem] xl:h-[7.5rem]">
+                        <div className="relative w-12 h-12 md:w-24 md:h-24">
                             <Image
                                 src={services[3].img}
                                 alt="Консултация"
@@ -175,7 +175,7 @@ const Services = () => {
                         className="flex flex-shrink-0 justify-center items-center mr-6 w-24 h-24 md:w-48 md:h-48 xl:w-48 xl:h-48 rounded-[2.2rem_0] md:rounded-[4rem_0] lg:rounded-[5.5rem_0] 
                         xl:rounded-[5rem_0] border-2 border-solid border-[#FF3131] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
                     >
-                        <div className="relative w-12 h-12 md:w-24 md:h-24 xl:w-[7.5rem] xl:h-[7.5rem]">
+                        <div className="relative w-12 h-12 md:w-24 md:h-24">
                             <Image
                                 src={services[4].img}
                                 alt="Консултация"
