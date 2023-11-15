@@ -105,7 +105,7 @@
 }
 
 .dot.active {
-  background: #FF6E41;
+  background: #FF3131;
 }
 
 .arrow {
@@ -115,7 +115,7 @@
   top: 50%;
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
-  fill: #FF6E41;
+  fill: #FF3131;
   cursor: pointer;
 }
 
@@ -156,7 +156,7 @@
 }
 
 .thumbnail .keen-slider__slide.active {
-  border: 2px solid #FF6E41;
+  border: 2px solid #FF3131;
 }
 
 /* gallery sldier */

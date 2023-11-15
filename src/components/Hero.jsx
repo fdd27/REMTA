@@ -16,7 +16,7 @@ const pf = Playfair_Display({
 
 const Hero = () => {
     return (
-        <section id="home" className="w-full h-screen bg-[url('../assets/hero-bg.png')] bg-cover bg-center bg-tra flex flex-col snap-start snap-always z-50">
+        <section id="home" className="w-full min-h-screen bg-[#1E1E1E] bg-fill bg-center flex flex-col snap-start snap-always z-50">
             <Navbar color='#ffffff' shadow='drop-shadow-[0_4px_0_rgba(0,0,0,0.25)]' mobile_menu_col='#ffffff' fbIcon={true} />
 
             {/* Hero container */}
@@ -27,7 +27,8 @@ const Hero = () => {
 
                     <h1
                         className="lg:pe-12 text-white text-3xl md:text-4xl xl:text-[2.65rem] 2xl:text-5xl font-bold leading-8 md:leading-[3rem] tracking-wider 
-                        drop-shadow-[4px_4px_0_rgba(0,0,0,0.25)] text-center lg:text-start"
+                        text-center lg:text-start"
+                        //drop-shadow-[4px_4px_0_rgba(0,0,0,0.25)]
                     >
                         Мебели по поръчка,<br />изработени специално за теб
                     </h1>
@@ -47,7 +48,8 @@ const Hero = () => {
                             href='#contact'
                             id='btn_hero'
                             className="mb-6 md:mb-0 md:me-[2.6rem] px-4 py-2 md:px-6 md:py-4 rounded-2xl md:rounded-3xl border-white border-2 border-solid border-opacity-100 bg-transparent 
-                            hover:scale-105 hover:bg-[#FF3131] transition duration-200 ease-in-out flex justify-center items-center cursor-pointer shadow-[5px_5px_0_rgba(0,0,0,0.25)]"
+                            hover:scale-105 hover:bg-[#F30010] transition duration-200 ease-in-out flex justify-center items-center cursor-pointer"
+                            //shadow-[5px_5px_0_rgba(0,0,0,0.25)]
                         >
                             <p className="text-white text-center text-lg md:text-[1.375rem] 2xl:text-2xl font-semibold tracking-normal lg:tracking-wide">Направи заявка</p>
                         </Link>

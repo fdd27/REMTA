@@ -27,7 +27,8 @@ const Footer = () => {
     }
 
     return (
-        <div className="flex-initial bottom-0 left-0 right-0 w-full bg-[rgba(255,116,72,0.75)] px-4 md:px-16 xl:px-24 2xl:px-44">
+        // bg-[rgba(255,116,72,0.75)]
+        <div className="flex-initial bottom-0 left-0 right-0 w-full bg-[#1e1e1e] px-4 md:px-16 xl:px-24 2xl:px-44">
             <div className="w-full flex flex-col lg:flex-row gap-2 lg:gap-0 justify-between items-center py-1 lg:py-8">
 
                 {/* email */}

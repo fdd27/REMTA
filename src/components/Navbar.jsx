@@ -4,10 +4,9 @@ import Image from "next/image"
 import Link from "next/link"
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import { useState } from 'react'
-import logo from "../assets/logo.svg"
+import logo from "../assets/Remta_logo.png"
 import fbOrange from "../assets/fbicon.png"
 import fbBrown from '../assets/fbiconbrown.png'
-import fb_m from '../assets/fbiconMobile.png'
 
 const Navbar = ({ color, shadow, mobile_menu_col, fbIcon }) => {
     const [nav, setNav] = useState(false)
@@ -30,8 +29,8 @@ const Navbar = ({ color, shadow, mobile_menu_col, fbIcon }) => {
                         className="max-w-full h-auto hover:scale-110 transition duration-200 ease-in-out"
                     />
                 </Link>
-                {/* Navigation buttons */}
-                <ul className={`hidden lg:flex text-[${color}] ${shadow}`}>
+                {/* Navigation buttons, removed ${shadow} */}
+                <ul className={`hidden lg:flex text-[${color}]`}>
                     <li className="p-8 text-2xl font-bold hover:underline underline-offset-8 hover:scale-110 transition duration-200 ease-in-out">
                         <Link href='/#home' className="cursor-pointer">Начало</Link>
                     </li>
@@ -49,7 +48,7 @@ const Navbar = ({ color, shadow, mobile_menu_col, fbIcon }) => {
                     rel="noopener noreferrer"
                     target="_blank"
                 >
-                    <Image src={fbIcon ? fbOrange : fbBrown} alt='Facebook' width='3rem' height='3rem' className={`max-w-full h-auto ${shadow}`} loading="eager" />
+                    <Image src={fbIcon ? fbOrange : fbBrown} alt='Facebook' width='3rem' height='3rem' className={`max-w-full h-auto`} loading="eager" />
                 </Link>
 
                 {/* Mobile Button */}
@@ -73,7 +72,7 @@ const Navbar = ({ color, shadow, mobile_menu_col, fbIcon }) => {
                         </li>
                         <li className="flex justify-center items-center p-8">
                             <Link href='https://www.facebook.com/RemtaDesign' rel="noopener noreferrer" target="_blank">
-                                <Image src={fb_m} alt='Facebook' width='3rem' height='3rem' className="max-w-full h-auto" loading="eager" />
+                                <Image src={fbBrown} alt='Facebook' width='3rem' height='3rem' className="max-w-full h-auto" loading="eager" />
                             </Link>
                         </li>
                     </ul>

@@ -53,11 +53,14 @@ const Services = () => {
             </p>
 
             {/* Container */}
-            <div className="flex flex-col lg:flex-row lg:flex-wrap justify-between gap-y-6 lg:gap-y-10">
+            <div className="flex flex-col xl:flex-row xl:flex-wrap justify-between gap-y-6 xl:gap-y-10">
                 {/* Service 1 */}
-                <div className="w-full lg:w-[49%] flex flex-row items-center p-6 bg-[rgba(255,255,255,0.6)] rounded-[1.25rem] shadow-[7px_7px_0_rgba(255,110,65,0.55)]">
+                <div className="w-full xl:w-[49%] flex flex-row items-center p-6 bg-[rgba(255,255,255,0.6)] rounded-[1.25rem] shadow-[7px_7px_0_rgba(255,49,49,0.55)]">
                     {/* border and image */}
-                    <div className="flex flex-shrink-0 justify-center items-center mr-6 w-24 h-24 md:w-48 md:h-48 xl:w-48 xl:h-48 rounded-[2.2rem_0] md:rounded-[4rem_0] lg:rounded-[5.5rem_0] xl:rounded-[5rem_0] border-2 border-solid border-[#FF6E41] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]">
+                    <div
+                        className="flex flex-shrink-0 justify-center items-center mr-6 w-24 h-24 md:w-48 md:h-48 xl:w-48 xl:h-48 rounded-[2.2rem_0] md:rounded-[4rem_0] lg:rounded-[5.5rem_0] 
+                        xl:rounded-[5rem_0] border-2 border-solid border-[#FF3131] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
+                    >
                         <div
                             className="relative w-12 h-12 md:w-24 md:h-24 xl:w-[7.5rem] xl:h-[7.5rem]"
                         >
@@ -72,7 +75,7 @@ const Services = () => {
                     {/* text */}
                     <div className="flex flex-col flex-auto justify-start items-start h-full">
                         <h1
-                            className="w-full mb-2 text-start text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium leading-5 sm:leading-[3rem] 
+                            className="w-full mb-2 xl:mb-4 text-start text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium leading-5 sm:leading-[3rem] xl:leading-8
                             lg:tracking-[0.03125rem]"
                         >
                             {services[0].title}
@@ -82,11 +85,11 @@ const Services = () => {
                 </div>
 
                 {/* Service 2 */}
-                <div className="w-full lg:w-[49%] flex flex-row items-center p-6 bg-[rgba(255,255,255,0.6)] rounded-[1.25rem] shadow-[7px_7px_0_rgba(255,110,65,0.55)]">
+                <div className="w-full xl:w-[49%] flex flex-row items-center p-6 bg-[rgba(255,255,255,0.6)] rounded-[1.25rem] shadow-[7px_7px_0_rgba(255,49,49,0.55)]">
                     {/* border and image */}
                     <div
                         className="flex flex-shrink-0 justify-center items-center mr-6 w-24 h-24 md:w-48 md:h-48 xl:w-48 xl:h-48 rounded-[2.2rem_0] md:rounded-[4rem_0] lg:rounded-[5.5rem_0] 
-                        xl:rounded-[5rem_0] border-2 border-solid border-[#FF6E41] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
+                        xl:rounded-[5rem_0] border-2 border-solid border-[#FF3131] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
                     >
                         <div className="relative w-12 h-12 md:w-24 md:h-24 xl:w-[7.5rem] xl:h-[7.5rem]">
                             <Image
@@ -100,7 +103,7 @@ const Services = () => {
                     {/* text */}
                     <div className="flex flex-col flex-auto justify-start items-start h-full">
                         <h1
-                            className="w-full text-start mb-2 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium leading-5 sm:leading-[3rem] 
+                            className="w-full text-start mb-2 xl:mb-4 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium leading-5 sm:leading-[3rem] xl:leading-8 
                             lg:tracking-[0.03125rem]"
                         >
                             {services[1].title}
@@ -110,11 +113,11 @@ const Services = () => {
                 </div>
 
                 {/* Service 3 */}
-                <div className="w-full lg:w-[49%] flex flex-row items-center p-6 bg-[rgba(255,255,255,0.6)] rounded-[1.25rem] shadow-[7px_7px_0_rgba(255,110,65,0.55)]">
+                <div className="w-full xl:w-[49%] flex flex-row items-center p-6 bg-[rgba(255,255,255,0.6)] rounded-[1.25rem] shadow-[7px_7px_0_rgba(255,49,49,0.55)]">
                     {/* border and image */}
                     <div
                         className="flex flex-shrink-0 justify-center items-center mr-6 w-24 h-24 md:w-48 md:h-48 xl:w-48 xl:h-48 rounded-[2.2rem_0] md:rounded-[4rem_0] lg:rounded-[5.5rem_0] 
-                        xl:rounded-[5rem_0] border-2 border-solid border-[#FF6E41] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
+                        xl:rounded-[5rem_0] border-2 border-solid border-[#FF3131] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
                     >
                         <div className="relative w-12 h-12 md:w-24 md:h-24 xl:w-[7.5rem] xl:h-[7.5rem]">
                             <Image
@@ -128,7 +131,7 @@ const Services = () => {
                     {/* text */}
                     <div className="flex flex-col flex-auto justify-start items-start h-full">
                         <h1
-                            className="w-full text-start mb-2 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium leading-5 sm:leading-[3rem] 
+                            className="w-full text-start mb-2 xl:mb-4 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium leading-5 sm:leading-[3rem] xl:leading-8
                             lg:tracking-[0.03125rem]"
                         >
                             {services[2].title}
@@ -138,11 +141,11 @@ const Services = () => {
                 </div>
 
                 {/* Service 4 */}
-                <div className="w-full lg:w-[49%] flex flex-row items-center p-6 bg-[rgba(255,255,255,0.6)] rounded-[1.25rem] shadow-[7px_7px_0_rgba(255,110,65,0.55)]">
+                <div className="w-full xl:w-[49%] flex flex-row items-center p-6 bg-[rgba(255,255,255,0.6)] rounded-[1.25rem] shadow-[7px_7px_0_rgba(255,49,49,0.55)]">
                     {/* border and image */}
                     <div
                         className="flex flex-shrink-0 justify-center items-center mr-6 w-24 h-24 md:w-48 md:h-48 xl:w-48 xl:h-48 rounded-[2.2rem_0] md:rounded-[4rem_0] lg:rounded-[5.5rem_0] 
-                        xl:rounded-[5rem_0] border-2 border-solid border-[#FF6E41] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
+                        xl:rounded-[5rem_0] border-2 border-solid border-[#FF3131] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
                     >
                         <div className="relative w-12 h-12 md:w-24 md:h-24 xl:w-[7.5rem] xl:h-[7.5rem]">
                             <Image
@@ -156,7 +159,7 @@ const Services = () => {
                     {/* text */}
                     <div className="flex flex-col flex-auto justify-start items-start h-full">
                         <h1
-                            className="w-full text-start mb-2 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium leading-5 sm:leading-[3rem] 
+                            className="w-full text-start mb-2 xl:mb-4 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium leading-5 sm:leading-[3rem] xl:leading-8
                             lg:tracking-[0.03125rem]"
                         >
                             {services[3].title}
@@ -166,11 +169,11 @@ const Services = () => {
                 </div>
 
                 {/* Service 5 */}
-                <div className="w-full lg:w-[49%] mx-auto flex flex-row items-center p-6 bg-[rgba(255,255,255,0.6)] rounded-[1.25rem] shadow-[7px_7px_0_rgba(255,110,65,0.55)]">
+                <div className="w-full xl:w-[49%] mx-auto flex flex-row items-center p-6 bg-[rgba(255,255,255,0.6)] rounded-[1.25rem] shadow-[7px_7px_0_rgba(255,49,49,0.55)]">
                     {/* border and image */}
                     <div
                         className="flex flex-shrink-0 justify-center items-center mr-6 w-24 h-24 md:w-48 md:h-48 xl:w-48 xl:h-48 rounded-[2.2rem_0] md:rounded-[4rem_0] lg:rounded-[5.5rem_0] 
-                        xl:rounded-[5rem_0] border-2 border-solid border-[#FF6E41] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
+                        xl:rounded-[5rem_0] border-2 border-solid border-[#FF3131] bg-white shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
                     >
                         <div className="relative w-12 h-12 md:w-24 md:h-24 xl:w-[7.5rem] xl:h-[7.5rem]">
                             <Image
@@ -184,7 +187,7 @@ const Services = () => {
                     {/* text */}
                     <div className="flex flex-col flex-auto justify-start items-start h-full">
                         <h1
-                            className="w-full text-start mb-2 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium leading-5 sm:leading-[3rem] 
+                            className="w-full text-start mb-2 xl:mb-4 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium leading-5 sm:leading-[3rem] xl:leading-8
                             lg:tracking-[0.03125rem]"
                         >
                             {services[4].title}

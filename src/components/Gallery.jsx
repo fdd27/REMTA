@@ -2,7 +2,6 @@
 
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
-import Link from "next/link"
 import Image from "next/image"
 
 import img1 from "../assets/gallery/img1.jpg"

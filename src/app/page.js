@@ -7,7 +7,7 @@ import Services from "@/components/Services"
 export default function Home() {
   return (
     // removed snap-y snap-mandatory overflow-y-scroll h-screen
-    <div className="w-full bg-[url('../assets/bg.svg')] bg-top bg-no-repeat bg-cover">
+    <div className="w-full bg-[#EEF1F4] bg-top bg-no-repeat bg-cover">
       <Hero />
       <Services />
       <Technologies />
