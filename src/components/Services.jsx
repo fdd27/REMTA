@@ -42,7 +42,7 @@ const Services = () => {
     ]
 
     return (
-        <section id="services" className="flex flex-col w-full px-4 md:px-16 xl:px-24 2xl:px-72 snap-start snap-always">
+        <section id="services" className="flex flex-col w-full px-4 md:px-16 xl:px-24 2xl:px-60 snap-start snap-always">
             <h1 className="text-[#56423E] text-center text-3xl md:text-4xl xl:text-[2.5rem] 2xl:text-[2.8125rem] font-semibold leading-[3rem] tracking-wider my-8 lg:my-20">
                 Как работи всичко
             </h1>

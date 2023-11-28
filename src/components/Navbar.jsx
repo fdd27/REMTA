@@ -19,7 +19,7 @@ const Navbar = ({ color, shadow, mobile_menu_col, fbIcon }) => {
         <div className="relative w-full left-0 top-0 right-0 z-10 ease-in duration-300 flex-initial">
             <div className="m-auto flex justify-end lg:justify-center items-center p-4 text-white">
                 {/* Logo */}
-                <Link href='/' className="absolute left-4 md:left-16 xl:left-24 2xl:left-72 top-3 lg:top-2 w-[3.75rem] h-[3.75rem] md:w-16 md:h-16 lg:w-20 lg:h-20">
+                <Link href='/' className="absolute left-4 md:left-16 xl:left-24 2xl:left-60 top-3 lg:top-2 w-[3.75rem] h-[3.75rem] md:w-16 md:h-16 lg:w-20 lg:h-20">
                     <Image
                         src={logo}
                         alt='REMTA'
@@ -29,7 +29,7 @@ const Navbar = ({ color, shadow, mobile_menu_col, fbIcon }) => {
                         className="max-w-full h-auto hover:scale-110 transition duration-200 ease-in-out"
                     />
                 </Link>
-                {/* Navigation buttons, removed ${shadow} */}
+                {/* Navigation buttons */}
                 <ul className={`hidden lg:flex text-[${color}]`}>
                     <li className="p-8 text-2xl font-bold hover:underline underline-offset-8 hover:scale-110 transition duration-200 ease-in-out">
                         <Link href='/#home' className="cursor-pointer">Начало</Link>
@@ -44,7 +44,7 @@ const Navbar = ({ color, shadow, mobile_menu_col, fbIcon }) => {
                 {/* Facebook button */}
                 <Link
                     href='https://www.facebook.com/RemtaDesign'
-                    className={`hidden lg:block absolute right-4 lg:right-16 xl:right-24 2xl:right-72 top-8 hover:scale-110 transition duration-200 ease-in-out`}
+                    className={`hidden lg:block absolute right-4 lg:right-16 xl:right-24 2xl:right-60 top-8 hover:scale-110 transition duration-200 ease-in-out`}
                     rel="noopener noreferrer"
                     target="_blank"
                 >

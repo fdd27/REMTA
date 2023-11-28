@@ -20,7 +20,7 @@ const Hero = () => {
             <Navbar color='#ffffff' shadow='drop-shadow-[0_4px_0_rgba(0,0,0,0.25)]' mobile_menu_col='#ffffff' fbIcon={true} />
 
             {/* Hero container */}
-            <div className="w-full flex px-4 md:px-16 xl:px-24 2xl:px-72 flex-auto">
+            <div className="w-full flex px-4 md:px-16 xl:px-24 2xl:px-60 flex-auto">
 
                 {/* Left Half */}
                 <div className="w-full lg:w-[51%] flex flex-col gap-y-6 md:gap-y-28 lg:gap-y-0 justify-center items-center lg:items-start lg:pr-3">
@@ -28,7 +28,6 @@ const Hero = () => {
                     <h1
                         className="lg:pe-12 text-white text-3xl md:text-4xl xl:text-[2.65rem] 2xl:text-5xl font-bold leading-8 md:leading-[3rem] tracking-wider 
                         text-center lg:text-start"
-                        //drop-shadow-[4px_4px_0_rgba(0,0,0,0.25)]
                     >
                         Мебели по поръчка,<br />изработени специално за теб
                     </h1>
@@ -49,7 +48,6 @@ const Hero = () => {
                             id='btn_hero'
                             className="mb-6 md:mb-0 md:me-[2.6rem] px-4 py-2 md:px-6 md:py-4 rounded-2xl md:rounded-3xl border-white border-2 border-solid border-opacity-100 bg-transparent 
                             hover:scale-105 hover:bg-[#F30010] transition duration-200 ease-in-out flex justify-center items-center cursor-pointer"
-                            //shadow-[5px_5px_0_rgba(0,0,0,0.25)]
                         >
                             <p className="text-white text-center text-lg md:text-[1.375rem] 2xl:text-2xl font-semibold tracking-normal lg:tracking-wide">Направи заявка</p>
                         </Link>

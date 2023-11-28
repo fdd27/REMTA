@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, Fragment } from "react"
+import { useState } from "react"
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 import { Raleway } from "next/font/google"
@@ -170,7 +170,7 @@ const Technologies = () => {
     ]
 
     return (
-        <section id="technologies" className="h-full lg:h-fit flex flex-col w-full px-4 md:px-16 xl:px-24 2xl:px-72 pb-32 lg:pb-0 snap-start snap-always">
+        <section id="technologies" className="h-full lg:h-fit flex flex-col w-full px-4 md:px-16 xl:px-24 2xl:px-60 pb-32 lg:pb-0 snap-start snap-always">
 
             <Dialog
                 open={isOpen}
@@ -184,13 +184,15 @@ const Technologies = () => {
                 <div className="fixed inset-0 w-screen overflow-y-auto">
                     {/* Container to center the panel */}
                     <div className="flex min-h-full items-center justify-center p-4">
-                        <Dialog.Panel className="mx-auto max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-5xl rounded bg-white">
+                        <Dialog.Panel className="mx-auto max-w-xs md:max-w-xl lg:max-w-4xl xl:max-w-5xl rounded bg-white">
+                            <span onClick={() => setIsOpen(false)} className="absolute top-0 right-4 lg:right-8 text-5xl lg:text-7xl font-extrabold text-white cursor-pointer z-50 hover:scale-110 transition duration-200 ease-in-out">&times;</span>
                             <Tab.Group>
-                                <Tab.List className='flex justify-center'>
+                                <Tab.List className='flex flex-col lg:flex-row justify-center'>
                                     {Object.keys(technologies[techIndex]).map((k, i) =>
                                         <Tab
                                             key={i}
-                                            className='p-4 text-xl font-semibold underline-offset-8 ui-selected:text-red ui-selected:underline ui-not-selected:text-brown ui-not-selected:no-underline'
+                                            className='p-2 md:p-4 text-xl font-semibold underline-offset-4 md:underline-offset-8 ui-selected:text-red ui-selected:underline ui-not-selected:text-brown 
+                                            ui-not-selected:no-underline hover:scale-105 transition duration-200 ease-in-out'
                                         >{k}</Tab>
                                     )}
                                 </Tab.List>
@@ -198,8 +200,8 @@ const Technologies = () => {
                                     {Object.values(technologies[techIndex]).map((arr, i) => (
                                         <Tab.Panel key={i} className='flex flex-row flex-wrap gap-6 justify-center'>
                                             {arr.map((obj, j) => (
-                                                <div key={j} className=" max-w-[7rem] md:max-w-[11rem] lg:max-w-[13rem]">
-                                                    <div className="relative w-28 h-28 md:w-44 md:h-44 lg:w-52 lg:h-52">
+                                                <div key={j} className="max-w-[5rem] md:max-w-[9rem] lg:max-w-[13rem]">
+                                                    <div className="relative w-20 h-20 md:w-36 md:h-36 lg:w-52 lg:h-52">
                                                         <Image
                                                             src={obj.img}
                                                             alt={obj.name}
@@ -207,7 +209,7 @@ const Technologies = () => {
                                                             sizes="(max-width: 768px) 70vw, (max-width: 1200px) 50vw, 15vw"
                                                         />
                                                     </div>
-                                                    <p className={`${raleway.className} text-xs md:text-sm lg:text-base text-center`}>{obj.name}</p>
+                                                    <p className={`${raleway.className} text-[0.6rem] md:text-sm lg:text-base text-center`}>{obj.name}</p>
                                                 </div>
                                             ))}
                                         </Tab.Panel>
@@ -322,7 +324,7 @@ const Technologies = () => {
                             <p className={`mb-2 text-[#56423E] text-center lg:text-justify text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl ${raleway.className}`}>{slides[currentSlide].text}</p>
                             {/* Colors and materials button */}
                             <button
-                                className="mb-2 text-xl text-brown font-medium underline-offset-4 hover:text-red hover:underline transition duration-200 ease-in-out"
+                                className="mx-auto lg:mx-0 mb-2 text-xs md:text-base lg:text-lg xl:text-xl text-brown font-medium underline-offset-4 hover:text-red hover:underline transition duration-200 ease-in-out"
                                 onClick={() => {
                                     setTechIndex(currentSlide)
                                     setIsOpen(true)
@@ -407,7 +409,7 @@ const Technologies = () => {
                             <p className={`mb-2 text-[#56423E] text-center lg:text-justify text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl ${raleway.className}`}>{slides[currentSlide].text}</p>
                             {/* Colors and materials button */}
                             <button
-                                className="mb-2 text-xl text-brown font-medium underline-offset-4 hover:text-red hover:underline transition duration-200 ease-in-out"
+                                className="mx-auto lg:mx-0 mb-2 text-xs md:text-base lg:text-lg xl:text-xl text-brown font-medium underline-offset-4 hover:text-red hover:underline transition duration-200 ease-in-out"
                                 onClick={() => {
                                     setTechIndex(currentSlide)
                                     setIsOpen(true)

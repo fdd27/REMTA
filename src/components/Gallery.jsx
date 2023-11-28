@@ -3,6 +3,8 @@
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 import Image from "next/image"
+import { useState } from "react"
+import { Dialog } from "@headlessui/react"
 
 import img1 from "../assets/gallery/img1.jpg"
 import img2 from "../assets/gallery/img2.jpg"
@@ -28,7 +30,8 @@ import img21 from "../assets/gallery/img21.jpg"
 import img22 from "../assets/gallery/img22.jpg"
 import img23 from "../assets/gallery/img23.jpg"
 import img24 from "../assets/gallery/img24.jpg"
-import PopupImage from "./PopupImage"
+
+const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23, img24]
 
 function ThumbnailPlugin(mainRef) {
     return (slider) => {
@@ -78,483 +81,74 @@ const Gallery = () => {
         [ThumbnailPlugin(instanceRef)]
     )
 
-    const imageClick = (e) => {
-        document.getElementById('popup').classList.toggle('visible')
-        document.getElementById('popupImage').src = e.currentTarget.src
-    }
+    let [isOpen, setIsOpen] = useState(false)
+    const [fsImage, setFsImage] = useState(null)
 
     return (
-        <section id="gallery" className="w-full px-4 md:px-16 xl:px-24 2xl:px-72">
+        <section id="gallery" className="w-full px-4 md:px-16 xl:px-24 2xl:px-60">
+            {/* Dialog to show image pop up */}
+            <Dialog
+                open={isOpen}
+                onClose={() => setIsOpen(false)}
+                className="relative z-50"
+            >
+                {/* The backdrop, rendered as a fixed sibling to the panel container */}
+                <div className="fixed inset-0 bg-black/80" aria-hidden="true" />
+
+                {/* Full-screen scrollable container */}
+                <div className="fixed inset-0 w-screen overflow-y-auto">
+
+                    {/* Container to center the panel */}
+                    <div className="flex min-h-full items-center justify-center p-4">
+                        <Dialog.Panel className="mx-auto max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-5xl rounded bg-white">
+                            <span onClick={() => setIsOpen(false)} className="absolute top-0 right-4 lg:right-8 text-5xl lg:text-7xl font-extrabold text-white cursor-pointer z-50 hover:scale-110 transition duration-200 ease-in-out">&times;</span>
+                            <Image src={fsImage} alt="" className="rounded-md" />
+                        </Dialog.Panel>
+                    </div>
+                </div>
+            </Dialog>
+
             <h1 className="text-[#56423E] text-center text-3xl md:text-4xl xl:text-[2.5rem] 2xl:text-[2.8125rem] font-semibold leading-[3rem] tracking-wider mt-0 mb-8 lg:my-24">
                 Галерия
             </h1>
 
             {/* Slider pics */}
             <div ref={sliderRef} className="keen-slider">
-                <div className="keen-slider__slide img-slide1 cursor-pointer">
-                    <Image
-                        src={img1}
-                        alt=""
-                        fill
-                        sizes="100vw"
-                        className=" object-cover"
-                        onClick={e => imageClick(e)}
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide2 cursor-pointer">
-                    <Image
-                        src={img2}
-                        alt=""
-                        fill
-                        sizes="100vw"
-                        className=" object-cover"
-                        onClick={e => imageClick(e)}
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide3 cursor-pointer">
-                    <Image
-                        src={img3}
-                        alt=""
-                        fill
-                        sizes="100vw"
-                        className=" object-cover"
-                        onClick={e => imageClick(e)}
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide4 cursor-pointer">
-                    <Image
-                        src={img4}
-                        alt=""
-                        fill
-                        sizes="100vw"
-                        className=" object-cover"
-                        onClick={e => imageClick(e)}
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide5 cursor-pointer">
-                    <Image
-                        src={img5}
-                        alt=""
-                        fill
-                        sizes="100vw"
-                        className=" object-cover"
-                        onClick={e => imageClick(e)}
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img6}
-                        alt=""
-                        fill
-                        sizes="100vw"
-                        className=" object-cover"
-                        onClick={e => imageClick(e)}
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img7}
-                        alt=""
-                        fill
-                        sizes="100vw"
-                        className=" object-cover"
-                        onClick={e => imageClick(e)}
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img8}
-                        alt=""
-                        fill
-                        sizes="100vw"
-                        className=" object-cover"
-                        onClick={e => imageClick(e)}
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img9}
-                        alt=""
-                        fill
-                        sizes="100vw"
-                        className=" object-cover"
-                        onClick={e => imageClick(e)}
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img10}
-                        alt=""
-                        fill
-                        sizes="100vw"
-                        className=" object-cover"
-                        onClick={e => imageClick(e)}
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img11}
-                        alt=""
-                        fill
-                        sizes="100vw"
-                        className=" object-cover"
-                        onClick={e => imageClick(e)}
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img12}
-                        alt=""
-                        fill
-                        sizes="100vw"
-                        className=" object-cover"
-                        onClick={e => imageClick(e)}
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img13}
-                        alt=""
-                        fill
-                        sizes="100vw"
-                        className=" object-cover"
-                        onClick={e => imageClick(e)}
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img14}
-                        alt=""
-                        fill
-                        sizes="100vw"
-                        className=" object-cover"
-                        onClick={e => imageClick(e)}
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img15}
-                        alt=""
-                        fill
-                        sizes="100vw"
-                        className=" object-cover"
-                        onClick={e => imageClick(e)}
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img16}
-                        alt=""
-                        fill
-                        sizes="100vw"
-                        className=" object-cover"
-                        onClick={e => imageClick(e)}
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img17}
-                        alt=""
-                        fill
-                        sizes="100vw"
-                        className=" object-cover"
-                        onClick={e => imageClick(e)}
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img18}
-                        alt=""
-                        fill
-                        sizes="100vw"
-                        className=" object-cover"
-                        onClick={e => imageClick(e)}
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img19}
-                        alt=""
-                        fill
-                        sizes="100vw"
-                        className=" object-cover"
-                        onClick={e => imageClick(e)}
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img20}
-                        alt=""
-                        fill
-                        sizes="100vw"
-                        className=" object-cover"
-                        onClick={e => imageClick(e)}
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img21}
-                        alt=""
-                        fill
-                        sizes="100vw"
-                        className=" object-cover"
-                        onClick={e => imageClick(e)}
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img22}
-                        alt=""
-                        fill
-                        sizes="100vw"
-                        className=" object-cover"
-                        onClick={e => imageClick(e)}
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img23}
-                        alt=""
-                        fill
-                        sizes="100vw"
-                        className=" object-cover"
-                        onClick={e => imageClick(e)}
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img24}
-                        alt=""
-                        fill
-                        sizes="100vw"
-                        className=" object-cover"
-                        onClick={e => imageClick(e)}
-                    />
-                </div>
+                {images.map((img, i) => {
+                    return (
+                        <div key={i} className={`keen-slider__slide img-slide${i} cursor-pointer`}>
+                            <Image
+                                src={img}
+                                alt=""
+                                fill
+                                sizes="(max-width: 1200px) 100vw, 70vw"
+                                className="object-cover"
+                                onClick={() => {
+                                    setFsImage(img)
+                                    setIsOpen(true)
+                                }}
+                            />
+                        </div>
+                    )
+                })}
             </div>
 
             {/* Thumbnails */}
             <div ref={thumbnailRef} className="keen-slider thumbnail lg:mb-24">
-                <div className="keen-slider__slide img-slide1 cursor-pointer">
-                    <Image
-                        src={img1}
-                        alt=""
-                        fill
-                        sizes="20vw"
-                        className=" object-cover"
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide2 cursor-pointer">
-                    <Image
-                        src={img2}
-                        alt=""
-                        fill
-                        sizes="20vw"
-                        className=" object-cover"
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide3 cursor-pointer">
-                    <Image
-                        src={img3}
-                        alt=""
-                        fill
-                        sizes="20vw"
-                        className=" object-cover"
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide4 cursor-pointer">
-                    <Image
-                        src={img4}
-                        alt=""
-                        fill
-                        sizes="20vw"
-                        className=" object-cover"
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide5 cursor-pointer">
-                    <Image
-                        src={img5}
-                        alt=""
-                        fill
-                        sizes="20vw"
-                        className=" object-cover"
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img6}
-                        alt=""
-                        fill
-                        sizes="20vw"
-                        className=" object-cover"
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img7}
-                        alt=""
-                        fill
-                        sizes="20vw"
-                        className=" object-cover"
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img8}
-                        alt=""
-                        fill
-                        sizes="20vw"
-                        className=" object-cover"
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img9}
-                        alt=""
-                        fill
-                        sizes="20vw"
-                        className=" object-cover"
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img10}
-                        alt=""
-                        fill
-                        sizes="20vw"
-                        className=" object-cover"
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img11}
-                        alt=""
-                        fill
-                        sizes="20vw"
-                        className=" object-cover"
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img12}
-                        alt=""
-                        fill
-                        sizes="20vw"
-                        className=" object-cover"
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img13}
-                        alt=""
-                        fill
-                        sizes="20vw"
-                        className=" object-cover"
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img14}
-                        alt=""
-                        fill
-                        sizes="20vw"
-                        className=" object-cover"
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img15}
-                        alt=""
-                        fill
-                        sizes="20vw"
-                        className=" object-cover"
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img16}
-                        alt=""
-                        fill
-                        sizes="20vw"
-                        className=" object-cover"
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img17}
-                        alt=""
-                        fill
-                        sizes="20vw"
-                        className=" object-cover"
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img18}
-                        alt=""
-                        fill
-                        sizes="20vw"
-                        className=" object-cover"
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img19}
-                        alt=""
-                        fill
-                        sizes="20vw"
-                        className=" object-cover"
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img20}
-                        alt=""
-                        fill
-                        sizes="20vw"
-                        className=" object-cover"
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img21}
-                        alt=""
-                        fill
-                        sizes="20vw"
-                        className=" object-cover"
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img22}
-                        alt=""
-                        fill
-                        sizes="20vw"
-                        className=" object-cover"
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img23}
-                        alt=""
-                        fill
-                        sizes="20vw"
-                        className=" object-cover"
-                    />
-                </div>
-                <div className="keen-slider__slide img-slide6 cursor-pointer">
-                    <Image
-                        src={img24}
-                        alt=""
-                        fill
-                        sizes="20vw"
-                        className=" object-cover"
-                    />
-                </div>
+                {images.map((img, i) => {
+                    return (
+                        <div key={i} className={`keen-slider__slide img-slide${i} cursor-pointer`}>
+                            <Image
+                                src={img}
+                                alt=""
+                                fill
+                                sizes="20vw"
+                                className="object-cover"
+                            />
+                        </div>
+                    )
+                })}
             </div>
-
-            {/* Pop-up Image component for when an image is clicked */}
-            <PopupImage />
         </section>
     )
 }
