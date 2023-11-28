@@ -1,17 +1,59 @@
 'use client'
 
-import { useState } from "react"
+import { useState, Fragment } from "react"
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 import { Raleway } from "next/font/google"
 import Image from "next/image"
 import Link from "next/link"
+import { Dialog, Tab } from "@headlessui/react"
 
 import tableTops from '../assets/tableTops.png'
 import drawers from '../assets/drawers.png'
 import handlesAndDoors from '../assets/handlesAndDoors.png'
 import electronics from '../assets/electronics.png'
 import doors from '../assets/doors.jpg'
+import mdf1 from '../assets/tableTops/mdf/1.jpg'
+import mdf2 from '../assets/tableTops/mdf/2.jpg'
+import mdf3 from '../assets/tableTops/mdf/3.jpg'
+import mdf4 from '../assets/tableTops/mdf/4.jpg'
+import mdf5 from '../assets/tableTops/mdf/5.jpg'
+import mdf6 from '../assets/tableTops/mdf/6.jpg'
+import mdf7 from '../assets/tableTops/mdf/7.jpg'
+import mdf8 from '../assets/tableTops/mdf/8.jpg'
+import mdf9 from '../assets/tableTops/mdf/9.jpg'
+import pdch1 from '../assets/tableTops/pdch/1.jpg'
+import pdch2 from '../assets/tableTops/pdch/2.jpg'
+import pdch3 from '../assets/tableTops/pdch/3.jpg'
+import pdch4 from '../assets/tableTops/pdch/4.jpg'
+import pdch5 from '../assets/tableTops/pdch/5.jpg'
+import pdch6 from '../assets/tableTops/pdch/6.jpg'
+import pdch7 from '../assets/tableTops/pdch/7.jpg'
+import pdch8 from '../assets/tableTops/pdch/8.jpg'
+import pdch9 from '../assets/tableTops/pdch/9.jpg'
+import dh_al_ec1 from '../assets/drawerHandles/aluminium_eco/1.jpg'
+import dh_al_ec2 from '../assets/drawerHandles/aluminium_eco/2.jpg'
+import dh_al_ec3 from '../assets/drawerHandles/aluminium_eco/3.jpg'
+import dh_m1 from '../assets/drawerHandles/metal/1.jpg'
+import dh_m2 from '../assets/drawerHandles/metal/2.jpg'
+import dh_m3 from '../assets/drawerHandles/metal/3.jpg'
+import df1 from '../assets/drawerFaces/1.jpg'
+import df2 from '../assets/drawerFaces/2.jpg'
+import df3 from '../assets/drawerFaces/3.jpg'
+import df4 from '../assets/drawerFaces/4.jpg'
+import df5 from '../assets/drawerFaces/5.jpg'
+import df6 from '../assets/drawerFaces/6.jpg'
+import df7 from '../assets/drawerFaces/7.jpg'
+import df8 from '../assets/drawerFaces/8.jpg'
+import df9 from '../assets/drawerFaces/9.jpg'
+import df10 from '../assets/drawerFaces/10.jpg'
+import df11 from '../assets/drawerFaces/11.jpg'
+import d_pvc1 from '../assets/doors/pvc/1.png'
+import d_pvc2 from '../assets/doors/pvc/2.png'
+import d_pvc3 from '../assets/doors/pvc/3.png'
+import d_mel1 from '../assets/doors/melamine/1.png'
+import d_mel2 from '../assets/doors/melamine/2.png'
+import d_mel3 from '../assets/doors/melamine/3.png'
 
 const raleway = Raleway({
     subsets: ['cyrillic'],
@@ -30,6 +72,9 @@ const Technologies = () => {
             setLoaded(true)
         },
     })
+
+    let [isOpen, setIsOpen] = useState(false)
+    const [techIndex, setTechIndex] = useState(0)
 
     const slides = [
         {
@@ -58,9 +103,121 @@ const Technologies = () => {
             text: "В свят, в който технологията безпроблемно се интегрира във всеки аспект от живота ни, нашите врати не са изключение. Независимо дали става въпрос за отваряне и затваряне без усилие, или за усъвършенствани функции за сигурност, нашите врати са проектирани да се адаптират към Вашите нужди."
         }
     ]
+    const technologies = [
+        {
+            "МДФ": [
+                { img: mdf1, name: "K531 AD Stone Arvadonna Chestnut" },
+                { img: mdf2, name: "K532 AD Flamed Arvadonna Chestnut" },
+                { img: mdf3, name: "K533 AD Mink Arvadonna Chestnut" },
+                { img: mdf4, name: "K534 AD Charcoal Arvadonna Chestnut" },
+                { img: mdf5, name: "K528 HU Cashmere Hudson Oak" },
+                { img: mdf6, name: "K527 HU Biscotti Hudson Oak" },
+                { img: mdf7, name: "K529 HU Gold Hudson Oak" },
+                { img: mdf8, name: "K530 HU Amaretto Hudson Oak" },
+                { img: mdf9, name: "K554 HU Chocolate Hudson Oak" }
+            ],
+            "ПДЧ": [
+                { img: pdch1, name: "K534 AD Charcoal Arvadonna Chestnut" },
+                { img: pdch2, name: "K532 AD Flamed Arvadonna Chestnut" },
+                { img: pdch3, name: "K533 AD Mink Arvadonna Chestnut" },
+                { img: pdch4, name: "K528 HU Cashmere Hudson Oak" },
+                { img: pdch5, name: "K527 HU Biscotti Hudson Oak" },
+                { img: pdch6, name: "K529 HU Gold Hudson Oak" },
+                { img: pdch7, name: "K530 HU Amaretto Hudson Oak" },
+                { img: pdch8, name: "K554 HU Chocolate Hudson Oak" },
+                { img: pdch9, name: "K531 AD Stone Arvadonna Chestnut" }
+            ]
+        },
+        {},
+        {
+            "Алуминиеви еко дръжки": [
+                { img: dh_al_ec1, name: "Алуминиева дръжка 024.05" },
+                { img: dh_al_ec2, name: "Алуминиева дръжка 024.08" },
+                { img: dh_al_ec3, name: "Алуминиева еко дръжка 1005" },
+            ],
+            "Метални дръжки": [
+                { img: dh_m1, name: "Метална дръжка 022" },
+                { img: dh_m2, name: "Метална дръжка 023.096" },
+                { img: dh_m3, name: "Метална дръжка 040" }
+            ],
+            "Вратички с мембраново покритие": [
+                { img: df1, name: "Bm 101" },
+                { img: df2, name: "Bm 103" },
+                { img: df3, name: "Bm 104" },
+                { img: df4, name: "Bm 105" },
+                { img: df5, name: "Bm 106" },
+                { img: df6, name: "Bm 107" },
+                { img: df7, name: "Bm 108" },
+                { img: df8, name: "Bm 109" },
+                { img: df9, name: "Bm 110" },
+                { img: df10, name: "Bm 111" },
+                { img: df11, name: "Bm 112" }
+            ]
+        },
+        {},
+        {
+            "PVC": [
+                { img: d_pvc1, name: "TP 03" },
+                { img: d_pvc2, name: "TP 04" },
+                { img: d_pvc3, name: "TP 06" }
+            ],
+            "Меламин": [
+                { img: d_mel1, name: "MELAMIN 01" },
+                { img: d_mel2, name: "MELAMIN 02" },
+                { img: d_mel3, name: "MELAMIN 03" }
+            ]
+        },
+    ]
 
     return (
         <section id="technologies" className="h-full lg:h-fit flex flex-col w-full px-4 md:px-16 xl:px-24 2xl:px-72 pb-32 lg:pb-0 snap-start snap-always">
+
+            <Dialog
+                open={isOpen}
+                onClose={() => setIsOpen(false)}
+                className="relative z-50"
+            >
+                {/* The backdrop, rendered as a fixed sibling to the panel container */}
+                <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
+
+                {/* Full-screen scrollable container */}
+                <div className="fixed inset-0 w-screen overflow-y-auto">
+                    {/* Container to center the panel */}
+                    <div className="flex min-h-full items-center justify-center p-4">
+                        <Dialog.Panel className="mx-auto max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-5xl rounded bg-white">
+                            <Tab.Group>
+                                <Tab.List className='flex justify-center'>
+                                    {Object.keys(technologies[techIndex]).map((k, i) =>
+                                        <Tab
+                                            key={i}
+                                            className='p-4 text-xl font-semibold underline-offset-8 ui-selected:text-red ui-selected:underline ui-not-selected:text-brown ui-not-selected:no-underline'
+                                        >{k}</Tab>
+                                    )}
+                                </Tab.List>
+                                <Tab.Panels>
+                                    {Object.values(technologies[techIndex]).map((arr, i) => (
+                                        <Tab.Panel key={i} className='flex flex-row flex-wrap gap-6 justify-center'>
+                                            {arr.map((obj, j) => (
+                                                <div key={j} className=" max-w-[7rem] md:max-w-[11rem] lg:max-w-[13rem]">
+                                                    <div className="relative w-28 h-28 md:w-44 md:h-44 lg:w-52 lg:h-52">
+                                                        <Image
+                                                            src={obj.img}
+                                                            alt={obj.name}
+                                                            fill
+                                                            sizes="(max-width: 768px) 70vw, (max-width: 1200px) 50vw, 15vw"
+                                                        />
+                                                    </div>
+                                                    <p className={`${raleway.className} text-xs md:text-sm lg:text-base text-center`}>{obj.name}</p>
+                                                </div>
+                                            ))}
+                                        </Tab.Panel>
+                                    ))}
+                                </Tab.Panels>
+                            </Tab.Group>
+                        </Dialog.Panel>
+                    </div>
+                </div>
+            </Dialog>
 
             <h1 className="text-[#56423E] text-center text-3xl md:text-4xl xl:text-[2.5rem] 2xl:text-[2.8125rem] font-semibold leading-[3rem] tracking-wider mt-14 mb-8 lg:my-24">
                 Технологии
@@ -77,7 +234,7 @@ const Technologies = () => {
                             lg:rounded-[0_5rem] shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
                         >
                             <Image
-                                src={slides[0].img}
+                                src={slides[currentSlide].img}
                                 alt="Плотове"
                                 fill
                                 sizes="(max-width: 1024px) 40vw, 20vw"
@@ -90,14 +247,23 @@ const Technologies = () => {
                                 className="w-full lg:w-fit mb-2 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium lg:leading-[3rem] lg:tracking-[0.03125rem] 
                                 text-center"
                             >
-                                {slides[0].title}
+                                {slides[currentSlide].title}
                             </h1>
-                            <p className={`mb-2 text-[#56423E] text-center lg:text-justify text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl ${raleway.className}`}>{slides[0].text}</p>
-                            <div className="w-full flex flex-col lg:flex-row  mb-2 text-[#56423E] text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl font-medium lg:gap-x-3 text-center">
+                            <p className={`mb-2 text-[#56423E] text-center lg:text-justify text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl ${raleway.className}`}>{slides[currentSlide].text}</p>
+                            {/* Colors and materials button */}
+                            <button
+                                className="mx-auto lg:mx-0 mb-2 text-xs md:text-base lg:text-lg xl:text-xl text-brown font-medium underline-offset-4 hover:text-red hover:underline transition duration-200 ease-in-out"
+                                onClick={() => {
+                                    setTechIndex(currentSlide)
+                                    setIsOpen(true)
+                                }}
+                            >Цветове и Материали</button>
+                            {/* Partners */}
+                            <div className="w-full flex flex-col lg:flex-row mb-2 text-brown text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl font-medium lg:gap-x-3 text-center">
                                 <p>Партньори:</p>
                                 <Link
                                     href='https://kronospan.com/bg_BG/products/view/kronodesign/laminirani-plochi/laminirano-pd-ch/laminirano-pd-ch-1'
-                                    className={`${raleway.className} underline text-[#FF3131] lg:text-[#56423E] lg:hover:text-[#FF3131]`}
+                                    className={`${raleway.className} pt-[0.1rem] underline-offset-4 text-red lg:text-brown lg:hover:text-red hover:underline transition duration-200 ease-in-out`}
                                     rel="noopener noreferrer"
                                     target="_blank"
                                 >Kronospan</Link>
@@ -112,7 +278,7 @@ const Technologies = () => {
                             lg:rounded-[0_5rem] shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
                         >
                             <Image
-                                src={slides[1].img}
+                                src={slides[currentSlide].img}
                                 alt="Чекмеджета"
                                 fill
                                 sizes="(max-width: 1024px) 40vw, 20vw"
@@ -125,9 +291,9 @@ const Technologies = () => {
                                 className="w-full lg:w-fit mb-2 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium lg:leading-[3rem] lg:tracking-[0.03125rem] 
                                 text-center"
                             >
-                                {slides[1].title}
+                                {slides[currentSlide].title}
                             </h1>
-                            <p className={`mb-2 text-[#56423E] text-center lg:text-justify text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl ${raleway.className}`}>{slides[1].text}</p>
+                            <p className={`mb-2 text-[#56423E] text-center lg:text-justify text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl ${raleway.className}`}>{slides[currentSlide].text}</p>
                         </div>
                     </div>
 
@@ -138,7 +304,7 @@ const Technologies = () => {
                             lg:rounded-[0_5rem] shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
                         >
                             <Image
-                                src={slides[2].img}
+                                src={slides[currentSlide].img}
                                 alt="Дръжки и врати"
                                 fill
                                 sizes="(max-width: 1024px) 40vw, 20vw"
@@ -151,20 +317,29 @@ const Technologies = () => {
                                 className="w-full lg:w-fit mb-2 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium lg:leading-[3rem] lg:tracking-[0.03125rem] 
                                 text-center"
                             >
-                                {slides[2].title}
+                                {slides[currentSlide].title}
                             </h1>
-                            <p className={`mb-2 text-[#56423E] text-center lg:text-justify text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl ${raleway.className}`}>{slides[2].text}</p>
+                            <p className={`mb-2 text-[#56423E] text-center lg:text-justify text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl ${raleway.className}`}>{slides[currentSlide].text}</p>
+                            {/* Colors and materials button */}
+                            <button
+                                className="mb-2 text-xl text-brown font-medium underline-offset-4 hover:text-red hover:underline transition duration-200 ease-in-out"
+                                onClick={() => {
+                                    setTechIndex(currentSlide)
+                                    setIsOpen(true)
+                                }}
+                            >Цветове и Материали</button>
+                            {/* Partners */}
                             <div className="w-full flex flex-col lg:flex-row  mb-2 text-[#56423E] text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl font-medium lg:gap-x-3 text-center">
                                 <p>Партньори:</p>
                                 <Link
                                     href='https://lotostrading.com/bg/mebelni-drazhki'
-                                    className={`${raleway.className} underline text-[#FF3131] lg:text-[#56423E] lg:hover:text-[#FF3131]`}
+                                    className={`${raleway.className} pt-[0.1rem] underline-offset-4 text-red lg:text-brown lg:hover:text-red lg:hover:underline transition duration-200 ease-in-out`}
                                     rel="noopener noreferrer"
                                     target="_blank"
                                 >Lotos Trading</Link>
                                 <Link
                                     href='https://berartkapak.com/urunler/membran-kapak.html'
-                                    className={`${raleway.className} underline text-[#FF3131] lg:text-[#56423E] lg:hover:text-[#FF3131]`}
+                                    className={`${raleway.className} pt-[0.1rem] underline-offset-4 text-red lg:text-brown lg:hover:text-red lg:hover:underline transition duration-200 ease-in-out`}
                                     rel="noopener noreferrer"
                                     target="_blank"
                                 >Berart</Link>
@@ -179,7 +354,7 @@ const Technologies = () => {
                             lg:rounded-[0_5rem] shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
                         >
                             <Image
-                                src={slides[3].img}
+                                src={slides[currentSlide].img}
                                 alt="Плотове"
                                 fill
                                 sizes="(max-width: 1024px) 40vw, 20vw"
@@ -192,14 +367,14 @@ const Technologies = () => {
                                 className="w-full lg:w-fit mb-2 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium lg:leading-[3rem] lg:tracking-[0.03125rem] 
                                 text-center"
                             >
-                                {slides[3].title}
+                                {slides[currentSlide].title}
                             </h1>
-                            <p className={`mb-2 text-[#56423E] text-center lg:text-justify text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl ${raleway.className}`}>{slides[3].text}</p>
+                            <p className={`mb-2 text-[#56423E] text-center lg:text-justify text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl ${raleway.className}`}>{slides[currentSlide].text}</p>
                             <div className="w-full flex flex-col lg:flex-row  mb-2 text-[#56423E] text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl font-medium lg:gap-x-3 text-center">
                                 <p>Партньори:</p>
                                 <Link
                                     href='https://www.teka.com/bg-bg/'
-                                    className={`${raleway.className} underline text-[#FF3131] lg:text-[#56423E] lg:hover:text-[#FF3131]`}
+                                    className={`${raleway.className} pt-[0.1rem] underline-offset-4 text-red lg:text-brown lg:hover:text-red lg:hover:underline transition duration-200 ease-in-out`}
                                     rel="noopener noreferrer"
                                     target="_blank"
                                 >Teka</Link>
@@ -214,7 +389,7 @@ const Technologies = () => {
                             lg:rounded-[0_5rem] shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
                         >
                             <Image
-                                src={slides[4].img}
+                                src={slides[currentSlide].img}
                                 alt="Плотове"
                                 fill
                                 sizes="(max-width: 1024px) 40vw, 20vw"
@@ -227,14 +402,23 @@ const Technologies = () => {
                                 className="w-full lg:w-fit mb-2 text-[#56423E] text-[1.15rem] md:text-[1.4rem] 2xl:text-[1.5625rem] font-medium lg:leading-[3rem] lg:tracking-[0.03125rem] 
                                 text-center"
                             >
-                                {slides[4].title}
+                                {slides[currentSlide].title}
                             </h1>
-                            <p className={`mb-2 text-[#56423E] text-center lg:text-justify text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl ${raleway.className}`}>{slides[4].text}</p>
+                            <p className={`mb-2 text-[#56423E] text-center lg:text-justify text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl ${raleway.className}`}>{slides[currentSlide].text}</p>
+                            {/* Colors and materials button */}
+                            <button
+                                className="mb-2 text-xl text-brown font-medium underline-offset-4 hover:text-red hover:underline transition duration-200 ease-in-out"
+                                onClick={() => {
+                                    setTechIndex(currentSlide)
+                                    setIsOpen(true)
+                                }}
+                            >Цветове и Материали</button>
+                            {/* Partners */}
                             <div className="w-full flex flex-col lg:flex-row  mb-2 text-[#56423E] text-xs md:text-base md:leading-4 lg:text-lg xl:text-xl font-medium lg:gap-x-3 text-center">
                                 <p>Партньори:</p>
                                 <Link
                                     href='http://www.tunakapi.com/'
-                                    className={`${raleway.className} underline text-[#FF3131] lg:text-[#56423E] lg:hover:text-[#FF3131]`}
+                                    className={`${raleway.className} pt-[0.1rem] underline-offset-4 text-red lg:text-brown lg:hover:text-red lg:hover:underline transition duration-200 ease-in-out`}
                                     rel="noopener noreferrer"
                                     target="_blank"
                                 >Tunakapı</Link>

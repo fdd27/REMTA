@@ -8,11 +8,11 @@ const pf = Playfair_Display({
 })
 
 export const metadata = {
-  metadataBase: 'https://www.remtadesign.store', // Add your website URL here
-
+  metadataBase: 'https://www.remtadesign.store',
   title: 'REMTA Design',
   description: 'Мебели по поръчка, изработени специално за теб',
-  keywords: ['Next.js', 'React', 'JavaScript', 'Remta', 'Momchilgrad', 'furniture', 'Bulgaria', 'мебели', 'мебели по поръчка', 'Момчилград', 'България', 'Ремта'],
+  keywords: ['Remta', 'Momchilgrad', 'furniture', 'Bulgaria', 'мебели', 'мебел', 'мебели по поръчка', 'Момчилград', 'България', 'Ремта', 'Кърджали', 'шкаф', 'шкафчета', 'врата', 'врати', 'дръжки', 'плот', 'плотове',
+    'кухня', 'кухни', 'кухни по поръчка'],
   openGraph: {
     title: 'REMTA Design',
     description: 'Мебели по поръчка, изработени специално за теб',
@@ -20,7 +20,7 @@ export const metadata = {
     siteName: 'REMTA Design',
     images: [
       {
-        url: 'https://i.postimg.cc/HsY496wY/asdasd.png',
+        url: 'https://postimg.cc/nsp8C3dS',
         width: 66,
         height: 66,
       },
