@@ -5,6 +5,7 @@ import img from "../assets/contact-img.png"
 import { Inter } from "next/font/google"
 import Footer from './Footer'
 import emailjs from "@emailjs/browser"
+import { TextField } from "@mui/material"
 
 const inter = Inter({
     subsets: ['latin', 'cyrillic'],
@@ -87,7 +88,7 @@ const Contact = () => {
                 <form onSubmit={e => { sendEmail(e) }} autoComplete="off" className="flex flex-col w-full lg:w-1/2 items-center justify-center">
                     <h1 className="mb-6 md:mb-12 text-[#56423E] text-center text-3xl md:text-4xl lg:text-3xl xl:text-[2rem] 2xl:text-[2.1875rem] font-semibold leading-[3rem] tracking-[-0.04375rem]">Изпрати запитване</h1>
                     <div className="flex">
-                        <div className="input-container">
+                        {/* <div className="input-container">
                             <input
                                 id="name"
                                 type='text'
@@ -100,7 +101,19 @@ const Contact = () => {
                                 placeholder:text-[#56423ea8] placeholder:${inter.className}`}
                                 required='required'
                             />
-                        </div>
+                        </div> */}
+                        <TextField
+                            id="name"
+                            label="Име"
+                            name="name"
+                            variant="outlined"
+                            className={`${inter.className} mb-4 md:mb-8 lg:mb-[2.25rem] mr-2 md:mr-8 lg:mr-[1.19rem] shadow-[4px_4px_0_rgba(255,49,49,0.55)] rounded-[0.375rem] 
+                            placeholder:${inter.className} bg-white`}
+                            required={true}
+                            InputProps={{ className:'text-[#56423E]' }}
+                            InputLabelProps={{ className:'text-[#56423E]' }}
+                        />
+
                         <div className="input-container">
                             <input
                                 id="surname"

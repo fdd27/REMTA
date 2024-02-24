@@ -18,8 +18,6 @@
   }
 }
 
-/* body {} */
-
 /* Form elements */
 .input:not(.unfilled):invalid {
   color: #d50000;
@@ -62,6 +60,7 @@
 }
 
 /*technolgies slider */
+
 [class^="tech-slide"],
 [class*=" tech-slide"] {
   background: rgba(255, 255, 255, 0.6);
@@ -134,8 +133,6 @@
   fill: rgba(255, 255, 255, 0.5);
 }
 
-/* technologies slider */
-
 /* gallery slider */
 [class^="img-slide"],
 [class*=" img-slide"] {
@@ -160,5 +157,3 @@
 .thumbnail .keen-slider__slide.active {
   border: 2px solid #FF3131;
 }
-
-/* gallery sldier */

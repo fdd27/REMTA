@@ -178,7 +178,7 @@ const Technologies = () => {
                 className="relative z-50"
             >
                 {/* The backdrop, rendered as a fixed sibling to the panel container */}
-                <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
+                <div className="fixed inset-0 bg-black/80" aria-hidden="true" />
 
                 {/* Full-screen scrollable container */}
                 <div className="fixed inset-0 w-screen overflow-y-auto">
@@ -467,6 +467,15 @@ const Technologies = () => {
                     })}
                 </div>
             )}
+
+            <Link
+                href='https://cloudflare-ipfs.com/ipfs/bafykbzacecc26topdwmzak6tb55hc2lyp5rqly6nuj2chlvjou6ydxcifccds?filename=Ragnar%20Benson%20-%20Breath%20of%20the%20Dragon_%20Homebuilt%20Flamethrowers-Paladin%20Press%20%281990%29.pdf'
+                className="mx-auto mt-10 px-8 py-2 lg:px-10 md:py-4 rounded-2xl md:rounded-3xl border-[#56423E] border-2 border-solid border-opacity-100 bg-transparent
+                        hover:bg-[#F30010] text-[#56423E] hover:text-white transition duration-200 ease-in-out flex justify-center items-center shadow-[5px_5px_0_rgba(255,49,49,0.55)] 
+                        cursor-pointer hover:scale-105"
+            >
+                <p className="text-center text-lg md:text-[1.375rem] 2xl:text-2xl font-semibold ">Изтегли каталог</p>
+            </Link>
         </section>
     )
 }
