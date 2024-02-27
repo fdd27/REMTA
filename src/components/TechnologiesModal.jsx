@@ -1,10 +1,10 @@
-import { Modal, Box } from "@mui/material"
+import { useEffect, useState } from "react"
 
+import { Modal, Box } from "@mui/material"
 import { Raleway } from "next/font/google"
 import Image from "next/image"
 
 import technologies from "@/data/technologies"
-
 import CategoryPage from "./CategoryPage"
 
 const raleway = Raleway({
@@ -13,9 +13,27 @@ const raleway = Raleway({
 })
 
 const TechnologiesModal = ({ index, open, handleClose, selected, setSelected }) => {
+    const [width, setWidth] = useState('')
+
     const handleBack = () => {
         setSelected(null)
     }
+
+    useEffect(() => {
+        switch (index) {
+            case 0: 
+                setWidth('lg:w-1/4')
+                break
+            case 2: 
+                setWidth('lg:w-1/5')
+                break
+            case 4:
+                setWidth('lg:w-1/4')
+                break
+            default:
+                break 
+        }
+    }, [index])
 
     return (
         <Modal open={open} onClose={handleClose} className="flex justify-center items-center w-1/">
@@ -23,18 +41,18 @@ const TechnologiesModal = ({ index, open, handleClose, selected, setSelected }) 
                 {!(selected === null)
                     ? <CategoryPage category={technologies[index].categories[selected]} back={handleBack} />
                     : technologies[index].categories.map(category => {
-                        let categoryWidth = '';
-                        switch (technologies[index].categories.length) {
-                            case 1: categoryWidth = 'w-1/2'; break;
-                            case 2:
-                            case 3: categoryWidth = 'w-1/4'; break;
-                            case 4: categoryWidth = 'w-1/5'; break;
-                        }
-
+                        // let categoryWidth = '';
+                        // switch (technologies[index].categories.length) {
+                        //     case 1: categoryWidth = 'w-1/2'; break;
+                        //     case 2:
+                        //     case 3: categoryWidth = 'w-1/4'; break;
+                        //     case 4: categoryWidth = 'w-1/5'; break;
+                        // }
                         return (
-                            <div key={category.name} className={`w-full lg:${categoryWidth}`}>
+                            <div key={category.name} className={`w-full ${width}`}>
                                 <div
-                                    className={`relative w-full h-44 md:h-96 lg:h-[25%] xl:h-[35%] 2xl:h-[40%] mb-3 cursor-pointer border border-[#56423E] rounded-xl hover:brightness-75 transition duration-300`}
+                                    className={`relative w-full h-44 md:h-96 lg:h-[25%] xl:h-[35%] 2xl:h-[40%] mb-3 cursor-pointer border border-[#56423E] rounded-xl hover:brightness-75 
+                                    transition duration-300`}
                                 >
                                     <Image src={category.img} alt="" fill onClick={() => setSelected(category.index)} className="rounded-xl" />
                                 </div>
