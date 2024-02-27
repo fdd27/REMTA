@@ -108,7 +108,7 @@ const Gallery = () => {
                 </div>
             </Dialog>
 
-            <h1 className="text-[#56423E] text-center text-3xl md:text-4xl xl:text-[2.5rem] 2xl:text-[2.8125rem] font-semibold leading-[3rem] tracking-wider mt-0 mb-8 lg:my-24">
+            <h1 className="text-[#56423E] text-center text-3xl md:text-4xl lg:text-3xl xl:text-[2rem] 2xl:text-4xl font-semibold leading-[3rem] tracking-wider mt-0 mb-8 lg:my-24">
                 Галерия
             </h1>
 

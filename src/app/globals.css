@@ -19,7 +19,7 @@
 }
 
 /* Form elements */
-.input:not(.unfilled):invalid {
+/* .input:not(.unfilled):invalid {
   color: #d50000;
   background: #fff8f8;
   border-color: #d50000;
@@ -47,17 +47,17 @@
 
 #email:not(.filled):not(.firstFill)::placeholder {
   color: #ffbfbf;
-}
+} */
 
 /* Form elements */
 
-.visible {
+/* .visible {
   display: flex;
 }
 
 #popup {
   background-color: rgba(0, 0, 0, 0.9);
-}
+} */
 
 /*technolgies slider */
 

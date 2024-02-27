@@ -43,12 +43,12 @@ const Services = () => {
 
     return (
         <section id="services" className="flex flex-col w-full px-4 md:px-16 xl:px-24 2xl:px-60 snap-start snap-always">
-            <h1 className="text-[#56423E] text-center text-3xl md:text-4xl xl:text-[2.5rem] 2xl:text-[2.8125rem] font-semibold leading-[3rem] tracking-wider my-8 lg:my-20">
+            <h1 className="text-[#56423E] text-center text-3xl md:text-4xl lg:text-3xl xl:text-[2rem] 2xl:text-4xl font-semibold leading-[3rem] tracking-wider my-8 lg:my-20">
                 Как работи всичко
             </h1>
 
             {/* removed from p > md:mt-7 max-w-[77.875rem] mx-auto 2xl:text-[1.375rem] */}
-            <p className={`${raleway.className} font-normal text-[#56423E] text-center text-base md:text-xl 2xl:text-[1.375rem] leading-4 lg:leading-8 tracking-wide mb-8 lg:mb-20`}>
+            <p className={`${raleway.className} font-normal text-[#56423E] text-center text-base md:text-xl leading-4 lg:leading-8 tracking-wide mb-8 lg:mb-20`}>
                 Държим клиентите ни да участват във всяка стъпка от процеса, за да сме сигурни, че тяхната визия е реализирана във всеки аспект на дизайна. От избора на материалите до размерите и характеристиките, ние работим в тясно сътрудничество с нашите клиенти, за да създадем обзавеждане, което идеално пасва на нуждите и предпочитанията им.
             </p>
 

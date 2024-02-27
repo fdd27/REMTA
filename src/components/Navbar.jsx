@@ -59,7 +59,7 @@ const Navbar = ({ color, shadow, mobile_menu_col, fbIcon }) => {
 
                 {/* Instagram button */}
                 <Link
-                    href='https://www.facebook.com/RemtaDesign'
+                    href='https://www.instagram.com/remta.design/'
                     className={`hidden lg:block absolute lg:right-16 xl:right-24 2xl:right-60 top-8 hover:scale-110 transition duration-200 ease-in-out`}
                     rel="noopener noreferrer"
                     target="_blank"
@@ -92,7 +92,7 @@ const Navbar = ({ color, shadow, mobile_menu_col, fbIcon }) => {
                             </Link>
                         </li>
                         <li className="flex justify-center items-center p-8">
-                            <Link href='https://www.facebook.com/RemtaDesign' rel="noopener noreferrer" target="_blank">
+                            <Link href='https://www.instagram.com/remta.design/' rel="noopener noreferrer" target="_blank">
                                 <InstagramIcon fontSize="large" className="text-[#56423E] active:text-[#FF7448DE]" />
                             </Link>
                         </li>
