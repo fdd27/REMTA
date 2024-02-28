@@ -87,30 +87,30 @@ const Contact = () => {
                     <form onSubmit={e => { sendEmail(e) }} autoComplete="off" className="">
                         <div className="flex flex-row justify-center mb-4 md:mb-8 lg:mb-[2.25rem] gap-x-4 lg:gap-x-8">
                             <TextField id="name" label="Име" name="name" variant="outlined" required={true} InputProps={{ className: 'text-[#56423E]' }} InputLabelProps={{ className: 'text-[#56423E]' }}
-                                className={`${inter.className} shadow-[4px_4px_0_rgba(255,49,49,0.55)] bg-white`}
+                                className={`${inter.className} shadow-[4px_4px_0_rgba(255,49,49,0.55)] rounded-[0.3rem] bg-white`}
                             />
 
                             <TextField id="surname" label="Фамилия" name="surname" variant="outlined" required={true} InputProps={{ className: 'text-[#56423E]' }} InputLabelProps={{ className: 'text-[#56423E]' }}
-                                className={`${inter.className} shadow-[4px_4px_0_rgba(255,49,49,0.55)] bg-white`}
+                                className={`${inter.className} shadow-[4px_4px_0_rgba(255,49,49,0.55)] rounded-[0.3rem] bg-white`}
                             />
                         </div>
                         <div className="flex flex-row justify-center mb-4 md:mb-8 lg:mb-[2.25rem] gap-x-4 lg:gap-x-8">
                             <TextField id="email" label="Имейл" name="email" variant="outlined" required={true} InputProps={{ className: 'text-[#56423E]' }} InputLabelProps={{ className: 'text-[#56423E]' }}
-                                className={`${inter.className} shadow-[4px_4px_0_rgba(255,49,49,0.55)] bg-white`}
+                                className={`${inter.className} shadow-[4px_4px_0_rgba(255,49,49,0.55)] rounded-[0.3rem] bg-white`}
                             />
 
                             <TextField id="tel" label="Телефон" name="tel" variant="outlined" required={true} InputProps={{ className: 'text-[#56423E]' }} InputLabelProps={{ className: 'text-[#56423E]' }}
-                                className={`${inter.className} shadow-[4px_4px_0_rgba(255,49,49,0.55)] bg-white`}
+                                className={`${inter.className} shadow-[4px_4px_0_rgba(255,49,49,0.55)] rounded-[0.3rem] bg-white`}
                             />
                         </div>
                         <div className="flex justify-center mb-4 md:mb-8 lg:mb-[2.25rem]">
                             <TextField id="about" label="Относно" name="about" variant="outlined" required={true} InputProps={{ className: 'text-[#56423E]' }} InputLabelProps={{ className: 'text-[#56423E]' }}
-                                className={`${inter.className} shadow-[4px_4px_0_rgba(255,49,49,0.55)] bg-white`}
+                                className={`${inter.className} shadow-[4px_4px_0_rgba(255,49,49,0.55)] rounded-[0.3rem] bg-white`}
                             />
                         </div>
                         <div className="mb-4 md:mb-8 lg:mb-[2.25rem]">
                             <TextField id="message" label="Съобщение" name="message" variant="outlined" InputProps={{ className: 'text-[#56423E]' }} InputLabelProps={{ className: 'text-[#56423E]' }}
-                                className={`${inter.className} shadow-[4px_4px_0_rgba(255,49,49,0.55)] bg-white`} multiline rows={6} fullWidth
+                                className={`${inter.className} shadow-[4px_4px_0_rgba(255,49,49,0.55)] rounded-[0.3rem] bg-white`} multiline rows={6} fullWidth
                             />
                         </div>
 
