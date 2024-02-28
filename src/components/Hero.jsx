@@ -65,6 +65,7 @@ const Hero = () => {
                         priority
                         loading="eager"
                         className="max-w-full h-auto"
+                        placeholder="blur"
                     />
                 </div>
             </div>

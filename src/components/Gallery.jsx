@@ -102,6 +102,7 @@ const Gallery = () => {
                                     setFsImage(img)
                                     setIsOpen(true)
                                 }}
+                                placeholder="blur"
                             />
                         </div>
                     )
@@ -119,6 +120,7 @@ const Gallery = () => {
                                 fill
                                 sizes="20vw"
                                 className="object-cover"
+                                placeholder="blur"
                             />
                         </div>
                     )
